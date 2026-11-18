@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
 
 export function Header() {
@@ -13,11 +14,27 @@ export function Header() {
       <div className="h-20 w-full px-4 sm:px-8 xl:px-12 flex items-center justify-between gap-4">
         {/* Left: Brand Logo & Main Nav */}
         <div className="flex items-center gap-6 xl:gap-10">
-          <Link href="/" className="flex items-center gap-2 group focus:outline-none">
-            <span className="font-['Space_Grotesk'] text-2xl xl:text-[28px] font-bold tracking-tight flex items-center text-[#0b1c30] dark:text-white">
-              TRIVE
-              <span className="text-[#0074db] dark:text-[#00D2FF] transition-colors">X</span>
-            </span>
+          <Link href="/" className="flex items-center gap-3 group focus:outline-none">
+            <div className="relative h-9 sm:h-10 w-auto flex items-center">
+              {/* Light mode logo */}
+              <Image
+                src="/logo-light.png"
+                alt="TRIVEX Logo"
+                width={160}
+                height={39}
+                priority
+                className="h-8 sm:h-9 w-auto object-contain dark:hidden"
+              />
+              {/* Dark mode logo (white text + blue X) */}
+              <Image
+                src="/logo-dark.png"
+                alt="TRIVEX Logo"
+                width={160}
+                height={39}
+                priority
+                className="h-8 sm:h-9 w-auto object-contain hidden dark:block"
+              />
+            </div>
             <span className="hidden xl:inline-block font-mono text-[10px] uppercase px-1.5 py-0.5 rounded tracking-widest bg-blue-50 text-[#005baf] border border-blue-200/50 dark:bg-[rgba(0,210,255,0.12)] dark:text-[#00D2FF] dark:border-[rgba(0,210,255,0.3)] transition-colors">
               Global
             </span>

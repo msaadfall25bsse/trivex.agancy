@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -8,10 +9,24 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 xl:gap-12 mb-12">
           {/* Column 1: Brand & Contact Info */}
           <div className="space-y-4">
-            <div className="font-['Space_Grotesk'] text-2xl font-bold tracking-tight text-[#0b1c30] dark:text-white flex items-center">
-              TRIVE
-              <span className="text-[#0074db] dark:text-[#00D2FF]">X</span>
-            </div>
+            <Link href="/" className="inline-block focus:outline-none">
+              <div className="relative h-9 sm:h-10 w-auto flex items-center">
+                <Image
+                  src="/logo-light.png"
+                  alt="TRIVEX Logo"
+                  width={160}
+                  height={39}
+                  className="h-9 sm:h-10 w-auto object-contain dark:hidden"
+                />
+                <Image
+                  src="/logo-dark.png"
+                  alt="TRIVEX Logo"
+                  width={160}
+                  height={39}
+                  className="h-9 sm:h-10 w-auto object-contain hidden dark:block"
+                />
+              </div>
+            </Link>
             <p className="text-sm leading-relaxed max-w-sm text-[#404754] dark:text-[#94A3B8]">
               High-velocity engineering and global technology consultancy accelerating enterprise
               platforms, AI infrastructure, and mission-critical cloud solutions.
