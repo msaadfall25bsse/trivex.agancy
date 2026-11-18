@@ -14,16 +14,16 @@ export function Footer() {
                 <Image
                   src="/logo-light.png"
                   alt="TRIVEX Logo"
-                  width={160}
-                  height={39}
-                  className="h-9 sm:h-10 w-auto object-contain dark:hidden"
+                  width={200}
+                  height={30}
+                  className="h-8 sm:h-9 w-auto object-contain dark:hidden"
                 />
                 <Image
                   src="/logo-dark.png"
                   alt="TRIVEX Logo"
-                  width={160}
-                  height={39}
-                  className="h-9 sm:h-10 w-auto object-contain hidden dark:block"
+                  width={200}
+                  height={30}
+                  className="h-8 sm:h-9 w-auto object-contain hidden dark:block"
                 />
               </div>
             </Link>
