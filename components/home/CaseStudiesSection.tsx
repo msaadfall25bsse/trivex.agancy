@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useTheme } from "@/components/ThemeProvider";
+import { Icon } from "@/components/ui/Icon";
 
 interface CaseStudy {
   id: string;
@@ -239,7 +240,7 @@ export function CaseStudiesSection() {
                     style={{ color: theme === "dark" ? "#00D2FF" : "#005baf" }}
                   >
                     <span>View Case Study</span>
-                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    <Icon name="arrow_forward" className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>
@@ -258,7 +259,7 @@ export function CaseStudiesSection() {
             }}
           >
             <span>Explore All Projects &amp; Case Studies</span>
-            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            <Icon name="arrow_forward" className="w-4 h-4" />
           </Link>
         </div>
       </div>

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useTheme } from "@/components/ThemeProvider";
 import { AGENCY_FAQS } from "@/data/faq";
+import { Icon } from "@/components/ui/Icon";
 
 export function FaqClientView() {
   const { theme } = useTheme();
@@ -77,13 +78,13 @@ export function FaqClientView() {
                   <span>{faq.question}</span>
                 </div>
                 <span
-                  className="material-symbols-outlined text-xl transition-transform duration-200 shrink-0"
+                  className="transition-transform duration-200 shrink-0"
                   style={{
                     transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
                     color: isDark ? "#00D2FF" : "#0088FF",
                   }}
                 >
-                  expand_more
+                  <Icon name="expand_more" className="w-5 h-5" />
                 </span>
               </button>
 

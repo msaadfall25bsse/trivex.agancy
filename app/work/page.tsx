@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { constructMetadata } from "@/lib/seo";
 import { WorkClientView } from "@/components/work/WorkClientView";
+import { Icon } from "@/components/ui/Icon";
 
 export const metadata = constructMetadata({
   title: "Case Studies & Work | Engineered for Commercial Growth",
@@ -17,7 +18,7 @@ export default function WorkPage() {
       <section className="relative px-margin pt-12 pb-16 overflow-hidden">
         <div className="max-w-4xl mx-auto text-center space-y-5">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-mono font-semibold bg-blue-500/10 border-blue-500/25 text-[#0088FF] dark:bg-cyan-500/10 dark:border-cyan-500/25 dark:text-[#00D2FF]">
-            <span className="material-symbols-outlined text-sm">rocket_launch</span>
+            <Icon name="rocket_launch" className="w-4 h-4" />
             <span>PORTFOLIO &amp; DELIVERED SOLUTIONS</span>
           </div>
 
@@ -54,7 +55,7 @@ export default function WorkPage() {
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-sm bg-[#0088FF] text-white dark:bg-[#00D2FF] dark:text-black shadow-lg hover:brightness-110 transition-all"
               >
                 <span>Request a Free Project Assessment</span>
-                <span className="material-symbols-outlined text-base">arrow_forward</span>
+                <Icon name="arrow_forward" className="w-4 h-4" />
               </Link>
             </div>
           </div>

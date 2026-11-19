@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { useTheme } from "@/components/ThemeProvider";
+import { Icon } from "@/components/ui/Icon";
 
 export function AboutSection() {
   const { theme } = useTheme();
@@ -103,7 +104,7 @@ export function AboutSection() {
                   color: theme === "dark" ? "#00D2FF" : "#0074db",
                 }}
               >
-                <span className="material-symbols-outlined">{p.icon}</span>
+                <Icon name={p.icon} className="w-5 h-5" />
               </div>
               <h3
                 className="font-headline-sm text-headline-sm"
@@ -173,7 +174,7 @@ export function AboutSection() {
             }}
           >
             <span>Learn More About Our Team &amp; Philosophy</span>
-            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            <Icon name="arrow_forward" className="w-4 h-4" />
           </Link>
         </div>
       </div>

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useTheme } from "@/components/ThemeProvider";
+import { Icon } from "@/components/ui/Icon";
 
 export function ConsultationSection() {
   const { theme } = useTheme();
@@ -136,11 +137,8 @@ export function ConsultationSection() {
                 style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
               >
                 <div className="flex items-center gap-2">
-                  <span
-                    className="material-symbols-outlined text-base"
-                    style={{ color: theme === "dark" ? "#00D2FF" : "#005baf" }}
-                  >
-                    mail
+                  <span style={{ color: theme === "dark" ? "#00D2FF" : "#005baf" }}>
+                    <Icon name="mail" className="w-4 h-4" />
                   </span>
                   <span
                     className="font-semibold"
@@ -150,11 +148,8 @@ export function ConsultationSection() {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span
-                    className="material-symbols-outlined text-base"
-                    style={{ color: theme === "dark" ? "#00D2FF" : "#005baf" }}
-                  >
-                    forum
+                  <span style={{ color: theme === "dark" ? "#00D2FF" : "#005baf" }}>
+                    <Icon name="forum" className="w-4 h-4" />
                   </span>
                   <span>Direct WhatsApp Engineering Concierge Available</span>
                 </div>
@@ -377,7 +372,7 @@ export function ConsultationSection() {
                     type="submit"
                   >
                     <span>Submit Technical Scope</span>
-                    <span className="material-symbols-outlined text-base">send</span>
+                    <Icon name="send" className="w-4 h-4" />
                   </button>
                 </div>
               </form>

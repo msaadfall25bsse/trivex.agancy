@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { useTheme } from "@/components/ThemeProvider";
 import { INDUSTRIES } from "@/data/industries";
+import { Icon } from "@/components/ui/Icon";
 
 export function HomeIndustriesSection() {
   const { theme } = useTheme();
@@ -45,7 +46,7 @@ export function HomeIndustriesSection() {
             style={{ color: isDark ? "#00D2FF" : "#0088FF" }}
           >
             <span>Explore All Industries</span>
-            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            <Icon name="arrow_forward" className="w-3.5 h-3.5" />
           </Link>
         </div>
 
@@ -67,7 +68,7 @@ export function HomeIndustriesSection() {
                     color: isDark ? "#00D2FF" : "#0088FF",
                   }}
                 >
-                  <span className="material-symbols-outlined text-2xl">{ind.icon}</span>
+                  <Icon name={ind.icon} className="w-6 h-6" />
                 </div>
                 <h3 className="font-brand font-bold text-xl">{ind.name}</h3>
                 <p
@@ -85,7 +86,7 @@ export function HomeIndustriesSection() {
                   style={{ color: isDark ? "#00D2FF" : "#0088FF" }}
                 >
                   <span>View Solutions</span>
-                  <span className="material-symbols-outlined text-xs">arrow_forward</span>
+                  <Icon name="arrow_forward" className="w-3 h-3" />
                 </Link>
               </div>
             </div>

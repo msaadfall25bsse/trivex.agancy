@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { constructMetadata } from "@/lib/seo";
+import { Icon } from "@/components/ui/Icon";
 
 export const metadata = constructMetadata({
   title: "Our Process & Methodology | 4-Stage Delivery Framework",
@@ -102,7 +103,7 @@ export default function ProcessPage() {
       <section className="relative px-margin pt-12 pb-16 overflow-hidden">
         <div className="max-w-4xl mx-auto text-center space-y-5">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-mono font-semibold bg-blue-500/10 border-blue-500/25 text-[#0088FF] dark:bg-cyan-500/10 dark:border-cyan-500/25 dark:text-[#00D2FF]">
-            <span className="material-symbols-outlined text-sm">cycle</span>
+            <Icon name="cycle" className="w-4 h-4" />
             <span>METHODOLOGY &amp; EXECUTION</span>
           </div>
 
@@ -157,8 +158,8 @@ export default function ProcessPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {stage.deliverables.map((del, dIdx) => (
                     <div key={dIdx} className="flex items-center gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                      <span className="material-symbols-outlined text-base text-[#0088FF] dark:text-[#00D2FF]">
-                        check_circle
+                      <span className="text-[#0088FF] dark:text-[#00D2FF]">
+                        <Icon name="check_circle" className="w-4 h-4" />
                       </span>
                       <span>{del}</span>
                     </div>
@@ -192,7 +193,7 @@ export default function ProcessPage() {
                 className="p-7 rounded-2xl border bg-white border-slate-200 dark:bg-[#0F141C] dark:border-[#1E2633] space-y-3"
               >
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-blue-500/10 text-[#0088FF] dark:bg-cyan-500/10 dark:text-[#00D2FF]">
-                  <span className="material-symbols-outlined text-xl">{std.icon}</span>
+                  <Icon name={std.icon} className="w-5 h-5" />
                 </div>
                 <h3 className="font-brand text-base font-bold">{std.title}</h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -220,7 +221,7 @@ export default function ProcessPage() {
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-sm bg-[#0088FF] text-white dark:bg-[#00D2FF] dark:text-black shadow-lg hover:brightness-110 transition-all"
               >
                 <span>Book a Free Strategy Consultation</span>
-                <span className="material-symbols-outlined text-base">arrow_forward</span>
+                <Icon name="arrow_forward" className="w-4 h-4" />
               </Link>
             </div>
           </div>

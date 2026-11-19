@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useTheme } from "@/components/ThemeProvider";
 import { AGENCY_FAQS } from "@/data/faq";
+import { Icon } from "@/components/ui/Icon";
 
 export function HomeFaqSection() {
   const { theme } = useTheme();
@@ -63,13 +64,13 @@ export function HomeFaqSection() {
                 >
                   <span>{faq.question}</span>
                   <span
-                    className="material-symbols-outlined text-lg transition-transform duration-200 shrink-0"
+                    className="transition-transform duration-200 shrink-0"
                     style={{
                       transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
                       color: isDark ? "#00D2FF" : "#0088FF",
                     }}
                   >
-                    expand_more
+                    <Icon name="expand_more" className="w-5 h-5" />
                   </span>
                 </button>
                 {isOpen && (
@@ -95,7 +96,7 @@ export function HomeFaqSection() {
             style={{ color: isDark ? "#00D2FF" : "#0088FF" }}
           >
             <span>View All Frequently Asked Questions</span>
-            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            <Icon name="arrow_forward" className="w-3.5 h-3.5" />
           </Link>
         </div>
       </div>

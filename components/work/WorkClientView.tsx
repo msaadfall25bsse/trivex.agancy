@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "@/components/ThemeProvider";
 import { PORTFOLIO_PROJECTS } from "@/data/portfolio";
+import { Icon } from "@/components/ui/Icon";
 
 export function WorkClientView() {
   const { theme } = useTheme();
@@ -116,8 +117,8 @@ export function WorkClientView() {
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
                     {project.deliverables.map((del, dIdx) => (
                       <li key={dIdx} className="flex items-center gap-1.5 text-slate-600 dark:text-slate-400">
-                        <span className="material-symbols-outlined text-sm text-[#0088FF] dark:text-[#00D2FF]">
-                          check_circle
+                        <span className="text-[#0088FF] dark:text-[#00D2FF]">
+                          <Icon name="check_circle" className="w-3.5 h-3.5" />
                         </span>
                         <span>{del}</span>
                       </li>
@@ -145,7 +146,7 @@ export function WorkClientView() {
                     className="inline-flex items-center gap-1.5 text-xs font-mono font-bold hover:underline text-[#0088FF] dark:text-[#00D2FF]"
                   >
                     <span>Request similar project scope</span>
-                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    <Icon name="arrow_forward" className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>

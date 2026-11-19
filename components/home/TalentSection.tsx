@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { useTheme } from "@/components/ThemeProvider";
+import { Icon } from "@/components/ui/Icon";
 
 export function TalentSection() {
   const { theme } = useTheme();
@@ -119,11 +120,8 @@ export function TalentSection() {
                     className="flex items-center gap-2"
                     style={{ color: theme === "dark" ? "#94A3B8" : "#475569" }}
                   >
-                    <span
-                      className="material-symbols-outlined text-base"
-                      style={{ color: theme === "dark" ? "#00D2FF" : "#0074db" }}
-                    >
-                      check_circle
+                    <span style={{ color: theme === "dark" ? "#00D2FF" : "#0074db" }}>
+                      <Icon name="check_circle" className="w-4 h-4 shrink-0" />
                     </span>
                     <span>{item}</span>
                   </li>
@@ -133,7 +131,7 @@ export function TalentSection() {
             <Link
               className="inline-flex items-center justify-center px-6 py-3 rounded font-label-lg text-label-lg font-medium shadow-sm transition-all"
               data-path="hire-developer"
-              href="#hire-developer"
+              href="/contact"
               style={{
                 backgroundColor: theme === "dark" ? "#00D2FF" : "#0074db",
                 color: theme === "dark" ? "#080B10" : "#ffffff",
@@ -194,11 +192,8 @@ export function TalentSection() {
                     className="flex items-center gap-2"
                     style={{ color: theme === "dark" ? "#94A3B8" : "#475569" }}
                   >
-                    <span
-                      className="material-symbols-outlined text-base"
-                      style={{ color: theme === "dark" ? "#00D2FF" : "#0074db" }}
-                    >
-                      check_circle
+                    <span style={{ color: theme === "dark" ? "#00D2FF" : "#0074db" }}>
+                      <Icon name="check_circle" className="w-4 h-4 shrink-0" />
                     </span>
                     <span>{item}</span>
                   </li>
@@ -208,7 +203,7 @@ export function TalentSection() {
             <Link
               className="inline-flex items-center justify-center px-6 py-3 rounded font-label-lg text-label-lg font-medium shadow-sm transition-all"
               data-path="book-consultation"
-              href="#book-consultation"
+              href="/contact"
               style={{
                 backgroundColor: theme === "dark" ? "#141B26" : "#e5eeff",
                 border: theme === "dark" ? "1px solid #1E2633" : "1px solid #c0c6d6",

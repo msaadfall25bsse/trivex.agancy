@@ -1,6 +1,7 @@
 import React from "react";
 import { constructMetadata } from "@/lib/seo";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { Icon } from "@/components/ui/Icon";
 
 export const metadata = constructMetadata({
   title: "Book a Consultation | Contact TRIVEX Agency",
@@ -34,7 +35,7 @@ export default function ContactPage() {
       <section className="relative px-margin pt-12 pb-12 overflow-hidden">
         <div className="max-w-4xl mx-auto text-center space-y-5">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-mono font-semibold bg-blue-500/10 border-blue-500/25 text-[#0088FF] dark:bg-cyan-500/10 dark:border-cyan-500/25 dark:text-[#00D2FF]">
-            <span className="material-symbols-outlined text-sm">mail</span>
+            <Icon name="mail" className="w-4 h-4" />
             <span>STRATEGIC CONSULTATION</span>
           </div>
 
@@ -70,7 +71,7 @@ export default function ContactPage() {
               <div className="space-y-4 text-sm">
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-blue-500/10 text-[#0088FF] dark:bg-cyan-500/10 dark:text-[#00D2FF]">
-                    <span className="material-symbols-outlined text-xl">alternate_email</span>
+                    <Icon name="alternate_email" className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-xs font-mono uppercase text-slate-400">Direct Email</div>
@@ -86,7 +87,7 @@ export default function ContactPage() {
 
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-blue-500/10 text-[#0088FF] dark:bg-cyan-500/10 dark:text-[#00D2FF]">
-                    <span className="material-symbols-outlined text-xl">phone_in_talk</span>
+                    <Icon name="phone_in_talk" className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-xs font-mono uppercase text-slate-400">Telephone</div>
@@ -99,7 +100,7 @@ export default function ContactPage() {
 
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-blue-500/10 text-[#0088FF] dark:bg-cyan-500/10 dark:text-[#00D2FF]">
-                    <span className="material-symbols-outlined text-xl">location_on</span>
+                    <Icon name="location_on" className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-xs font-mono uppercase text-slate-400">Global Hubs</div>
@@ -118,8 +119,8 @@ export default function ContactPage() {
               <div className="space-y-4">
                 {CONTACT_HIGHLIGHTS.map((h, idx) => (
                   <div key={idx} className="flex items-start gap-3">
-                    <span className="material-symbols-outlined text-lg mt-0.5 text-[#0088FF] dark:text-[#00D2FF]">
-                      {h.icon}
+                    <span className="mt-0.5 text-[#0088FF] dark:text-[#00D2FF]">
+                      <Icon name={h.icon} className="w-4 h-4" />
                     </span>
                     <div className="space-y-0.5">
                       <div className="text-xs font-bold text-slate-900 dark:text-white">

@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { useTheme } from "@/components/ThemeProvider";
+import { Icon } from "@/components/ui/Icon";
 
 export function HeroSection() {
   const { theme } = useTheme();
@@ -124,7 +125,7 @@ export function HeroSection() {
                 }}
               >
                 <span>Book a Free Consultation</span>
-                <span className="material-symbols-outlined text-base">arrow_forward</span>
+                <Icon name="arrow_forward" className="w-4 h-4" />
               </Link>
               <Link
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded font-label-lg text-label-lg font-medium transition-all hover:border-[#00D2FF] hover:text-[#00D2FF]"
@@ -136,7 +137,7 @@ export function HeroSection() {
                 }}
               >
                 <span>Explore All Services</span>
-                <span className="material-symbols-outlined text-base">hub</span>
+                <Icon name="hub" className="w-4 h-4" />
               </Link>
             </div>
 
@@ -210,8 +211,8 @@ export function HeroSection() {
                   }}
                 >
                   <div className="flex items-center gap-2.5">
-                    <span className="material-symbols-outlined text-lg" style={{ color: isDark ? "#00D2FF" : "#0074db" }}>
-                      query_stats
+                    <span style={{ color: isDark ? "#00D2FF" : "#0074db" }}>
+                      <Icon name="query_stats" className="w-5 h-5" />
                     </span>
                     <span className="font-brand font-semibold text-xs sm:text-sm">Marketing &amp; Paid Acquisition</span>
                   </div>
@@ -226,8 +227,8 @@ export function HeroSection() {
                   }}
                 >
                   <div className="flex items-center gap-2.5">
-                    <span className="material-symbols-outlined text-lg" style={{ color: isDark ? "#00D2FF" : "#0074db" }}>
-                      terminal
+                    <span style={{ color: isDark ? "#00D2FF" : "#0074db" }}>
+                      <Icon name="terminal" className="w-5 h-5" />
                     </span>
                     <span className="font-brand font-semibold text-xs sm:text-sm">Web &amp; Custom Software</span>
                   </div>
@@ -242,8 +243,8 @@ export function HeroSection() {
                   }}
                 >
                   <div className="flex items-center gap-2.5">
-                    <span className="material-symbols-outlined text-lg" style={{ color: isDark ? "#00D2FF" : "#0074db" }}>
-                      shopping_bag
+                    <span style={{ color: isDark ? "#00D2FF" : "#0074db" }}>
+                      <Icon name="shopping_bag" className="w-5 h-5" />
                     </span>
                     <span className="font-brand font-semibold text-xs sm:text-sm">E-Commerce &amp; WordPress</span>
                   </div>
@@ -258,8 +259,8 @@ export function HeroSection() {
                   }}
                 >
                   <div className="flex items-center gap-2.5">
-                    <span className="material-symbols-outlined text-lg" style={{ color: isDark ? "#00D2FF" : "#0074db" }}>
-                      smart_toy
+                    <span style={{ color: isDark ? "#00D2FF" : "#0074db" }}>
+                      <Icon name="smart_toy" className="w-5 h-5" />
                     </span>
                     <span className="font-brand font-semibold text-xs sm:text-sm">Business Automation &amp; AI</span>
                   </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { constructMetadata } from "@/lib/seo";
+import { Icon } from "@/components/ui/Icon";
 
 export const metadata = constructMetadata({
   title: "About Us | Three Minds. One Vision.",
@@ -61,7 +62,7 @@ export default function AboutPage() {
       <section className="relative px-margin pt-12 pb-16 overflow-hidden">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-mono font-semibold bg-blue-500/10 border-blue-500/25 text-[#0088FF] dark:bg-cyan-500/10 dark:border-cyan-500/25 dark:text-[#00D2FF]">
-            <span className="material-symbols-outlined text-sm">groups</span>
+            <Icon name="groups" className="w-4 h-4" />
             <span>THREE MINDS. ONE VISION.</span>
           </div>
 
@@ -134,7 +135,7 @@ export default function AboutPage() {
                 className="p-8 rounded-2xl border bg-white border-slate-200 dark:bg-[#0F141C] dark:border-[#1E2633] space-y-4"
               >
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-blue-500/10 text-[#0088FF] dark:bg-cyan-500/10 dark:text-[#00D2FF]">
-                  <span className="material-symbols-outlined text-2xl">{val.icon}</span>
+                  <Icon name={val.icon} className="w-6 h-6" />
                 </div>
                 <h3 className="font-brand text-xl font-bold">{val.title}</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -189,7 +190,7 @@ export default function AboutPage() {
                   className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-bold text-sm bg-[#0088FF] text-white dark:bg-[#00D2FF] dark:text-black shadow-md hover:brightness-110 transition-all"
                 >
                   <span>Talk to Our Team</span>
-                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  <Icon name="arrow_forward" className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -213,7 +214,7 @@ export default function AboutPage() {
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-sm bg-[#0088FF] text-white dark:bg-[#00D2FF] dark:text-black shadow-lg hover:brightness-110 transition-all"
               >
                 <span>Book a Strategy Consultation</span>
-                <span className="material-symbols-outlined text-base">arrow_forward</span>
+                <Icon name="arrow_forward" className="w-4 h-4" />
               </Link>
             </div>
           </div>

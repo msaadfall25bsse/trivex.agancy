@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useTheme } from "@/components/ThemeProvider";
+import { Icon } from "@/components/ui/Icon";
 
 export function ContactForm() {
   const { theme } = useTheme();
@@ -51,7 +52,7 @@ export function ContactForm() {
             color: isDark ? "#00D2FF" : "#0088FF",
           }}
         >
-          <span className="material-symbols-outlined text-3xl">check_circle</span>
+          <Icon name="check_circle" className="w-8 h-8" />
         </div>
 
         <h3 className="font-brand text-2xl sm:text-3xl font-bold">
@@ -303,13 +304,13 @@ export function ContactForm() {
         >
           {isSubmitting ? (
             <>
-              <span className="material-symbols-outlined text-base animate-spin">refresh</span>
+              <Icon name="refresh" className="w-4 h-4 animate-spin" />
               <span>Submitting Request...</span>
             </>
           ) : (
             <>
               <span>Schedule Technical Consultation</span>
-              <span className="material-symbols-outlined text-base">arrow_forward</span>
+              <Icon name="arrow_forward" className="w-4 h-4" />
             </>
           )}
         </button>

@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { useTheme } from "@/components/ThemeProvider";
+import { Icon } from "@/components/ui/Icon";
 
 export function ServicesSection() {
   const { theme } = useTheme();
@@ -149,7 +150,7 @@ export function ServicesSection() {
             }}
           >
             <span>View All 12 Services</span>
-            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            <Icon name="arrow_forward" className="w-4 h-4" />
           </Link>
         </div>
 
@@ -173,10 +174,10 @@ export function ServicesSection() {
                     {svc.num}
                   </span>
                   <span
-                    className="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform"
+                    className="group-hover:scale-110 transition-transform"
                     style={{ color: isDark ? "#00D2FF" : "#0074db" }}
                   >
-                    {svc.icon}
+                    <Icon name={svc.icon} className="w-6 h-6" />
                   </span>
                 </div>
                 <h3
@@ -207,7 +208,7 @@ export function ServicesSection() {
                 }}
               >
                 <span>{svc.linkText}</span>
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                <Icon name="arrow_forward" className="w-3.5 h-3.5" />
               </Link>
             </div>
           ))}

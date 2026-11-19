@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "@/components/ThemeProvider";
+import { Icon } from "@/components/ui/Icon";
 
 export function Footer() {
   const { theme } = useTheme();
@@ -55,11 +56,8 @@ export function Footer() {
               style={{ color: isDark ? "#94A3B8" : "#404754" }}
             >
               <div className="flex items-center gap-2">
-                <span
-                  className="material-symbols-outlined text-sm"
-                  style={{ color: isDark ? "#00D2FF" : "#005baf" }}
-                >
-                  mail
+                <span style={{ color: isDark ? "#00D2FF" : "#005baf" }}>
+                  <Icon name="mail" className="w-4 h-4" />
                 </span>
                 <a
                   href="mailto:contact@trivex.group"
@@ -70,20 +68,14 @@ export function Footer() {
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <span
-                  className="material-symbols-outlined text-sm"
-                  style={{ color: isDark ? "#00D2FF" : "#005baf" }}
-                >
-                  phone_in_talk
+                <span style={{ color: isDark ? "#00D2FF" : "#005baf" }}>
+                  <Icon name="phone_in_talk" className="w-4 h-4" />
                 </span>
                 <span>+1 (800) 874-8390</span>
               </div>
               <div className="flex items-center gap-2">
-                <span
-                  className="material-symbols-outlined text-sm"
-                  style={{ color: isDark ? "#00D2FF" : "#005baf" }}
-                >
-                  verified
+                <span style={{ color: isDark ? "#00D2FF" : "#005baf" }}>
+                  <Icon name="verified" className="w-4 h-4" />
                 </span>
                 <span
                   className="font-mono font-semibold"

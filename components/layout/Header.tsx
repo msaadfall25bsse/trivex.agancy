@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTheme } from "@/components/ThemeProvider";
+import { Icon } from "@/components/ui/Icon";
 
 export function Header() {
   const { theme, setTheme } = useTheme();
@@ -160,9 +161,10 @@ export function Header() {
                   }`}
                 >
                   <span>Services</span>
-                  <span className={`material-symbols-outlined text-base transition-transform duration-200 ${servicesDropdownOpen ? "rotate-180" : ""}`}>
-                    expand_more
-                  </span>
+                  <Icon
+                    name="expand_more"
+                    className={`w-4 h-4 transition-transform duration-200 ${servicesDropdownOpen ? "rotate-180" : ""}`}
+                  />
                 </Link>
 
                 {/* Dropdown Menu */}
@@ -182,9 +184,7 @@ export function Header() {
                               isDark ? "text-[#00D2FF]" : "text-[#0088FF]"
                             }`}
                           >
-                            <span className="material-symbols-outlined text-base">
-                              {group.icon}
-                            </span>
+                            <Icon name={group.icon} className="w-4 h-4" />
                             <span>{group.category}</span>
                           </div>
                           <ul className="space-y-1.5 pl-6 border-l" style={{ borderColor: isDark ? "#1E2633" : "#e2e8f0" }}>

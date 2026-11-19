@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useTheme } from "@/components/ThemeProvider";
+import { Icon } from "@/components/ui/Icon";
 
 export function TechStackSection() {
   const { theme } = useTheme();
@@ -76,11 +77,8 @@ export function TechStackSection() {
               }}
             >
               <div className="flex items-center gap-2">
-                <span
-                  className="material-symbols-outlined"
-                  style={{ color: theme === "dark" ? "#00D2FF" : "#005baf" }}
-                >
-                  {cat.icon}
+                <span style={{ color: theme === "dark" ? "#00D2FF" : "#005baf" }}>
+                  <Icon name={cat.icon} className="w-5 h-5" />
                 </span>
                 <h4
                   className="font-headline-sm text-headline-sm"

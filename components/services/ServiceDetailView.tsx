@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useTheme } from "@/components/ThemeProvider";
 import { ServiceData, SERVICES } from "@/data/services";
+import { Icon } from "@/components/ui/Icon";
 
 interface ServiceDetailViewProps {
   service: ServiceData;
@@ -57,7 +58,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
               color: isDark ? "#00D2FF" : "#0088FF",
             }}
           >
-            <span className="material-symbols-outlined text-sm">{service.icon}</span>
+            <Icon name={service.icon} className="w-4 h-4" />
             <span>{service.badge}</span>
           </div>
 
@@ -85,7 +86,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
               }}
             >
               <span>Book a Free Strategy Consultation</span>
-              <span className="material-symbols-outlined text-base">arrow_forward</span>
+              <Icon name="arrow_forward" className="w-4 h-4" />
             </Link>
 
             <Link
@@ -201,8 +202,8 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                   </p>
                 </div>
                 <div className="pt-4 flex items-center gap-1.5 text-xs font-mono text-slate-400">
-                  <span className="material-symbols-outlined text-sm" style={{ color: isDark ? "#00D2FF" : "#0088FF" }}>
-                    check_circle
+                  <span style={{ color: isDark ? "#00D2FF" : "#0088FF" }}>
+                    <Icon name="check_circle" className="w-4 h-4" />
                   </span>
                   <span>Included in SOW</span>
                 </div>
@@ -224,11 +225,8 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
             }}
           >
             <div className="flex items-center gap-3">
-              <span
-                className="material-symbols-outlined text-2xl"
-                style={{ color: isDark ? "#00D2FF" : "#0088FF" }}
-              >
-                groups
+              <span style={{ color: isDark ? "#00D2FF" : "#0088FF" }}>
+                <Icon name="groups" className="w-6 h-6" />
               </span>
               <h3 className="font-brand text-xl sm:text-2xl font-bold">Who This Is For</h3>
             </div>
@@ -236,10 +234,10 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
               {service.whoIsItFor.map((target, idx) => (
                 <li key={idx} className="flex items-start gap-3">
                   <span
-                    className="material-symbols-outlined text-base mt-0.5 shrink-0"
+                    className="mt-0.5 shrink-0"
                     style={{ color: isDark ? "#00D2FF" : "#0088FF" }}
                   >
-                    verified
+                    <Icon name="verified" className="w-4 h-4" />
                   </span>
                   <span
                     className="text-sm leading-relaxed"
@@ -261,11 +259,8 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
             }}
           >
             <div className="flex items-center gap-3">
-              <span
-                className="material-symbols-outlined text-2xl"
-                style={{ color: isDark ? "#00D2FF" : "#0088FF" }}
-              >
-                healing
+              <span style={{ color: isDark ? "#00D2FF" : "#0088FF" }}>
+                <Icon name="healing" className="w-6 h-6" />
               </span>
               <h3 className="font-brand text-xl sm:text-2xl font-bold">Business Problems Solved</h3>
             </div>
@@ -273,10 +268,10 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
               {service.problemsSolved.map((problem, idx) => (
                 <li key={idx} className="flex items-start gap-3">
                   <span
-                    className="material-symbols-outlined text-base mt-0.5 shrink-0"
+                    className="mt-0.5 shrink-0"
                     style={{ color: isDark ? "#00D2FF" : "#0088FF" }}
                   >
-                    check
+                    <Icon name="check" className="w-4 h-4" />
                   </span>
                   <span
                     className="text-sm leading-relaxed"
@@ -414,13 +409,13 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                   >
                     <span>{faq.question}</span>
                     <span
-                      className="material-symbols-outlined text-lg transition-transform duration-200"
+                      className="transition-transform duration-200 shrink-0"
                       style={{
                         transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
                         color: isDark ? "#00D2FF" : "#0088FF",
                       }}
                     >
-                      expand_more
+                      <Icon name="expand_more" className="w-5 h-5" />
                     </span>
                   </button>
                   {isOpen && (
@@ -461,7 +456,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                 style={{ color: isDark ? "#00D2FF" : "#0088FF" }}
               >
                 <span>View all 12 services</span>
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                <Icon name="arrow_forward" className="w-3.5 h-3.5" />
               </Link>
             </div>
 
@@ -478,10 +473,10 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                 >
                   <div className="space-y-3">
                     <span
-                      className="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform"
+                      className="group-hover:scale-110 transition-transform inline-block"
                       style={{ color: isDark ? "#00D2FF" : "#0088FF" }}
                     >
-                      {rel.icon}
+                      <Icon name={rel.icon} className="w-6 h-6" />
                     </span>
                     <h4 className="font-brand font-bold text-base group-hover:text-[#00D2FF] transition-colors">
                       {rel.title}
@@ -495,7 +490,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                   </div>
                   <div className="pt-4 flex items-center gap-1 text-xs font-mono font-semibold" style={{ color: isDark ? "#00D2FF" : "#0088FF" }}>
                     <span>Learn more</span>
-                    <span className="material-symbols-outlined text-xs">arrow_forward</span>
+                    <Icon name="arrow_forward" className="w-3 h-3" />
                   </div>
                 </Link>
               ))}
@@ -549,7 +544,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                 }}
               >
                 <span>Request a Free Project Consultation</span>
-                <span className="material-symbols-outlined text-base">arrow_forward</span>
+                <Icon name="arrow_forward" className="w-4 h-4" />
               </Link>
             </div>
           </div>

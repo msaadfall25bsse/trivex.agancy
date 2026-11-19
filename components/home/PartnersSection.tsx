@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useTheme } from "@/components/ThemeProvider";
+import { Icon } from "@/components/ui/Icon";
 
 export function PartnersSection() {
   const { theme } = useTheme();
@@ -52,10 +53,9 @@ export function PartnersSection() {
               }}
             >
               <span
-                className="material-symbols-outlined text-2xl"
                 style={{ color: theme === "dark" ? "#00D2FF" : "#005baf" }}
               >
-                {partner.icon}
+                <Icon name={partner.icon} className="w-6 h-6" />
               </span>
               <span
                 className="font-label-sm text-label-sm font-bold text-center"

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { constructMetadata } from "@/lib/seo";
 import { SERVICES } from "@/data/services";
+import { Icon } from "@/components/ui/Icon";
 
 export const metadata = constructMetadata({
   title: "All Services | Full-Service Digital Growth & Technology",
@@ -42,7 +43,7 @@ export default function ServicesPage() {
       <section className="relative px-margin pt-12 pb-16 overflow-hidden">
         <div className="max-w-4xl mx-auto text-center space-y-5">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-mono font-semibold bg-blue-500/10 border-blue-500/25 text-[#0088FF] dark:bg-cyan-500/10 dark:border-cyan-500/25 dark:text-[#00D2FF]">
-            <span className="material-symbols-outlined text-sm">hub</span>
+            <Icon name="hub" className="w-4 h-4" />
             <span>COMPREHENSIVE AGENCY SERVICES</span>
           </div>
 
@@ -60,7 +61,7 @@ export default function ServicesPage() {
               className="px-7 py-3.5 rounded-lg font-bold text-sm bg-[#0088FF] text-white dark:bg-[#00D2FF] dark:text-black shadow-lg hover:brightness-110 flex items-center gap-2 transition-all"
             >
               <span>Schedule a Free Strategy Call</span>
-              <span className="material-symbols-outlined text-base">arrow_forward</span>
+              <Icon name="arrow_forward" className="w-4 h-4" />
             </Link>
           </div>
         </div>
@@ -76,7 +77,7 @@ export default function ServicesPage() {
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b pb-4 border-slate-200 dark:border-slate-800 gap-2">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-[#0088FF] dark:text-[#00D2FF]">
-                      <span className="material-symbols-outlined text-sm">{cat.icon}</span>
+                      <Icon name={cat.icon} className="w-4 h-4" />
                       <span>{cat.name}</span>
                     </div>
                     <h2 className="font-brand text-2xl sm:text-3xl font-bold">{cat.name}</h2>
@@ -96,7 +97,7 @@ export default function ServicesPage() {
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
                           <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-blue-500/10 text-[#0088FF] dark:bg-cyan-500/10 dark:text-[#00D2FF] group-hover:scale-110 transition-transform">
-                            <span className="material-symbols-outlined text-2xl">{service.icon}</span>
+                            <Icon name={service.icon} className="w-6 h-6" />
                           </div>
                           <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-md border bg-slate-100 border-slate-200 text-slate-700 dark:bg-[#141B26] dark:border-[#1E2633] dark:text-slate-300">
                             {service.badge}
@@ -125,9 +126,7 @@ export default function ServicesPage() {
 
                       <div className="pt-6 mt-4 border-t border-slate-100 dark:border-[#1E2633] flex items-center justify-between text-xs font-mono font-semibold text-[#0088FF] dark:text-[#00D2FF]">
                         <span>Explore details &amp; deliverables</span>
-                        <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
-                          arrow_forward
-                        </span>
+                        <Icon name="arrow_forward" className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </Link>
                   ))}
@@ -154,7 +153,7 @@ export default function ServicesPage() {
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-sm bg-[#0088FF] text-white dark:bg-[#00D2FF] dark:text-black shadow-lg hover:brightness-110 transition-all"
               >
                 <span>Book a Free Strategy Consultation</span>
-                <span className="material-symbols-outlined text-base">arrow_forward</span>
+                <Icon name="arrow_forward" className="w-4 h-4" />
               </Link>
             </div>
           </div>

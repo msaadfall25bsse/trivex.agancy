@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { useTheme } from "@/components/ThemeProvider";
+import { Icon } from "@/components/ui/Icon";
 
 export function ProcessSection() {
   const { theme } = useTheme();
@@ -115,7 +116,7 @@ export function ProcessSection() {
             }}
           >
             <span>Learn More About Our 4-Stage Methodology</span>
-            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            <Icon name="arrow_forward" className="w-4 h-4" />
           </Link>
         </div>
       </div>
