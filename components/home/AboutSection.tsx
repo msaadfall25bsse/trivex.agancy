@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { useTheme } from "@/components/ThemeProvider";
 
 export function AboutSection() {
@@ -159,6 +160,21 @@ export function AboutSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Link to Full About Page */}
+        <div className="flex justify-center pt-2">
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm font-mono transition-all hover:brightness-110 shadow-md"
+            style={{
+              backgroundColor: theme === "dark" ? "#00D2FF" : "#0088FF",
+              color: theme === "dark" ? "#000000" : "#ffffff",
+            }}
+          >
+            <span>Learn More About Our Team &amp; Philosophy</span>
+            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+          </Link>
         </div>
       </div>
     </section>

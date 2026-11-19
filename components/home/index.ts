@@ -7,3 +7,5 @@ export { TalentSection } from "./TalentSection";
 export { ProcessSection } from "./ProcessSection";
 export { TechStackSection } from "./TechStackSection";
 export { ConsultationSection } from "./ConsultationSection";
+export { HomeIndustriesSection } from "./HomeIndustriesSection";
+export { HomeFaqSection } from "./HomeFaqSection";

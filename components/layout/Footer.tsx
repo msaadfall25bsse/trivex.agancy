@@ -7,14 +7,15 @@ import { useTheme } from "@/components/ThemeProvider";
 
 export function Footer() {
   const { theme } = useTheme();
+  const isDark = theme === "dark";
 
   return (
     <footer
       className="w-full transition-colors duration-200"
       style={{
-        backgroundColor: theme === "dark" ? "#0B0E14" : "#f1f5f9",
-        borderTop: theme === "dark" ? "1px solid #1E2633" : "1px solid #e2e8f0",
-        color: theme === "dark" ? "#94A3B8" : "#404754",
+        backgroundColor: isDark ? "#0B0E14" : "#f1f5f9",
+        borderTop: isDark ? "1px solid #1E2633" : "1px solid #e2e8f0",
+        color: isDark ? "#94A3B8" : "#404754",
       }}
     >
       <div className="w-full px-margin py-space-xl">
@@ -29,7 +30,7 @@ export function Footer() {
                   width={220}
                   height={34}
                   className={`h-8 sm:h-9 w-auto object-contain ${
-                    theme === "dark" ? "hidden" : "block"
+                    isDark ? "hidden" : "block"
                   }`}
                 />
                 <Image
@@ -38,35 +39,40 @@ export function Footer() {
                   width={220}
                   height={34}
                   className={`h-8 sm:h-9 w-auto object-contain ${
-                    theme === "dark" ? "block" : "hidden"
+                    isDark ? "block" : "hidden"
                   }`}
                 />
               </div>
             </Link>
             <p
               className="font-body-sm text-body-sm leading-relaxed max-w-sm transition-colors"
-              style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
+              style={{ color: isDark ? "#94A3B8" : "#404754" }}
             >
-              High-velocity engineering and global technology consultancy accelerating enterprise
-              platforms, AI infrastructure, and mission-critical cloud solutions.
+              Full-service digital growth, engineering, and creative agency helping modern businesses build, scale, and automate. Three minds, one unified vision.
             </p>
             <div
               className="pt-2 space-y-1.5 font-label-md text-label-md transition-colors"
-              style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
+              style={{ color: isDark ? "#94A3B8" : "#404754" }}
             >
               <div className="flex items-center gap-2">
                 <span
                   className="material-symbols-outlined text-sm"
-                  style={{ color: theme === "dark" ? "#00D2FF" : "#005baf" }}
+                  style={{ color: isDark ? "#00D2FF" : "#005baf" }}
                 >
                   mail
                 </span>
-                <span>contact@trivex.group</span>
+                <a
+                  href="mailto:contact@trivex.group"
+                  className="hover:underline transition-colors"
+                  style={{ color: isDark ? "#ffffff" : "#0b1c30" }}
+                >
+                  contact@trivex.group
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <span
                   className="material-symbols-outlined text-sm"
-                  style={{ color: theme === "dark" ? "#00D2FF" : "#005baf" }}
+                  style={{ color: isDark ? "#00D2FF" : "#005baf" }}
                 >
                   phone_in_talk
                 </span>
@@ -75,239 +81,227 @@ export function Footer() {
               <div className="flex items-center gap-2">
                 <span
                   className="material-symbols-outlined text-sm"
-                  style={{ color: theme === "dark" ? "#00D2FF" : "#005baf" }}
+                  style={{ color: isDark ? "#00D2FF" : "#005baf" }}
                 >
-                  dns
+                  verified
                 </span>
                 <span
                   className="font-mono font-semibold"
-                  style={{ color: theme === "dark" ? "#00D2FF" : "#005baf" }}
+                  style={{ color: isDark ? "#00D2FF" : "#005baf" }}
                 >
-                  ISO 27001 &amp; SOC 2 TYPE II CERTIFIED
+                  24-Hour Consultation Turnaround
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Column 2: Capabilities */}
+          {/* Column 2: Key Services */}
           <div className="space-y-space-md">
             <h4
               className="font-headline-sm text-headline-sm transition-colors"
-              style={{ color: theme === "dark" ? "#FFFFFF" : "#0b1c30" }}
+              style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
             >
-              Capabilities
+              Core Services
             </h4>
             <ul className="space-y-2.5 font-body-sm text-body-sm">
               <li>
                 <Link
                   className="transition-colors hover:text-[#00D2FF]"
-                  data-path="services"
-                  href="#services-matrix"
-                  style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
+                  href="/services/web-development"
+                  style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  Enterprise Architecture &amp; Cloud
+                  Web &amp; Custom Development
                 </Link>
               </li>
               <li>
                 <Link
                   className="transition-colors hover:text-[#00D2FF]"
-                  data-path="services"
-                  href="#services-matrix"
-                  style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
+                  href="/services/ecommerce"
+                  style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  Generative AI &amp; Data Platforms
+                  E-Commerce Storefronts
                 </Link>
               </li>
               <li>
                 <Link
                   className="transition-colors hover:text-[#00D2FF]"
-                  data-path="services"
-                  href="#services-matrix"
-                  style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
+                  href="/services/wordpress-development"
+                  style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  Full-Cycle Product Engineering
+                  WordPress Theme Engineering
                 </Link>
               </li>
               <li>
                 <Link
                   className="transition-colors hover:text-[#00D2FF]"
-                  data-path="services"
-                  href="#services-matrix"
-                  style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
+                  href="/services/mobile-app-development"
+                  style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  Legacy Migration &amp; Refactoring
+                  Cross-Platform Mobile Apps
                 </Link>
               </li>
               <li>
                 <Link
                   className="transition-colors hover:text-[#00D2FF]"
-                  data-path="services"
-                  href="#services-matrix"
-                  style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
+                  href="/services/digital-marketing"
+                  style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  DevSecOps &amp; Platform Automation
+                  Paid Ads &amp; Performance Marketing
                 </Link>
               </li>
               <li>
                 <Link
-                  className="transition-colors hover:text-[#00D2FF]"
-                  data-path="hire-developer"
-                  href="#hire-developer"
-                  style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
+                  className="transition-colors font-semibold hover:text-[#00D2FF]"
+                  href="/services"
+                  style={{ color: isDark ? "#00D2FF" : "#0088FF" }}
                 >
-                  Dedicated Engineering Squads
+                  View All 12 Services →
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Tech Stacks */}
+          {/* Column 3: Agency & Methodology */}
           <div className="space-y-space-md">
             <h4
               className="font-headline-sm text-headline-sm transition-colors"
-              style={{ color: theme === "dark" ? "#FFFFFF" : "#0b1c30" }}
+              style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
             >
-              Tech Stacks
+              TRIVEX Agency
             </h4>
             <ul className="space-y-2.5 font-body-sm text-body-sm">
               <li>
                 <Link
                   className="transition-colors hover:text-[#00D2FF]"
-                  data-path="services"
-                  href="#services-matrix"
-                  style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
+                  href="/about"
+                  style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  Next.js / React / TypeScript
+                  About Our Philosophy
                 </Link>
               </li>
               <li>
                 <Link
                   className="transition-colors hover:text-[#00D2FF]"
-                  data-path="services"
-                  href="#services-matrix"
-                  style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
+                  href="/work"
+                  style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  Go / Rust / Distributed Systems
+                  Portfolio &amp; Case Studies
                 </Link>
               </li>
               <li>
                 <Link
                   className="transition-colors hover:text-[#00D2FF]"
-                  data-path="services"
-                  href="#services-matrix"
-                  style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
+                  href="/industries"
+                  style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  Python / PyTorch / LLMOps
+                  Industries We Support
                 </Link>
               </li>
               <li>
                 <Link
                   className="transition-colors hover:text-[#00D2FF]"
-                  data-path="services"
-                  href="#services-matrix"
-                  style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
+                  href="/process"
+                  style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  AWS / GCP / Azure Hybrid Cloud
+                  4-Stage Execution Process
                 </Link>
               </li>
               <li>
                 <Link
                   className="transition-colors hover:text-[#00D2FF]"
-                  data-path="services"
-                  href="#services-matrix"
-                  style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
+                  href="/faq"
+                  style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  Kubernetes / Terraform / Kafka
+                  Frequently Asked Questions
                 </Link>
               </li>
               <li>
                 <Link
                   className="transition-colors hover:text-[#00D2FF]"
-                  data-path="services"
-                  href="#services-matrix"
-                  style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
+                  href="/contact"
+                  style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  PostgreSQL / Snowflake / Redis
+                  Book a Consultation
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: Global Delivery Hubs */}
+          {/* Column 4: Global Hubs */}
           <div className="space-y-space-md">
             <h4
               className="font-headline-sm text-headline-sm transition-colors"
-              style={{ color: theme === "dark" ? "#FFFFFF" : "#0b1c30" }}
+              style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
             >
-              Global Delivery Hubs
+              Global Hubs
             </h4>
             <div className="space-y-3 font-body-sm text-body-sm">
               <div
                 className="border-l-2 pl-3"
-                style={{ borderLeftColor: theme === "dark" ? "#00D2FF" : "#0074db" }}
+                style={{ borderLeftColor: isDark ? "#00D2FF" : "#0074db" }}
               >
                 <div
                   className="font-label-md text-label-md font-semibold transition-colors"
-                  style={{ color: theme === "dark" ? "#FFFFFF" : "#0b1c30" }}
+                  style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
                 >
                   United States
                 </div>
                 <div
                   className="text-xs transition-colors"
-                  style={{ color: theme === "dark" ? "#64748B" : "#64748B" }}
+                  style={{ color: isDark ? "#64748B" : "#64748B" }}
                 >
-                  New York • San Francisco • Austin
+                  Strategic Client Growth &amp; Advisory
                 </div>
               </div>
               <div
                 className="border-l-2 pl-3"
-                style={{ borderLeftColor: theme === "dark" ? "#00D2FF" : "#0074db" }}
+                style={{ borderLeftColor: isDark ? "#00D2FF" : "#0074db" }}
               >
                 <div
                   className="font-label-md text-label-md font-semibold transition-colors"
-                  style={{ color: theme === "dark" ? "#FFFFFF" : "#0b1c30" }}
+                  style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
                 >
                   United Kingdom &amp; Sweden
                 </div>
                 <div
                   className="text-xs transition-colors"
-                  style={{ color: theme === "dark" ? "#64748B" : "#64748B" }}
+                  style={{ color: isDark ? "#64748B" : "#64748B" }}
                 >
-                  London Tech Square • Stockholm Hub
+                  European Delivery &amp; Design Architecture
                 </div>
               </div>
               <div
                 className="border-l-2 pl-3"
-                style={{ borderLeftColor: theme === "dark" ? "#00D2FF" : "#0074db" }}
+                style={{ borderLeftColor: isDark ? "#00D2FF" : "#0074db" }}
               >
                 <div
                   className="font-label-md text-label-md font-semibold transition-colors"
-                  style={{ color: theme === "dark" ? "#FFFFFF" : "#0b1c30" }}
+                  style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
                 >
                   United Arab Emirates
                 </div>
                 <div
                   className="text-xs transition-colors"
-                  style={{ color: theme === "dark" ? "#64748B" : "#64748B" }}
+                  style={{ color: isDark ? "#64748B" : "#64748B" }}
                 >
-                  Dubai Internet City HQ
+                  MENA Commercial Operations
                 </div>
               </div>
               <div
                 className="border-l-2 pl-3"
-                style={{ borderLeftColor: theme === "dark" ? "#00D2FF" : "#0074db" }}
+                style={{ borderLeftColor: isDark ? "#00D2FF" : "#0074db" }}
               >
                 <div
                   className="font-label-md text-label-md font-semibold transition-colors"
-                  style={{ color: theme === "dark" ? "#FFFFFF" : "#0b1c30" }}
+                  style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
                 >
-                  Pakistan Delivery Center
+                  Center of Technical Excellence
                 </div>
                 <div
                   className="text-xs transition-colors"
-                  style={{ color: theme === "dark" ? "#64748B" : "#64748B" }}
+                  style={{ color: isDark ? "#64748B" : "#64748B" }}
                 >
-                  Islamabad • Lahore Center of Excellence
+                  Abbottabad &amp; Islamabad Engineering Hubs
                 </div>
               </div>
             </div>
@@ -317,43 +311,45 @@ export function Footer() {
         {/* Bottom copyright and legal links */}
         <div
           className="pt-space-lg border-t flex flex-col md:flex-row items-center justify-between gap-4"
-          style={{ borderColor: theme === "dark" ? "#1E2633" : "#e2e8f0" }}
+          style={{ borderColor: isDark ? "#1E2633" : "#e2e8f0" }}
         >
           <div
             className="font-label-sm text-label-sm transition-colors text-center md:text-left"
-            style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
+            style={{ color: isDark ? "#94A3B8" : "#404754" }}
           >
-            © 2026 TRIVEX Global Technology Group. All rights reserved. Precision-engineered enterprise solutions.
+            © 2026 TRIVEX Agency. All rights reserved. Precision-engineered digital growth and technology solutions.
           </div>
           <div
-            className="flex items-center gap-space-lg font-label-sm text-label-sm transition-colors"
-            style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
+            className="flex flex-wrap items-center justify-center gap-space-md sm:gap-space-lg font-label-sm text-label-sm transition-colors"
+            style={{ color: isDark ? "#94A3B8" : "#404754" }}
           >
             <Link
               className="hover:text-primary transition-colors"
-              data-path="privacy-policy"
-              href="#privacy-policy"
+              href="/privacy-policy"
             >
               Privacy Policy
             </Link>
             <Link
               className="hover:text-primary transition-colors"
-              data-path="terms-of-service"
-              href="#terms-of-service"
+              href="/terms-of-service"
             >
               Terms of Service
             </Link>
             <Link
               className="hover:text-primary transition-colors"
-              data-path="security"
-              href="#security"
+              href="/cookie-policy"
             >
-              Security &amp; Compliance
+              Cookie Policy
             </Link>
             <Link
               className="hover:text-primary transition-colors"
-              data-path="sitemap"
-              href="#sitemap"
+              href="/faq"
+            >
+              FAQ
+            </Link>
+            <Link
+              className="hover:text-primary transition-colors"
+              href="/sitemap.xml"
             >
               Sitemap
             </Link>

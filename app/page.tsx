@@ -7,47 +7,55 @@ import {
   AboutSection,
   ServicesSection,
   CaseStudiesSection,
-  TalentSection,
   ProcessSection,
+  HomeIndustriesSection,
+  TalentSection,
   TechStackSection,
+  HomeFaqSection,
   ConsultationSection,
 } from "@/components/home";
 
 export const metadata: Metadata = constructMetadata({
-  title: "High-Velocity Enterprise Engineering & AI Platforms",
+  title: "TRIVEX | We Build, Market & Scale Digital Businesses",
   description:
-    "We build, market & scale world-class digital businesses. From performance marketing & e-commerce to full-stack web apps, mobile platforms, and AI enterprise automation.",
+    "Full-service digital growth, technology & creative agency. From performance marketing & e-commerce to full-stack web apps, mobile platforms, and AI enterprise automation.",
   pathname: "/",
 });
 
 export default function Home() {
   return (
     <div className="flex flex-col w-full">
-      {/* SECTION 1: HERO & CORE ENGINE METRICS */}
+      {/* 1. HERO & CORE AGENCY VALUE PROPOSITION */}
       <HeroSection />
 
-      {/* SECTION 2: TRUSTED CLOUD & ECOSYSTEM PARTNERS */}
+      {/* 2. VERIFIED PLATFORM & ECOSYSTEM STACK */}
       <PartnersSection />
 
-      {/* SECTION 3: ABOUT & STRUCTURAL VALUE ARCHITECTURE */}
+      {/* 3. ABOUT & STRATEGIC VALUE ARCHITECTURE */}
       <AboutSection />
 
-      {/* SECTION 4: 8 CAPABILITY SERVICE CARDS */}
+      {/* 4. 8 CORE SERVICES CAPABILITY MATRIX */}
       <ServicesSection />
 
-      {/* SECTION 5: FEATURED WORK / CASE STUDIES */}
+      {/* 5. FEATURED WORK & CASE STUDIES */}
       <CaseStudiesSection />
 
-      {/* SECTION 6: GLOBAL ENGINEERING TALENT & ELASTIC STAFFING */}
-      <TalentSection />
-
-      {/* SECTION 7: 6-STEP EXECUTION LIFECYCLE */}
+      {/* 6. 4-STAGE METHODOLOGY & EXECUTION */}
       <ProcessSection />
 
-      {/* SECTION 8: TECHNICAL STACK MATRIX */}
+      {/* 7. INDUSTRY SPECIALIZATIONS */}
+      <HomeIndustriesSection />
+
+      {/* 8. TALENT & CROSS-FUNCTIONAL SQUADS */}
+      <TalentSection />
+
+      {/* 9. TECHNICAL STACK & MODERN FRAMEWORKS */}
       <TechStackSection />
 
-      {/* SECTION 9: GLOBAL HUBS & TECHNICAL CONSULTATION FORM */}
+      {/* 10. FREQUENTLY ASKED QUESTIONS */}
+      <HomeFaqSection />
+
+      {/* 11. GLOBAL HUBS & STRATEGIC CONSULTATION INQUIRY */}
       <ConsultationSection />
     </div>
   );
