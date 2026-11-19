@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { constructMetadata } from "@/lib/seo";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -23,11 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "TRIVEX | Global Enterprise Engineering",
-  description:
-    "High-velocity engineering and global technology consultancy accelerating enterprise platforms, AI infrastructure, and mission-critical cloud solutions.",
-};
+export const metadata: Metadata = constructMetadata();
 
 export default function RootLayout({
   children,
@@ -41,6 +39,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <JsonLd />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -59,7 +58,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-[#f8f9ff] text-[#0b1c30] dark:bg-[#080B10] dark:text-white transition-colors duration-200">
         <ThemeProvider>
           <Header />
-          <main className="flex-1 w-full pt-20">
+          <main className="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)] flex-1">
             {children}
           </main>
           <Footer />

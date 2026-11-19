@@ -1,13 +1,24 @@
 import React from "react";
-import { HeroSection } from "@/components/sections/HeroSection";
-import { PartnersSection } from "@/components/sections/PartnersSection";
-import { AboutSection } from "@/components/sections/AboutSection";
-import { ServicesSection } from "@/components/sections/ServicesSection";
-import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
-import { TalentSection } from "@/components/sections/TalentSection";
-import { ProcessSection } from "@/components/sections/ProcessSection";
-import { TechStackSection } from "@/components/sections/TechStackSection";
-import { ConsultationSection } from "@/components/sections/ConsultationSection";
+import type { Metadata } from "next";
+import { constructMetadata } from "@/lib/seo";
+import {
+  HeroSection,
+  PartnersSection,
+  AboutSection,
+  ServicesSection,
+  CaseStudiesSection,
+  TalentSection,
+  ProcessSection,
+  TechStackSection,
+  ConsultationSection,
+} from "@/components/home";
+
+export const metadata: Metadata = constructMetadata({
+  title: "High-Velocity Enterprise Engineering & AI Platforms",
+  description:
+    "We build, market & scale world-class digital businesses. From performance marketing & e-commerce to full-stack web apps, mobile platforms, and AI enterprise automation.",
+  pathname: "/",
+});
 
 export default function Home() {
   return (
