@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useTheme } from "@/components/ThemeProvider";
 
 export function Header() {
@@ -27,31 +28,30 @@ export function Header() {
               className="flex items-center gap-2 group focus:outline-none"
               data-path="home"
             >
-              <div className="flex items-center tracking-tighter">
-                <span
-                  className={`text-2xl sm:text-3xl font-black tracking-wider font-brand transition-colors ${
-                    isDark ? "text-white" : "text-[#0B0F17]"
+              <div className="relative h-8 sm:h-9 w-auto flex items-center">
+                {/* Light theme: black text logo */}
+                <Image
+                  src="/logo-light.png"
+                  alt="TRIVEX Logo"
+                  width={220}
+                  height={34}
+                  priority
+                  className={`h-7 sm:h-8 md:h-9 w-auto object-contain transition-opacity duration-200 ${
+                    isDark ? "hidden" : "block"
                   }`}
-                >
-                  TRIVE
-                </span>
-                <span
-                  className={`text-2xl sm:text-3xl font-black tracking-wider font-brand transition-colors ${
-                    isDark ? "text-[#00D2FF]" : "text-[#0088FF]"
+                />
+                {/* Dark theme: white text logo */}
+                <Image
+                  src="/logo-dark.png"
+                  alt="TRIVEX Logo"
+                  width={220}
+                  height={34}
+                  priority
+                  className={`h-7 sm:h-8 md:h-9 w-auto object-contain transition-opacity duration-200 ${
+                    isDark ? "block" : "hidden"
                   }`}
-                >
-                  X
-                </span>
+                />
               </div>
-              <span
-                className={`px-1.5 py-0.5 text-[9px] font-bold tracking-widest rounded uppercase font-mono transition-colors ${
-                  isDark
-                    ? "bg-[#00D2FF]/10 text-[#00D2FF] border border-[#00D2FF]/30"
-                    : "bg-[#0088FF]/10 text-[#0088FF] border border-[#0088FF]/20"
-                }`}
-              >
-                GLOBAL
-              </span>
             </Link>
 
             {/* Center: Nav Items */}

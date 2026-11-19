@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useTheme } from "@/components/ThemeProvider";
 
 export function Footer() {
@@ -21,17 +22,25 @@ export function Footer() {
           {/* Column 1: Brand & Contact Info */}
           <div className="space-y-space-md">
             <Link href="/" className="inline-block focus:outline-none">
-              <div
-                className="font-headline-md text-headline-md font-bold tracking-tight flex items-center transition-colors"
-                style={{ color: theme === "dark" ? "#FFFFFF" : "#0b1c30" }}
-              >
-                TRIVE
-                <span
-                  className="font-headline-md"
-                  style={{ color: theme === "dark" ? "#00D2FF" : "#0074db" }}
-                >
-                  X
-                </span>
+              <div className="relative h-9 sm:h-10 w-auto flex items-center">
+                <Image
+                  src="/logo-light.png"
+                  alt="TRIVEX Logo"
+                  width={220}
+                  height={34}
+                  className={`h-8 sm:h-9 w-auto object-contain ${
+                    theme === "dark" ? "hidden" : "block"
+                  }`}
+                />
+                <Image
+                  src="/logo-dark.png"
+                  alt="TRIVEX Logo"
+                  width={220}
+                  height={34}
+                  className={`h-8 sm:h-9 w-auto object-contain ${
+                    theme === "dark" ? "block" : "hidden"
+                  }`}
+                />
               </div>
             </Link>
             <p
