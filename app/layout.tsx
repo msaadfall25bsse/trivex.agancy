@@ -58,7 +58,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-[#f8f9ff] text-[#0b1c30] dark:bg-[#080B10] dark:text-white transition-colors duration-200">
         <ThemeProvider>
           <Header />
-          <main className="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)] flex-1">
+          <main className="w-full pt-24 sm:pt-28 bg-surface min-h-[calc(100vh-20rem)] flex-1">
             {children}
           </main>
           <Footer />

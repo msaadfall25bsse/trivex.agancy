@@ -3,287 +3,390 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useTheme } from "@/components/ThemeProvider";
-import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
-  const { theme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const isDark = theme === "dark";
+
   return (
-    <header
-      className="fixed top-0 left-0 w-full z-50 transition-all backdrop-blur-md border-b"
-      style={{
-        backgroundColor: theme === "dark" ? "rgba(11, 14, 20, 0.85)" : "rgba(255, 255, 255, 0.9)",
-        borderBottomColor: theme === "dark" ? "#1E2633" : "#e2e8f0",
-        color: theme === "dark" ? "#FFFFFF" : "#0b1c30",
-      }}
-    >
-      <div className="h-20 w-full px-margin flex items-center justify-between gap-gutter">
-        {/* Left Side: Brand Logo & Navigation */}
-        <div className="flex items-center gap-space-xl">
-          <Link
-            className="flex items-center gap-space-sm group focus:outline-none"
-            data-path="home"
-            href="/"
-          >
-            <span
-              className="font-headline-md text-headline-md font-bold tracking-tight flex items-center transition-colors"
-              style={{ color: theme === "dark" ? "#FFFFFF" : "#0b1c30" }}
-            >
-              TRIVE
-              <span
-                className="font-headline-md"
-                style={{ color: theme === "dark" ? "#00D2FF" : "#0074db" }}
-              >
-                X
-              </span>
-            </span>
-            <span
-              className="hidden xl:inline-block font-label-sm text-label-sm uppercase px-1.5 py-0.5 rounded tracking-widest transition-colors font-medium"
-              style={{
-                backgroundColor:
-                  theme === "dark" ? "rgba(0, 210, 255, 0.12)" : "rgba(0, 116, 219, 0.1)",
-                color: theme === "dark" ? "#00D2FF" : "#0074db",
-                border:
-                  theme === "dark"
-                    ? "1px solid rgba(0, 210, 255, 0.3)"
-                    : "1px solid rgba(0, 116, 219, 0.3)",
-              }}
-            >
-              Global
-            </span>
-          </Link>
-
-          <nav
-            className="hidden lg:flex items-center gap-space-lg"
-            data-active-classes="text-primary font-semibold"
-          >
-            <Link
-              aria-current="page"
-              className="transition-colors py-1 font-semibold"
-              data-path="home"
-              href="/"
-              style={{ color: theme === "dark" ? "#00D2FF" : "#0074db" }}
-            >
-              Home
-            </Link>
-            <Link
-              className="font-body-md text-body-md transition-colors py-1 hover:text-white"
-              data-path="about-us"
-              href="#about-us"
-              style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
-            >
-              About Us
-            </Link>
-            <Link
-              className="font-body-md text-body-md transition-colors py-1 hover:text-white"
-              data-path="services"
-              href="#services-matrix"
-              style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
-            >
-              Services
-            </Link>
-            <Link
-              className="font-body-md text-body-md transition-colors py-1 hover:text-white"
-              data-path="case-studies"
-              href="#case-studies"
-              style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
-            >
-              Our Work / Case Studies
-            </Link>
-            <Link
-              className="font-body-md text-body-md transition-colors py-1 hover:text-white"
-              data-path="industries"
-              href="#industries"
-              style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
-            >
-              Industries
-            </Link>
-            <Link
-              className="font-body-md text-body-md transition-colors py-1 hover:text-white"
-              data-path="careers"
-              href="#careers"
-              style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
-            >
-              Careers
-            </Link>
-          </nav>
-        </div>
-
-        {/* Right Side: Color mode toggle, 2xl links, CTA button, Profile */}
-        <div className="flex items-center gap-space-md">
-          {/* Color Mode Toggle */}
-          <ThemeToggle className="hidden sm:flex" />
-
-          {/* 2XL Quick Links */}
-          <div className="hidden 2xl:flex items-center gap-space-md font-label-lg text-label-lg">
-            <Link
-              className="transition-colors hover:text-[#00D2FF]"
-              data-path="apply-as-talent"
-              href="#apply-as-talent"
-              style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
-            >
-              Apply as Talent
-            </Link>
-            <span style={{ color: theme === "dark" ? "#1E2633" : "#cbd5e1" }}>|</span>
-            <Link
-              className="transition-colors hover:text-[#00D2FF]"
-              data-path="hire-developer"
-              href="#hire-developer"
-              style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
-            >
-              Hire Developer
-            </Link>
-          </div>
-
-          {/* Consultation CTA Button */}
-          <Link
-            className="inline-flex items-center justify-center px-4 py-2.5 rounded font-label-lg text-label-lg font-medium shadow-[0_1px_3px_rgba(11,15,23,0.04)] transition-all whitespace-nowrap"
-            data-path="book-consultation"
-            href="#book-consultation"
-            style={{
-              backgroundColor: "#0074db",
-              color: "#fefcff",
-            }}
-          >
-            <span>Book a Free Consultation</span>
-          </Link>
-
-          {/* Profile Avatar */}
-          <div
-            className="flex items-center pl-2 border-l"
-            style={{ borderLeftColor: theme === "dark" ? "#1E2633" : "#e2e8f0" }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              alt="Profile"
-              className="w-8 h-8 rounded-full object-cover border"
-              style={{ borderColor: theme === "dark" ? "#1E2633" : "#e2e8f0" }}
-              src="https://lh3.googleusercontent.com/aida/ALJJyrBrwg-tCHth-hOm-zvwKV-ScTcNAKX-KVMSLDsfHdhDVjtXixpBrGLL-N2IXCE9vNy59ZvOHmQUl2GP9Sh4OJbXgMVXP4v3oAf-2OPc7jzApWL5AoqOxUF_DdQo0V_MbQu9qMTAQLTttI2sT1UxtEmP8f716J4SkNUUvQtUaQJCTxkf9KUAqQ5lk1YKRx3GoJH7GFuNPVygU0Q_wBotRUqXk6CaNXVlnABDEdbcdy1z4ybf9EWqxTXWSP4"
-            />
-          </div>
-
-          {/* Responsive Mobile Drawer Button */}
-          <button
-            aria-label="Toggle navigation menu"
-            className="lg:hidden flex items-center justify-center p-2 rounded focus:outline-none"
-            style={{
-              color: theme === "dark" ? "#94A3B8" : "#404754",
-              border: theme === "dark" ? "1px solid #1E2633" : "1px solid #e2e8f0",
-            }}
-            type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            <span className="material-symbols-outlined text-2xl">
-              {mobileMenuOpen ? "close" : "menu"}
-            </span>
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Dropdown Menu */}
-      {mobileMenuOpen && (
-        <div
-          className="lg:hidden w-full px-6 py-6 border-t flex flex-col gap-4 animate-in slide-in-from-top-2 duration-200"
-          style={{
-            backgroundColor: theme === "dark" ? "#0F141C" : "#ffffff",
-            borderColor: theme === "dark" ? "#1E2633" : "#e2e8f0",
-          }}
+    <div className="fixed top-0 left-0 w-full z-50 px-3 sm:px-6 lg:px-8 pt-3 pb-1">
+      <div className="max-w-7xl mx-auto">
+        <header
+          className={`w-full backdrop-blur-md rounded-xl transition-all duration-200 ${
+            isDark
+              ? "bg-[#080B10]/95 border border-[#1E2633] shadow-2xl"
+              : "bg-white/95 border border-slate-200/90 shadow-lg"
+          }`}
         >
-          <div className="flex items-center justify-between pb-3 border-b border-inherit">
-            <span
-              className="font-label-md text-label-md uppercase tracking-wider font-semibold"
-              style={{ color: theme === "dark" ? "#94A3B8" : "#64748B" }}
-            >
-              Theme Selection
-            </span>
-            <ThemeToggle />
-          </div>
-
-          <nav className="flex flex-col gap-3 font-body-md text-body-md">
+          <div className="w-full px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            {/* Left: Brand Logo */}
             <Link
-              className="py-1 font-semibold transition-colors"
               href="/"
-              onClick={() => setMobileMenuOpen(false)}
-              style={{ color: theme === "dark" ? "#00D2FF" : "#0074db" }}
+              className="flex items-center gap-2 group focus:outline-none"
+              data-path="home"
             >
-              Home
+              <div className="flex items-center tracking-tighter">
+                <span
+                  className={`text-2xl sm:text-3xl font-black tracking-wider font-brand transition-colors ${
+                    isDark ? "text-white" : "text-[#0B0F17]"
+                  }`}
+                >
+                  TRIVE
+                </span>
+                <span
+                  className={`text-2xl sm:text-3xl font-black tracking-wider font-brand transition-colors ${
+                    isDark ? "text-[#00D2FF]" : "text-[#0088FF]"
+                  }`}
+                >
+                  X
+                </span>
+              </div>
+              <span
+                className={`px-1.5 py-0.5 text-[9px] font-bold tracking-widest rounded uppercase font-mono transition-colors ${
+                  isDark
+                    ? "bg-[#00D2FF]/10 text-[#00D2FF] border border-[#00D2FF]/30"
+                    : "bg-[#0088FF]/10 text-[#0088FF] border border-[#0088FF]/20"
+                }`}
+              >
+                GLOBAL
+              </span>
             </Link>
-            <Link
-              className="py-1 transition-colors"
-              href="#about-us"
-              onClick={() => setMobileMenuOpen(false)}
-              style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
-            >
-              About Us
-            </Link>
-            <Link
-              className="py-1 transition-colors"
-              href="#services-matrix"
-              onClick={() => setMobileMenuOpen(false)}
-              style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
-            >
-              Services
-            </Link>
-            <Link
-              className="py-1 transition-colors"
-              href="#case-studies"
-              onClick={() => setMobileMenuOpen(false)}
-              style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
-            >
-              Our Work / Case Studies
-            </Link>
-            <Link
-              className="py-1 transition-colors"
-              href="#industries"
-              onClick={() => setMobileMenuOpen(false)}
-              style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
-            >
-              Industries
-            </Link>
-            <Link
-              className="py-1 transition-colors"
-              href="#careers"
-              onClick={() => setMobileMenuOpen(false)}
-              style={{ color: theme === "dark" ? "#94A3B8" : "#404754" }}
-            >
-              Careers
-            </Link>
-          </nav>
 
-          <div className="pt-2 flex flex-col gap-2">
-            <Link
-              className="w-full text-center py-2.5 rounded font-label-lg text-label-lg font-medium transition-colors"
-              href="#book-consultation"
-              onClick={() => setMobileMenuOpen(false)}
-              style={{
-                backgroundColor: "#0074db",
-                color: "#fefcff",
-              }}
-            >
-              Book a Free Consultation
-            </Link>
-            <div className="flex items-center justify-around pt-2 text-xs font-mono">
+            {/* Center: Nav Items */}
+            <nav className="hidden md:flex items-center space-x-7 lg:space-x-8">
               <Link
-                href="#apply-as-talent"
-                onClick={() => setMobileMenuOpen(false)}
-                style={{ color: theme === "dark" ? "#94A3B8" : "#64748B" }}
+                href="/"
+                className={`text-sm font-semibold pb-1 transition-colors border-b-2 ${
+                  isDark
+                    ? "text-[#00D2FF] border-[#00D2FF]"
+                    : "text-[#0088FF] border-[#0088FF]"
+                }`}
               >
-                Apply as Talent
+                Home
               </Link>
-              <span style={{ color: theme === "dark" ? "#1E2633" : "#cbd5e1" }}>•</span>
               <Link
-                href="#hire-developer"
-                onClick={() => setMobileMenuOpen(false)}
-                style={{ color: theme === "dark" ? "#94A3B8" : "#64748B" }}
+                href="#about-us"
+                className={`text-sm font-medium transition-colors ${
+                  isDark
+                    ? "text-slate-300 hover:text-white"
+                    : "text-slate-600 hover:text-slate-900"
+                }`}
               >
-                Hire Developer
+                About Us
               </Link>
+              <Link
+                href="#services-matrix"
+                className={`text-sm font-medium transition-colors ${
+                  isDark
+                    ? "text-slate-300 hover:text-white"
+                    : "text-slate-600 hover:text-slate-900"
+                }`}
+              >
+                Services
+              </Link>
+              <Link
+                href="#case-studies"
+                className={`text-sm font-medium transition-colors ${
+                  isDark
+                    ? "text-slate-300 hover:text-white"
+                    : "text-slate-600 hover:text-slate-900"
+                }`}
+              >
+                Our Work / Case Studies
+              </Link>
+              <Link
+                href="#industries"
+                className={`text-sm font-medium transition-colors ${
+                  isDark
+                    ? "text-slate-300 hover:text-white"
+                    : "text-slate-600 hover:text-slate-900"
+                }`}
+              >
+                Industries
+              </Link>
+              <Link
+                href="#careers"
+                className={`text-sm font-medium transition-colors ${
+                  isDark
+                    ? "text-slate-300 hover:text-white"
+                    : "text-slate-600 hover:text-slate-900"
+                }`}
+              >
+                Careers
+              </Link>
+            </nav>
+
+            {/* Right: Theme Switcher & Actions */}
+            <div className="flex items-center space-x-3 sm:space-x-4">
+              {/* Dark/Light Theme Toggle Pill */}
+              <div
+                aria-label="Theme mode toggle"
+                className={`flex items-center rounded-full p-1 shadow-inner transition-colors ${
+                  isDark
+                    ? "bg-[#10141D] border border-[#1E2633]"
+                    : "bg-slate-100 border border-slate-200"
+                }`}
+                role="radiogroup"
+              >
+                {/* Switch to Light Button */}
+                <button
+                  aria-label="Switch to Light Mode"
+                  className={`p-1.5 rounded-full transition-all focus:outline-none ${
+                    !isDark
+                      ? "bg-[#0088FF] text-white shadow-sm"
+                      : "text-slate-400 hover:text-white hover:bg-[#19202E]"
+                  }`}
+                  title={!isDark ? "Light Mode Active" : "Switch to Light Mode"}
+                  type="button"
+                  onClick={() => setTheme("light")}
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  </svg>
+                </button>
+
+                {/* Switch to Dark Button */}
+                <button
+                  aria-label="Switch to Dark Mode"
+                  className={`p-1.5 rounded-full transition-all focus:outline-none ${
+                    isDark
+                      ? "bg-[#00D2FF] text-black shadow-sm"
+                      : "text-slate-500 hover:text-slate-800 hover:bg-slate-200"
+                  }`}
+                  title={isDark ? "Dark Mode Active" : "Switch to Dark Mode"}
+                  type="button"
+                  onClick={() => setTheme("dark")}
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Primary Book Consultation CTA Button */}
+              <Link
+                href="#book-consultation"
+                className={`inline-flex items-center justify-center px-4 sm:px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap ${
+                  isDark
+                    ? "bg-[#00D2FF] hover:bg-[#2fe0ff] text-black shadow-[0_0_20px_rgba(0,210,255,0.35)]"
+                    : "bg-[#0088FF] hover:bg-[#0070d6] text-white shadow-[0_4px_14px_rgba(0,136,255,0.35)]"
+                }`}
+              >
+                Book a Free Consultation
+              </Link>
+
+              {/* Mobile Hamburger Menu Button */}
+              <button
+                aria-label="Toggle Navigation Menu"
+                className={`md:hidden p-2 rounded-lg transition-colors focus:outline-none ${
+                  isDark
+                    ? "bg-[#10141D] text-slate-300 border border-[#1E2633] hover:text-white"
+                    : "bg-slate-100 text-slate-600 border border-slate-200 hover:text-slate-900"
+                }`}
+                type="button"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                {mobileMenuOpen ? (
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                )}
+              </button>
             </div>
           </div>
-        </div>
-      )}
-    </header>
+
+          {/* Mobile Navigation Drawer */}
+          {mobileMenuOpen && (
+            <div
+              className={`md:hidden px-6 py-6 border-t rounded-b-xl flex flex-col gap-4 animate-in slide-in-from-top-2 duration-200 ${
+                isDark
+                  ? "bg-[#080B10] border-[#1E2633] text-slate-200"
+                  : "bg-white border-slate-200 text-slate-800"
+              }`}
+            >
+              <div className="flex items-center justify-between pb-3 border-b border-inherit">
+                <span
+                  className={`text-xs font-mono font-semibold uppercase tracking-wider ${
+                    isDark ? "text-slate-400" : "text-slate-500"
+                  }`}
+                >
+                  Theme Mode
+                </span>
+                <div
+                  className={`flex items-center rounded-full p-1 shadow-inner ${
+                    isDark
+                      ? "bg-[#10141D] border border-[#1E2633]"
+                      : "bg-slate-100 border border-slate-200"
+                  }`}
+                >
+                  <button
+                    className={`p-1.5 rounded-full ${
+                      !isDark
+                        ? "bg-[#0088FF] text-white shadow-sm"
+                        : "text-slate-400"
+                    }`}
+                    type="button"
+                    onClick={() => setTheme("light")}
+                  >
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    className={`p-1.5 rounded-full ${
+                      isDark
+                        ? "bg-[#00D2FF] text-black shadow-sm"
+                        : "text-slate-500"
+                    }`}
+                    type="button"
+                    onClick={() => setTheme("dark")}
+                  >
+                    <svg
+                      className="w-4 h-4"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <nav className="flex flex-col gap-3 font-medium text-sm">
+                <Link
+                  href="/"
+                  className={`py-1 transition-colors ${
+                    isDark ? "text-[#00D2FF]" : "text-[#0088FF]"
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Home
+                </Link>
+                <Link
+                  href="#about-us"
+                  className={`py-1 transition-colors ${
+                    isDark
+                      ? "text-slate-300 hover:text-white"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  About Us
+                </Link>
+                <Link
+                  href="#services-matrix"
+                  className={`py-1 transition-colors ${
+                    isDark
+                      ? "text-slate-300 hover:text-white"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Services
+                </Link>
+                <Link
+                  href="#case-studies"
+                  className={`py-1 transition-colors ${
+                    isDark
+                      ? "text-slate-300 hover:text-white"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Our Work / Case Studies
+                </Link>
+                <Link
+                  href="#industries"
+                  className={`py-1 transition-colors ${
+                    isDark
+                      ? "text-slate-300 hover:text-white"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Industries
+                </Link>
+                <Link
+                  href="#careers"
+                  className={`py-1 transition-colors ${
+                    isDark
+                      ? "text-slate-300 hover:text-white"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Careers
+                </Link>
+              </nav>
+
+              <div className="pt-2">
+                <Link
+                  href="#book-consultation"
+                  className={`w-full flex items-center justify-center py-2.5 rounded-lg text-xs font-bold transition-all ${
+                    isDark
+                      ? "bg-[#00D2FF] text-black shadow-[0_0_15px_rgba(0,210,255,0.35)]"
+                      : "bg-[#0088FF] text-white shadow-[0_4px_14px_rgba(0,136,255,0.35)]"
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Book a Free Consultation
+                </Link>
+              </div>
+            </div>
+          )}
+        </header>
+      </div>
+    </div>
   );
 }
 

@@ -9,38 +9,55 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
   return (
     <div
       aria-label="Color mode"
-      className={`flex items-center p-1 rounded-full transition-colors ${className}`}
+      className={`flex items-center rounded-full p-1 shadow-inner transition-colors ${
+        theme === "dark"
+          ? "bg-[#10141D] border border-[#1E2633]"
+          : "bg-slate-100 border border-slate-200"
+      } ${className}`}
       role="radiogroup"
-      style={{
-        backgroundColor: theme === "dark" ? "#141B26" : "#f1f5f9",
-        border: theme === "dark" ? "1px solid #1E2633" : "1px solid #e2e8f0",
-      }}
     >
+      {/* Light Mode Switch Button */}
       <button
-        aria-label="Switch to light mode"
-        className="flex items-center justify-center w-7 h-7 rounded-full transition-all focus:outline-none"
-        style={{
-          color: theme === "light" ? "#005baf" : "#64748B",
-          backgroundColor: theme === "light" ? "#ffffff" : "transparent",
-          boxShadow: theme === "light" ? "0 1px 3px rgba(0,0,0,0.1)" : "none",
-        }}
+        aria-label="Switch to Light Mode"
+        className={`p-1.5 rounded-full transition-all focus:outline-none ${
+          theme === "light"
+            ? "bg-[#0088FF] text-white shadow-sm"
+            : "text-slate-400 hover:text-white hover:bg-[#19202E]"
+        }`}
+        title={theme === "light" ? "Light Mode Active" : "Switch to Light Mode"}
         type="button"
         onClick={() => setTheme("light")}
       >
-        <span className="material-symbols-outlined text-base leading-none">light_mode</span>
+        <svg
+          className="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+          />
+        </svg>
       </button>
+
+      {/* Dark Mode Switch Button */}
       <button
-        aria-label="Dark mode active"
-        className="flex items-center justify-center w-7 h-7 rounded-full shadow-sm transition-all focus:outline-none"
-        style={{
-          backgroundColor: theme === "dark" ? "#00D2FF" : "transparent",
-          color: theme === "dark" ? "#080B10" : "#64748B",
-          boxShadow: theme === "dark" ? "0 0 12px rgba(0, 210, 255, 0.4)" : "none",
-        }}
+        aria-label="Switch to Dark Mode"
+        className={`p-1.5 rounded-full transition-all focus:outline-none ${
+          theme === "dark"
+            ? "bg-[#00D2FF] text-black shadow-sm"
+            : "text-slate-500 hover:text-slate-800 hover:bg-slate-200"
+        }`}
+        title={theme === "dark" ? "Dark Mode Active" : "Switch to Dark Mode"}
         type="button"
         onClick={() => setTheme("dark")}
       >
-        <span className="material-symbols-outlined text-base leading-none">dark_mode</span>
+        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+        </svg>
       </button>
     </div>
   );

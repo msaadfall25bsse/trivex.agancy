@@ -38,6 +38,7 @@ body {
 }
 
 /* Typography tokens from index_dark.html */
+.font-brand { font-family: var(--font-space), 'Space Grotesk', sans-serif; }
 .font-display { font-family: var(--font-space), sans-serif; font-weight: 700; }
 .text-display { font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.15; letter-spacing: -0.03em; }
 
