@@ -129,7 +129,7 @@ export function Header() {
               {/* Home */}
               <Link
                 href="/"
-                className={`text-sm font-semibold pb-1 transition-colors border-b-2 ${
+                className={`font-body-md text-body-md font-semibold pb-1 transition-colors border-b-2 ${
                   pathname === "/"
                     ? isDark
                       ? "text-[#00D2FF] border-[#00D2FF]"
@@ -150,7 +150,7 @@ export function Header() {
               >
                 <Link
                   href="/services"
-                  className={`text-sm font-semibold pb-1 flex items-center gap-1 transition-colors border-b-2 ${
+                  className={`font-body-md text-body-md font-semibold pb-1 flex items-center gap-1 transition-colors border-b-2 ${
                     pathname?.startsWith("/services")
                       ? isDark
                         ? "text-[#00D2FF] border-[#00D2FF]"
@@ -237,7 +237,7 @@ export function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`text-sm font-semibold pb-1 transition-colors border-b-2 ${
+                    className={`font-body-md text-body-md font-semibold pb-1 transition-colors border-b-2 ${
                       isActive
                         ? isDark
                           ? "text-[#00D2FF] border-[#00D2FF]"
@@ -317,7 +317,7 @@ export function Header() {
               {/* Primary Book Consultation CTA Button */}
               <Link
                 href="/contact"
-                className={`inline-flex items-center justify-center px-4 sm:px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap ${
+                className={`inline-flex items-center justify-center px-4 sm:px-5 py-2.5 rounded-lg font-label-lg text-label-lg font-medium transition-all hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap ${
                   isDark
                     ? "bg-[#00D2FF] hover:bg-[#2fe0ff] text-black shadow-[0_0_20px_rgba(0,210,255,0.35)]"
                     : "bg-[#0088FF] hover:bg-[#0070d6] text-white shadow-[0_4px_14px_rgba(0,136,255,0.35)]"
