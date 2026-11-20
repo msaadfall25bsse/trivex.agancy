@@ -136,222 +136,169 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right: Telemetry & Console Card */}
+          {/* Right: Core Capability Console */}
           <div className="lg:col-span-5 flex flex-col gap-space-md">
-            {/* Live Telemetry Card */}
-            <div className="glass-panel p-space-lg rounded-2xl shadow-xl flex flex-col gap-space-md">
+            <div className="glass-panel p-space-lg rounded-3xl shadow-xl flex flex-col gap-space-md">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
                   <span
-                    className="font-label-md text-label-md font-bold"
-                    style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
+                    className="w-2.5 h-2.5 rounded-full"
+                    style={{ backgroundColor: isDark ? "#00D2FF" : "#0074db" }}
+                  />
+                  <span
+                    className="font-label-sm text-label-sm font-mono font-bold tracking-wider"
+                    style={{ color: isDark ? "#00D2FF" : "#005baf" }}
                   >
-                    CORE-ENGINE V4.8 - ONLINE
+                    AGENCY OPERATING CAPABILITIES
                   </span>
                 </div>
                 <span
-                  className="px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold"
+                  className="font-mono text-[11px] font-semibold px-2.5 py-0.5 rounded-full"
                   style={{
-                    backgroundColor: isDark ? "rgba(0, 210, 255, 0.12)" : "rgba(0, 116, 219, 0.1)",
-                    color: isDark ? "#00D2FF" : "#005baf",
-                    border: `1px solid ${isDark ? "rgba(0, 210, 255, 0.25)" : "rgba(0, 116, 219, 0.2)"}`,
+                    backgroundColor: "rgba(16, 185, 129, 0.15)",
+                    color: "#10B981",
+                    border: "1px solid rgba(16, 185, 129, 0.3)",
                   }}
                 >
-                  99.4% SLA
+                  INTAKE OPEN
                 </span>
               </div>
-              <div className="grid grid-cols-2 gap-space-md py-space-xs">
-                <div
-                  className="p-space-sm rounded-lg glass-panel-interactive"
-                  style={{
-                    backgroundColor: isDark ? "rgba(20, 27, 38, 0.6)" : "rgba(255, 255, 255, 0.65)",
-                    border: `1px solid ${isDark ? "#1E2633" : "rgba(0, 80, 200, 0.1)"}`,
-                  }}
-                >
-                  <span className="font-label-sm text-label-sm block" style={{ color: "#64748B" }}>
-                    ACTIVE PODS
-                  </span>
-                  <span
-                    className="font-headline-md text-headline-md font-bold block"
-                    style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
-                  >
-                    14 SQUADS
-                  </span>
-                  <span
-                    className="font-label-sm text-label-sm block mt-0.5"
-                    style={{ color: isDark ? "#00D2FF" : "#005baf" }}
-                  >
-                    Global Allocation
-                  </span>
-                </div>
-                <div
-                  className="p-space-sm rounded-lg glass-panel-interactive"
-                  style={{
-                    backgroundColor: isDark ? "rgba(20, 27, 38, 0.6)" : "rgba(255, 255, 255, 0.65)",
-                    border: `1px solid ${isDark ? "#1E2633" : "rgba(0, 80, 200, 0.1)"}`,
-                  }}
-                >
-                  <span className="font-label-sm text-label-sm block" style={{ color: "#64748B" }}>
-                    ON-TIME SHIP RATE
-                  </span>
-                  <span
-                    className="font-headline-md text-headline-md font-bold block"
-                    style={{ color: isDark ? "#00D2FF" : "#005baf" }}
-                  >
-                    99.4%
-                  </span>
-                  <span
-                    className="font-label-sm text-label-sm block mt-0.5"
-                    style={{ color: isDark ? "#94A3B8" : "#64748B" }}
-                  >
-                    350+ Releases
-                  </span>
-                </div>
-              </div>
 
-              {/* Inline SVG Sparkline */}
-              <div
-                className="p-space-sm rounded-lg flex flex-col gap-1"
-                style={{
-                  backgroundColor: isDark ? "rgba(20, 27, 38, 0.6)" : "rgba(255, 255, 255, 0.65)",
-                  border: `1px solid ${isDark ? "#1E2633" : "rgba(0, 80, 200, 0.1)"}`,
-                }}
-              >
-                <div
-                  className="flex justify-between items-center font-label-sm text-label-sm"
-                  style={{ color: isDark ? "#94A3B8" : "#64748B" }}
-                >
-                  <span>MONTHLY SYSTEM VELOCITY</span>
-                  <span className="font-bold" style={{ color: isDark ? "#00D2FF" : "#005baf" }}>
-                    +142.8% YoY
-                  </span>
+              {/* 4 Pillars Preview with Glassmorphism */}
+              <div className="space-y-2.5 pt-1">
+                <div className="p-3.5 rounded-2xl border flex items-center justify-between glass-panel-interactive bg-white/40 dark:bg-white/[0.04] border-white/50 dark:border-white/10">
+                  <div className="flex items-center gap-2.5">
+                    <span style={{ color: isDark ? "#00D2FF" : "#0074db" }}>
+                      <Icon name="query_stats" className="w-5 h-5" />
+                    </span>
+                    <span className="font-brand font-semibold text-xs sm:text-sm">Marketing &amp; Paid Acquisition</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-slate-400">Meta • Google • TikTok</span>
                 </div>
-                <svg
-                  className="w-full h-12"
-                  fill="none"
-                  style={{ color: isDark ? "#00D2FF" : "#0074db" }}
-                  viewBox="0 0 300 48"
-                >
-                  <path
-                    d="M0 36 L30 32 L60 38 L90 24 L120 28 L150 16 L180 20 L210 10 L240 14 L270 4 L300 2"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2.5"
-                  />
-                  <path
-                    d="M0 36 L30 32 L60 38 L90 24 L120 28 L150 16 L180 20 L210 10 L240 14 L270 4 L300 2 V 48 H 0 Z"
-                    fill="currentColor"
-                    fillOpacity="0.15"
-                  />
-                </svg>
-              </div>
 
-              <div
-                className="flex items-center justify-between font-label-sm text-label-sm"
-                style={{ color: "#64748B" }}
-              >
-                <span>Security: ISO 27001 &amp; SOC2 TYPE II</span>
-                <span
-                  className="font-mono font-medium"
-                  style={{ color: isDark ? "#00D2FF" : "#005baf" }}
-                >
-                  US • UK • UAE • SE • PK
-                </span>
+                <div className="p-3.5 rounded-2xl border flex items-center justify-between glass-panel-interactive bg-white/40 dark:bg-white/[0.04] border-white/50 dark:border-white/10">
+                  <div className="flex items-center gap-2.5">
+                    <span style={{ color: isDark ? "#00D2FF" : "#0074db" }}>
+                      <Icon name="terminal" className="w-5 h-5" />
+                    </span>
+                    <span className="font-brand font-semibold text-xs sm:text-sm">Web &amp; Custom Software</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-slate-400">Next.js • React • TypeScript</span>
+                </div>
+
+                <div className="p-3.5 rounded-2xl border flex items-center justify-between glass-panel-interactive bg-white/40 dark:bg-white/[0.04] border-white/50 dark:border-white/10">
+                  <div className="flex items-center gap-2.5">
+                    <span style={{ color: isDark ? "#00D2FF" : "#0074db" }}>
+                      <Icon name="shopping_bag" className="w-5 h-5" />
+                    </span>
+                    <span className="font-brand font-semibold text-xs sm:text-sm">E-Commerce &amp; WordPress</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-slate-400">Shopify • Headless • ACF</span>
+                </div>
+
+                <div className="p-3.5 rounded-2xl border flex items-center justify-between glass-panel-interactive bg-white/40 dark:bg-white/[0.04] border-white/50 dark:border-white/10">
+                  <div className="flex items-center gap-2.5">
+                    <span style={{ color: isDark ? "#00D2FF" : "#0074db" }}>
+                      <Icon name="smart_toy" className="w-5 h-5" />
+                    </span>
+                    <span className="font-brand font-semibold text-xs sm:text-sm">Business Automation &amp; AI</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-slate-400">Workflows • CRM • Custom Bots</span>
+                </div>
               </div>
             </div>
 
-            {/* Studio Photo Preview Banner */}
-            <div
-              className="relative rounded-2xl overflow-hidden shadow-sm h-44 glass-panel border"
-              style={{
-                borderColor: isDark ? "#1E2633" : "rgba(0, 80, 200, 0.1)",
-              }}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className="w-full h-full object-cover"
-                alt="TRIVEX Global Delivery Network Studio"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpHUh43ZCgzSAe3oqp7WbAZKshntsivvCFLGmclgXvMzBa0O99tYLs9wh6Nw0kZcOlXcX01_iu-6FojUxGtB3DryxdTzoElIrjlVTCCn9kHsHJvscucVa9ng5LlnXGvQ6XqCuwYEgVC9rwp5qHMydw5O7wyoB1OS3de49p6e4OXBnZe43TEE6DI73NdQtOdSwwF_wFOXp9xQFunXTWqN6q9_DUB6gNTUWWrLqHRPA"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#080B10]/90 via-[#080B10]/30 to-transparent flex items-end p-space-md">
-                <p className="text-white font-label-md text-label-md">
-                  TRIVEX Global Delivery Network // Central Engineering Room
-                </p>
+            {/* Studio Banner Preview Card */}
+            <div className="glass-panel p-4 rounded-2xl flex items-center justify-between shadow-sm">
+              <div className="flex items-center gap-3">
+                <div
+                  className="w-9 h-9 rounded-xl flex items-center justify-center font-mono font-bold"
+                  style={{
+                    backgroundColor: isDark ? "rgba(0, 210, 255, 0.12)" : "rgba(0, 116, 219, 0.1)",
+                    color: isDark ? "#00D2FF" : "#0074db",
+                  }}
+                >
+                  TX
+                </div>
+                <div>
+                  <div
+                    className="font-headline-sm text-xs font-bold uppercase tracking-wider"
+                    style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
+                  >
+                    TRIVEX Collaborative Model
+                  </div>
+                  <div className="font-label-sm text-[11px]" style={{ color: "#64748B" }}>
+                    Dedicated Engineering &amp; Creative Pods
+                  </div>
+                </div>
               </div>
+              <Link
+                href="/about"
+                className="text-xs font-mono font-semibold hover:underline"
+                style={{ color: isDark ? "#00D2FF" : "#0088FF" }}
+              >
+                Our Story →
+              </Link>
             </div>
           </div>
         </div>
 
-        {/* 4 Core Key Metrics Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-space-md pt-space-md">
-          <div className="p-space-lg rounded-2xl shadow-sm flex flex-col justify-between glass-panel glass-panel-interactive">
-            <span className="font-label-sm text-label-sm" style={{ color: "#64748B" }}>
-              LOCATIONS
-            </span>
+        {/* Honest Agency Value Metrics Bar */}
+        <div className="glass-panel p-space-lg rounded-3xl shadow-xl grid grid-cols-2 md:grid-cols-4 gap-space-md">
+          <div className="flex flex-col gap-1">
             <span
-              className="font-display text-display font-bold"
-              style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
-            >
-              05
-            </span>
-            <span
-              className="font-body-sm text-body-sm"
-              style={{ color: isDark ? "#94A3B8" : "#64748B" }}
-            >
-              Global Hubs in Key Tech Hubs
-            </span>
-          </div>
-          <div className="p-space-lg rounded-2xl shadow-sm flex flex-col justify-between glass-panel glass-panel-interactive">
-            <span className="font-label-sm text-label-sm" style={{ color: "#64748B" }}>
-              TALENT NETWORK
-            </span>
-            <span
-              className="font-display text-display font-bold"
+              className="font-display text-2xl lg:text-3xl font-bold"
               style={{ color: isDark ? "#00D2FF" : "#005baf" }}
             >
-              150+
+              12
             </span>
             <span
-              className="font-body-sm text-body-sm"
+              className="font-label-sm text-label-sm"
               style={{ color: isDark ? "#94A3B8" : "#64748B" }}
             >
-              Vetted Senior Engineers &amp; Designers
+              Core Specialized Services
             </span>
           </div>
-          <div className="p-space-lg rounded-2xl shadow-sm flex flex-col justify-between glass-panel glass-panel-interactive">
-            <span className="font-label-sm text-label-sm" style={{ color: "#64748B" }}>
-              DELIVERY SPEED
-            </span>
+          <div className="flex flex-col gap-1">
             <span
-              className="font-display text-display font-bold"
-              style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
+              className="font-display text-2xl lg:text-3xl font-bold"
+              style={{ color: isDark ? "#00D2FF" : "#005baf" }}
             >
-              99.4%
+              4
             </span>
             <span
-              className="font-body-sm text-body-sm"
+              className="font-label-sm text-label-sm"
               style={{ color: isDark ? "#94A3B8" : "#64748B" }}
             >
-              On-Time Sprint Completion SLA
+              Global Operational Hubs
             </span>
           </div>
-          <div className="p-space-lg rounded-2xl shadow-sm flex flex-col justify-between glass-panel glass-panel-interactive">
-            <span className="font-label-sm text-label-sm" style={{ color: "#64748B" }}>
-              ENTERPRISE SECURITY
-            </span>
+          <div className="flex flex-col gap-1">
             <span
-              className="font-display text-display font-bold"
+              className="font-display text-2xl lg:text-3xl font-bold"
               style={{ color: isDark ? "#00D2FF" : "#005baf" }}
             >
               100%
             </span>
             <span
-              className="font-body-sm text-body-sm"
+              className="font-label-sm text-label-sm"
               style={{ color: isDark ? "#94A3B8" : "#64748B" }}
             >
-              SOC 2 Type II &amp; ISO 27001 Protection
+              Client Source Code &amp; IP Ownership
+            </span>
+          </div>
+          <div className="flex flex-col gap-1">
+            <span
+              className="font-display text-2xl lg:text-3xl font-bold"
+              style={{ color: isDark ? "#00D2FF" : "#005baf" }}
+            >
+              24h
+            </span>
+            <span
+              className="font-label-sm text-label-sm"
+              style={{ color: isDark ? "#94A3B8" : "#64748B" }}
+            >
+              Consultation Assessment Turnaround
             </span>
           </div>
         </div>
