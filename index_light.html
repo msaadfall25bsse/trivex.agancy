@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="web_standard" name="shell-type">
+    <title>TRIVEX | Global Enterprise Engineering</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        id="tailwind-config">tailwind.config = { "darkMode": "class", "theme": { "extend": { "colors": { "secondary-fixed-dim": "#bec6e0", "on-secondary-container": "#5c647a", "surface-container": "#e5eeff", "on-error-container": "#93000a", "tertiary-container": "#007bb9", "on-tertiary-fixed-variant": "#004b73", "inverse-on-surface": "#eaf1ff", "tertiary": "#006194", "on-secondary": "#ffffff", "secondary-fixed": "#dae2fd", "error-container": "#ffdad6", "inverse-surface": "#213145", "surface-container-lowest": "#ffffff", "surface": "#f8f9ff", "secondary": "#565e74", "on-primary-container": "#fefcff", "surface-dim": "#cbdbf5", "surface-container-highest": "#d3e4fe", "surface-container-low": "#eff4ff", "on-tertiary": "#ffffff", "surface-tint": "#005eb3", "tertiary-fixed-dim": "#93ccff", "error": "#ba1a1a", "secondary-container": "#dae2fd", "on-primary": "#ffffff", "surface-bright": "#f8f9ff", "tertiary-fixed": "#cce5ff", "on-background": "#0b1c30", "outline-variant": "#c0c6d6", "on-primary-fixed": "#001b3c", "primary-fixed": "#d5e3ff", "outline": "#717785", "on-surface-variant": "#404754", "on-error": "#ffffff", "primary-fixed-dim": "#a8c8ff", "on-tertiary-fixed": "#001d31", "surface-variant": "#d3e4fe", "on-primary-fixed-variant": "#004689", "on-secondary-fixed": "#131b2e", "on-secondary-fixed-variant": "#3f465c", "primary-container": "#0074db", "on-tertiary-container": "#fdfcff", "inverse-primary": "#a8c8ff", "background": "#f8f9ff", "primary": "#005baf", "surface-container-high": "#dce9ff", "on-surface": "#0b1c30" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-md": "1rem", "margin-mobile": "1.25rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "gutter-mobile": "1rem", "space-xs": "0.25rem", "margin": "3rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-lg": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "label-lg": ["JetBrains Mono"], "headline-lg-mobile": ["Space Grotesk"], "label-sm": ["JetBrains Mono"], "body-lg": ["Hanken Grotesk"], "display": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "body-md": ["Hanken Grotesk"], "display-mobile": ["Space Grotesk"], "label-md": ["JetBrains Mono"], "body-sm": ["Hanken Grotesk"] }, "fontSize": { "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "500" }], "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "display-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface antialiased">
+    <header
+        class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all">
+        <div class="h-20 w-full px-margin flex items-center justify-between gap-gutter">
+            <div class="flex items-center gap-space-xl"><a
+                    class="flex items-center gap-space-sm group focus:outline-none" data-path="home" href="#"><span
+                        class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface flex items-center">TRIVE<span
+                            class="text-primary-container font-headline-md">X</span></span><span
+                        class="hidden xl:inline-block font-label-sm text-label-sm uppercase px-1.5 py-0.5 rounded bg-surface-container-high text-primary tracking-widest">Global</span></a>
+                <nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold">
+                    <a aria-current="page" class="transition-colors py-1 text-primary font-semibold" data-path="home"
+                        href="#">Home</a><a
+                        class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1"
+                        data-path="about-us" href="#">About Us</a><a
+                        class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1"
+                        data-path="services" href="#">Services</a><a
+                        class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1"
+                        data-path="case-studies" href="#">Our Work / Case Studies</a><a
+                        class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1"
+                        data-path="industries" href="#">Industries</a><a
+                        class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-1"
+                        data-path="careers" href="#">Careers</a></nav>
+            </div>
+            <div class="flex items-center gap-space-md">
+                <div aria-label="Color mode"
+                    class="hidden sm:flex items-center bg-slate-100 p-1 rounded-full border border-slate-200"
+                    role="radiogroup"><button aria-label="Light mode active"
+                        class="flex items-center justify-center w-7 h-7 rounded-full bg-white shadow-sm text-primary transition-all"
+                        type="button"><span
+                            class="material-symbols-outlined text-base leading-none">light_mode</span></button><button
+                        aria-label="Switch to dark mode"
+                        class="flex items-center justify-center w-7 h-7 rounded-full text-secondary hover:text-on-surface transition-all"
+                        type="button"><span
+                            class="material-symbols-outlined text-base leading-none">dark_mode</span></button></div>
+                <div class="hidden 2xl:flex items-center gap-space-md font-label-lg text-label-lg"><a
+                        class="text-on-surface-variant hover:text-primary transition-colors" data-path="apply-as-talent"
+                        href="#">Apply as Talent</a><span class="text-outline-variant">|</span><a
+                        class="text-on-surface-variant hover:text-primary transition-colors" data-path="hire-developer"
+                        href="#">Hire Developer</a></div><a
+                    class="inline-flex items-center justify-center px-4 py-2.5 rounded bg-primary-container text-on-primary-container font-label-lg text-label-lg font-medium shadow-[0_1px_3px_rgba(11,15,23,0.04)] hover:bg-tertiary-container hover:text-on-tertiary-container transition-all"
+                    data-path="book-consultation" href="#"><span class="whitespace-nowrap">Book a Free
+                        Consultation</span></a>
+                <div class="flex items-center pl-2 border-l border-slate-200"><img alt="Profile"
+                        class="w-8 h-8 rounded-full object-cover border border-slate-200"
+                        src="https://lh3.googleusercontent.com/aida/ALJJyrBrwg-tCHth-hOm-zvwKV-ScTcNAKX-KVMSLDsfHdhDVjtXixpBrGLL-N2IXCE9vNy59ZvOHmQUl2GP9Sh4OJbXgMVXP4v3oAf-2OPc7jzApWL5AoqOxUF_DdQo0V_MbQu9qMTAQLTttI2sT1UxtEmP8f716J4SkNUUvQtUaQJCTxkf9KUAqQ5lk1YKRx3GoJH7GFuNPVygU0Q_wBotRUqXk6CaNXVlnABDEdbcdy1z4ybf9EWqxTXWSP4">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]">
+        <div class="flex flex-col w-full">
+            <!-- SECTION 1: HERO & CORE ENGINE METRICS -->
+            <section class="relative w-full px-margin py-space-xl overflow-hidden bg-surface">
+                <div class="absolute inset-y-0 right-0 w-full lg:w-3/5 pointer-events-none overflow-hidden z-0"><img
+                        src="https://lh3.googleusercontent.com/aida/ALJJyrBzx4Y8noL01zqp5PYB66KSR1tjqH5ijNXJUsXiEyppbVMuMtGQW_DEkYKsXbe6YXt67YIdtcw20eKIt1KIJCY9qyiwMIg2mm3PhaCJtcsVmZbhBiregWNnmsu9mUp8dHPPn61SHrXXfjntBV7rEOtgKL3FQOM1KiXbRGqwv7ZU1RY6gPQCXDngrXeUqMgyk8MwNvsgbwW0SEpzZHvpPNj5i94GBD_aT6cVSHjhY4z5"
+                        alt="TRIVEX modern engineering workspace"
+                        class="w-full h-full object-cover object-right opacity-90">
+                    <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/60 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+                </div>
+                <!-- Subtle technical ambient gradients -->
+                <div
+                    class="absolute -top-32 right-10 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl pointer-events-none">
+                </div>
+                <div
+                    class="absolute top-1/2 left-0 w-80 h-80 bg-tertiary-fixed/40 rounded-full blur-3xl pointer-events-none">
+                </div>
+                <div class="relative z-10 max-w-7xl mx-auto flex flex-col gap-space-xl">
+                    <!-- Top Tagline & Status Pill -->
+                    <div class="flex flex-wrap items-center justify-between gap-space-md">
+                        <div
+                            class="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-full bg-surface-container-low text-primary shadow-sm">
+                            <span class="inline-block w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+                            <span class="font-label-md text-label-md uppercase tracking-wider font-semibold">⚡ Next-Gen
+                                Digital Growth &amp; Technology Partner</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-space-sm font-label-sm text-label-sm text-on-surface-variant bg-surface-container-lowest px-3 py-1 rounded shadow-sm">
+                            <span class="text-primary font-mono font-semibold">DEPLOYED GLOBAL NODES:</span>
+                            <span>US • UK • UAE • SE • PK</span>
+                        </div>
+                    </div>
+                    <!-- Main Asymmetric Hero Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+                        <!-- Left: Hero Headline & Narrative -->
+                        <div class="lg:col-span-7 flex flex-col gap-space-lg">
+                            <h1 class="font-display text-display text-on-surface uppercase tracking-tight">
+                                We build, market &amp; scale <span
+                                    class="text-primary-container bg-gradient-to-r from-primary to-tertiary-container bg-clip-text text-transparent">world-class
+                                    digital</span> businesses.
+                            </h1>
+                            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                                From performance marketing, e-commerce, and high-conversion creative to custom web
+                                applications, mobile platforms, and AI enterprise automation—we unite strategy,
+                                engineering, and digital growth under one roof.
+                            </p>
+                            <!-- Dual CTA -->
+                            <div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+                                <a class="inline-flex items-center gap-2 px-6 py-3.5 rounded bg-primary-container text-on-primary-container font-label-lg text-label-lg font-medium shadow-md hover:bg-primary transition-all"
+                                    data-path="book-consultation" href="#">
+                                    <span>Book a Free Consultation</span>
+                                    <span class="material-symbols-outlined text-base">arrow_forward</span>
+                                </a>
+                                <a class="inline-flex items-center gap-2 px-6 py-3.5 rounded bg-surface-container-lowest text-on-surface font-label-lg text-label-lg font-medium shadow-sm hover:text-primary transition-all"
+                                    href="#services-matrix">
+                                    <span>Explore Capabilities</span>
+                                    <span class="material-symbols-outlined text-base">terminal</span>
+                                </a>
+                            </div>
+                            <!-- Quick Proof Chips -->
+                            <div class="pt-space-md flex flex-wrap items-center gap-space-sm">
+                                <span class="font-label-sm text-label-sm text-on-surface-variant">TRUSTED
+                                    INFRASTRUCTURE:</span>
+                                <span
+                                    class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">ISO
+                                    27001</span>
+                                <span
+                                    class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">SOC
+                                    2 Type II</span>
+                                <span
+                                    class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">GDPR
+                                    Compliant</span>
+                                <span
+                                    class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Zero
+                                    Fluff Architecture</span>
+                            </div>
+                        </div>
+                        <!-- Right: Telemetry & Studio Banner Console -->
+                        <div class="lg:col-span-5 flex flex-col gap-space-md">
+                            <!-- Live Telemetry Card -->
+                            <div
+                                class="p-space-lg rounded-xl bg-surface-container-lowest shadow-md flex flex-col gap-space-md">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                                        <span class="font-label-md text-label-md font-bold text-on-surface">CORE-ENGINE
+                                            V4.8 - ONLINE</span>
+                                    </div>
+                                    <span
+                                        class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">99.4%
+                                        SLA</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-space-md py-space-xs">
+                                    <div class="p-space-sm rounded bg-surface-container-low">
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant block">ACTIVE
+                                            PODS</span>
+                                        <span class="font-headline-md text-headline-md text-on-surface font-bold">14
+                                            SQUADS</span>
+                                        <span class="font-label-sm text-label-sm text-primary block mt-0.5">Global
+                                            Allocation</span>
+                                    </div>
+                                    <div class="p-space-sm rounded bg-surface-container-low">
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant block">ON-TIME
+                                            SHIP RATE</span>
+                                        <span
+                                            class="font-headline-md text-headline-md text-primary font-bold">99.4%</span>
+                                        <span
+                                            class="font-label-sm text-label-sm text-on-surface-variant block mt-0.5">350+
+                                            Releases</span>
+                                    </div>
+                                </div>
+                                <!-- Inline SVG Sparkline for throughput -->
+                                <div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+                                    <div
+                                        class="flex justify-between items-center font-label-sm text-label-sm text-on-surface-variant">
+                                        <span>MONTHLY SYSTEM VELOCITY</span>
+                                        <span class="text-primary font-bold">+142.8% YoY</span>
+                                    </div>
+                                    <svg class="w-full h-12 text-primary-container" fill="none" viewBox="0 0 300 48">
+                                        <path
+                                            d="M0 36 L30 32 L60 38 L90 24 L120 28 L150 16 L180 20 L210 10 L240 14 L270 4 L300 2"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2.5"></path>
+                                        <path
+                                            d="M0 36 L30 32 L60 38 L90 24 L120 28 L150 16 L180 20 L210 10 L240 14 L270 4 L300 2 V 48 H 0 Z"
+                                            fill="currentColor" fill-opacity="0.08"></path>
+                                    </svg>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+                                    <span>Security: ISO 27001 &amp; SOC2 TYPE II</span>
+                                    <span class="text-primary font-mono font-medium">US • UK • UAE • SE • PK</span>
+                                </div>
+                            </div>
+                            <!-- Studio Photo Preview -->
+                            <div class="relative rounded-xl overflow-hidden shadow-sm h-48 bg-surface-container-low">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="High-tech bright modern software engineering studio with collaborative developers designing systems on multi-monitor displays, clean aesthetic, natural sunlight, white slate desks, electric cyan ambient reflections, ultra-sharp realistic photography"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE2IVeeGY70cp4rg88nlsg9cGL7IUlAteKAZwi9HtGhJAKCHjFerIzn4mb36XWFz5FPTCPcu1URVnJquYmEUzsuvXSxxnRGdwiPsMrA9EMlU-CgQ021EyFjhN-y2cYk_cH7WIXX2wEPkVL5_pc0T8TDDRtso4-N1ZIgPlgiJhguIf3gGm3F2Jsj-C3FMEN8d_DnAzn7EfFTJdDzhERAgcT5rXZEpa5-RJ1YW_h6mc">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent flex items-end p-space-md">
+                                    <p class="text-white font-label-md text-label-md">TRIVEX Global Delivery Network //
+                                        Central Engineering Room</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 4 Core Key Metrics Bar -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-space-md pt-space-md">
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant">LOCATIONS</span>
+                            <span class="font-display text-display text-on-surface font-bold">05</span>
+                            <span class="font-body-sm text-body-sm text-on-surface-variant">Global Hubs in Key Tech
+                                Hubs</span>
+                        </div>
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant">TALENT NETWORK</span>
+                            <span class="font-display text-display text-primary font-bold">150+</span>
+                            <span class="font-body-sm text-body-sm text-on-surface-variant">Vetted Senior Engineers
+                                &amp; Designers</span>
+                        </div>
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant">DELIVERY SPEED</span>
+                            <span class="font-display text-display text-on-surface font-bold">99.4%</span>
+                            <span class="font-body-sm text-body-sm text-on-surface-variant">On-Time Sprint Completion
+                                SLA</span>
+                        </div>
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant">ENTERPRISE SECURITY</span>
+                            <span class="font-display text-display text-primary font-bold">100%</span>
+                            <span class="font-body-sm text-body-sm text-on-surface-variant">SOC 2 Type II &amp; ISO
+                                27001 Protection</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 2: TRUSTED CLOUD & ECOSYSTEM PARTNERS -->
+            <section class="w-full px-margin py-space-lg bg-surface-container-low">
+                <div class="max-w-7xl mx-auto flex flex-col gap-space-md">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+                        <span
+                            class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Certified
+                            Ecosystem &amp; Cloud Partners</span>
+                        <span class="font-label-sm text-label-sm text-primary">TIER 1 PLATFORM INTEGRATIONS</span>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-space-sm">
+                        <div
+                            class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col items-center justify-center gap-1 hover:shadow-md transition-all">
+                            <span class="material-symbols-outlined text-primary text-2xl">cloud_queue</span>
+                            <span class="font-label-sm text-label-sm font-bold text-on-surface">AWS Partner</span>
+                        </div>
+                        <div
+                            class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col items-center justify-center gap-1 hover:shadow-md transition-all">
+                            <span class="material-symbols-outlined text-primary text-2xl">neurology</span>
+                            <span class="font-label-sm text-label-sm font-bold text-on-surface">OpenAI</span>
+                        </div>
+                        <div
+                            class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col items-center justify-center gap-1 hover:shadow-md transition-all">
+                            <span class="material-symbols-outlined text-primary text-2xl">shopping_cart</span>
+                            <span class="font-label-sm text-label-sm font-bold text-on-surface">Shopify Plus</span>
+                        </div>
+                        <div
+                            class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col items-center justify-center gap-1 hover:shadow-md transition-all">
+                            <span class="material-symbols-outlined text-primary text-2xl">payments</span>
+                            <span class="font-label-sm text-label-sm font-bold text-on-surface">Stripe Verified</span>
+                        </div>
+                        <div
+                            class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col items-center justify-center gap-1 hover:shadow-md transition-all">
+                            <span class="material-symbols-outlined text-primary text-2xl">public</span>
+                            <span class="font-label-sm text-label-sm font-bold text-on-surface">Google Cloud</span>
+                        </div>
+                        <div
+                            class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col items-center justify-center gap-1 hover:shadow-md transition-all">
+                            <span class="material-symbols-outlined text-primary text-2xl">ads_click</span>
+                            <span class="font-label-sm text-label-sm font-bold text-on-surface">Meta Business</span>
+                        </div>
+                        <div
+                            class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col items-center justify-center gap-1 hover:shadow-md transition-all">
+                            <span class="material-symbols-outlined text-primary text-2xl">terminal</span>
+                            <span class="font-label-sm text-label-sm font-bold text-on-surface">Vercel Enterprise</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 3: ABOUT & WHY CHOOSE US -->
+            <section class="w-full px-margin py-space-xl bg-surface">
+                <div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+                    <!-- Section Header -->
+                    <div class="flex flex-col gap-space-xs max-w-3xl">
+                        <span
+                            class="font-label-sm text-label-sm text-primary font-semibold tracking-widest uppercase">Engineered
+                            for Velocity</span>
+                        <h2 class="font-display text-display text-on-surface">Our Journey of Building Scalable Digital
+                            Success.</h2>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant">
+                            We began as an elite core of full-stack engineers and performance architects. Today, TRIVEX
+                            accelerates high-growth startups and established global enterprises through surgical
+                            execution, zero-waste infrastructure, and revenue-centric marketing.
+                        </p>
+                    </div>
+                    <!-- 4 Core Pillars Strip -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col gap-space-sm">
+                            <div
+                                class="w-10 h-10 rounded bg-surface-container-high text-primary flex items-center justify-center">
+                                <span class="material-symbols-outlined">trending_up</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface">Growth &amp; Performance</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Omnichannel paid ad scaling,
+                                programmatic CRO, and predictive lifetime-value modeling.</p>
+                        </div>
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col gap-space-sm">
+                            <div
+                                class="w-10 h-10 rounded bg-surface-container-high text-primary flex items-center justify-center">
+                                <span class="material-symbols-outlined">code</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface">Engineering &amp; Code</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Distributed cloud
+                                microservices, reactive frontends, and rock-solid mobile applications.</p>
+                        </div>
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col gap-space-sm">
+                            <div
+                                class="w-10 h-10 rounded bg-surface-container-high text-primary flex items-center justify-center">
+                                <span class="material-symbols-outlined">palette</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface">Creative &amp; Motion</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Brand systems, high-converting
+                                motion design, 3D product visualization, and dynamic UGC.</p>
+                        </div>
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col gap-space-sm">
+                            <div
+                                class="w-10 h-10 rounded bg-surface-container-high text-primary flex items-center justify-center">
+                                <span class="material-symbols-outlined">psychology</span>
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface">AI Business Automation</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Custom LLM agents, automated
+                                enterprise pipelines, and bespoke intelligence nodes.</p>
+                        </div>
+                    </div>
+                    <!-- 3 Structural Value Cards -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-md justify-between">
+                            <div class="flex flex-col gap-space-sm">
+                                <span class="font-label-md text-label-md text-primary font-bold">PILLAR // 01</span>
+                                <h4 class="font-headline-md text-headline-md text-on-surface">Global Delivery Excellence
+                                </h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                    Strategic presences across Sacramento (US), London (UK), Dubai (UAE), Stockholm
+                                    (Sweden), anchored by high-velocity technical execution squads in Pakistan.
+                                    Round-the-clock handover cycles.
+                                </p>
+                            </div>
+                            <div class="font-label-sm text-label-sm text-primary font-mono">CONTINUOUS 24/7 SPRINT CYCLE
+                            </div>
+                        </div>
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-md justify-between">
+                            <div class="flex flex-col gap-space-sm">
+                                <span class="font-label-md text-label-md text-primary font-bold">PILLAR // 02</span>
+                                <h4 class="font-headline-md text-headline-md text-on-surface">Zero Fluff Real Code</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                    We do not outsource to unverified freelancers. Every single line of code passes
+                                    strict CI/CD linting, automated vulnerability scans, and code reviews led by
+                                    Principal Staff Engineers.
+                                </p>
+                            </div>
+                            <div class="font-label-sm text-label-sm text-primary font-mono">100% TRANSPARENT GIT
+                                REPOSITORIES</div>
+                        </div>
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-md justify-between">
+                            <div class="flex flex-col gap-space-sm">
+                                <span class="font-label-md text-label-md text-primary font-bold">PILLAR // 03</span>
+                                <h4 class="font-headline-md text-headline-md text-on-surface">Dedicated Agile Pods</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                    Plug integrated cross-functional units—PM, UI/UX Designer, Lead Full-Stack, and QA
+                                    Engineer—directly into your Slack and Jira environments in under 72 hours.
+                                </p>
+                            </div>
+                            <div class="font-label-sm text-label-sm text-primary font-mono">EMBEDDED OPERATING MODEL
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 4: 8 CAPABILITY SERVICE CARDS -->
+            <section class="w-full px-margin py-space-xl bg-surface-container-low" id="services-matrix">
+                <div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+                        <div class="flex flex-col gap-space-xs max-w-2xl">
+                            <span
+                                class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-widest">Complete
+                                Technical Spectrum</span>
+                            <h2 class="font-display text-display text-on-surface">Full-Suite Digital Capabilities</h2>
+                            <p class="font-body-lg text-body-lg text-on-surface-variant">Modular engineering and growth
+                                blocks ready to build, launch, and compound enterprise market share.</p>
+                        </div>
+                        <a class="font-label-lg text-label-lg text-primary font-semibold flex items-center gap-1 hover:underline"
+                            data-path="services" href="#">
+                            <span>View Detailed Spec Sheets</span>
+                            <span class="material-symbols-outlined text-base">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- 8 Bento Grid Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+                        <!-- Service 01 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-label-sm text-label-sm text-primary font-mono">01 //
+                                        PLATFORMS</span>
+                                    <span
+                                        class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">web</span>
+                                </div>
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface">Web Dev &amp; Custom
+                                    Platforms</h3>
+                                <ul class="space-y-1.5 font-body-sm text-body-sm text-on-surface-variant">
+                                    <li>• Next.js 15 &amp; React Architecture</li>
+                                    <li>• Enterprise Headless CMS</li>
+                                    <li>• Micro-frontends &amp; High Scale APIs</li>
+                                </ul>
+                            </div>
+                            <a class="pt-space-md font-label-md text-label-md text-primary font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all"
+                                data-path="services" href="#">
+                                <span>Explore Service</span>
+                                <span>→</span>
+                            </a>
+                        </div>
+                        <!-- Service 02 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-label-sm text-label-sm text-primary font-mono">02 // MOBILE</span>
+                                    <span
+                                        class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">smartphone</span>
+                                </div>
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface">Mobile App Engineering
+                                </h3>
+                                <ul class="space-y-1.5 font-body-sm text-body-sm text-on-surface-variant">
+                                    <li>• Native iOS (Swift) &amp; Android (Kotlin)</li>
+                                    <li>• Flutter Cross-Platform Mastery</li>
+                                    <li>• Offline-First Sync &amp; Low Latency</li>
+                                </ul>
+                            </div>
+                            <a class="pt-space-md font-label-md text-label-md text-primary font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all"
+                                data-path="services" href="#">
+                                <span>Explore Service</span>
+                                <span>→</span>
+                            </a>
+                        </div>
+                        <!-- Service 03 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-label-sm text-label-sm text-primary font-mono">03 //
+                                        COMMERCE</span>
+                                    <span
+                                        class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">shopping_bag</span>
+                                </div>
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface">E-Commerce &amp; Scaling
+                                </h3>
+                                <ul class="space-y-1.5 font-body-sm text-body-sm text-on-surface-variant">
+                                    <li>• Shopify Plus Custom Hydrogen</li>
+                                    <li>• High-Volume Checkout Workflows</li>
+                                    <li>• ERP &amp; Fulfillment Sync Engines</li>
+                                </ul>
+                            </div>
+                            <a class="pt-space-md font-label-md text-label-md text-primary font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all"
+                                data-path="services" href="#">
+                                <span>Explore Service</span>
+                                <span>→</span>
+                            </a>
+                        </div>
+                        <!-- Service 04 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-label-sm text-label-sm text-primary font-mono">04 // GROWTH</span>
+                                    <span
+                                        class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">query_stats</span>
+                                </div>
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface">Digital Marketing &amp;
+                                    CRO</h3>
+                                <ul class="space-y-1.5 font-body-sm text-body-sm text-on-surface-variant">
+                                    <li>• Meta &amp; Google Ads at Scale</li>
+                                    <li>• Algorithmic SEO &amp; Content Hubs</li>
+                                    <li>• Multivariate Funnel Optimization</li>
+                                </ul>
+                            </div>
+                            <a class="pt-space-md font-label-md text-label-md text-primary font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all"
+                                data-path="services" href="#">
+                                <span>Explore Service</span>
+                                <span>→</span>
+                            </a>
+                        </div>
+                        <!-- Service 05 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-label-sm text-label-sm text-primary font-mono">05 //
+                                        INTELLIGENCE</span>
+                                    <span
+                                        class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">smart_toy</span>
+                                </div>
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface">AI &amp; Enterprise
+                                    Automations</h3>
+                                <ul class="space-y-1.5 font-body-sm text-body-sm text-on-surface-variant">
+                                    <li>• LangChain, LlamaIndex &amp; RAG</li>
+                                    <li>• Autonomous Ops &amp; RPA Bots</li>
+                                    <li>• Computer Vision &amp; OCR Pipelines</li>
+                                </ul>
+                            </div>
+                            <a class="pt-space-md font-label-md text-label-md text-primary font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all"
+                                data-path="services" href="#">
+                                <span>Explore Service</span>
+                                <span>→</span>
+                            </a>
+                        </div>
+                        <!-- Service 06 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-label-sm text-label-sm text-primary font-mono">06 //
+                                        EXPERIENCE</span>
+                                    <span
+                                        class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">design_services</span>
+                                </div>
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface">UI/UX &amp; Product Design
+                                </h3>
+                                <ul class="space-y-1.5 font-body-sm text-body-sm text-on-surface-variant">
+                                    <li>• Enterprise Design Systems</li>
+                                    <li>• User Journey Mapping &amp; Wireframes</li>
+                                    <li>• High-Fidelity Interactive Prototypes</li>
+                                </ul>
+                            </div>
+                            <a class="pt-space-md font-label-md text-label-md text-primary font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all"
+                                data-path="services" href="#">
+                                <span>Explore Service</span>
+                                <span>→</span>
+                            </a>
+                        </div>
+                        <!-- Service 07 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-label-sm text-label-sm text-primary font-mono">07 //
+                                        CREATIVE</span>
+                                    <span
+                                        class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">movie</span>
+                                </div>
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface">Creative Video &amp;
+                                    Branding</h3>
+                                <ul class="space-y-1.5 font-body-sm text-body-sm text-on-surface-variant">
+                                    <li>• AI-Enhanced UGC Ad Creatives</li>
+                                    <li>• 3D Motion Graphics &amp; Spline</li>
+                                    <li>• Visual Brand Identity Systems</li>
+                                </ul>
+                            </div>
+                            <a class="pt-space-md font-label-md text-label-md text-primary font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all"
+                                data-path="services" href="#">
+                                <span>Explore Service</span>
+                                <span>→</span>
+                            </a>
+                        </div>
+                        <!-- Service 08 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-label-sm text-label-sm text-primary font-mono">08 // SQUADS</span>
+                                    <span
+                                        class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">group_add</span>
+                                </div>
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface">Staff Augmentation &amp;
+                                    Pods</h3>
+                                <ul class="space-y-1.5 font-body-sm text-body-sm text-on-surface-variant">
+                                    <li>• Top 3% Screened Developers</li>
+                                    <li>• Zero-Overhead Ramp in 48-72h</li>
+                                    <li>• Fully Aligned to Time Zones</li>
+                                </ul>
+                            </div>
+                            <a class="pt-space-md font-label-md text-label-md text-primary font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all"
+                                data-path="hire-developer" href="#">
+                                <span>Hire Developers</span>
+                                <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 5: FEATURED WORK / CASE STUDIES -->
+            <section class="w-full px-margin py-space-xl bg-surface">
+                <div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+                    <!-- Section Title & Dynamic Filter Tabs -->
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+                        <div class="flex flex-col gap-space-xs">
+                            <span
+                                class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-widest">Proven
+                                Measurable ROI</span>
+                            <h2 class="font-display text-display text-on-surface">Featured Case Studies</h2>
+                        </div>
+                        <!-- Interactive Filter Strip -->
+                        <div class="flex flex-wrap items-center gap-2 p-1.5 rounded-lg bg-surface-container-low"
+                            id="case-study-filters">
+                            <button
+                                class="px-3.5 py-1.5 rounded font-label-sm text-label-sm font-semibold bg-surface-container-lowest text-primary shadow-sm"
+                                type="button">All Work</button>
+                            <button
+                                class="px-3.5 py-1.5 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface"
+                                type="button">Web Apps</button>
+                            <button
+                                class="px-3.5 py-1.5 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface"
+                                type="button">Mobile</button>
+                            <button
+                                class="px-3.5 py-1.5 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface"
+                                type="button">E-commerce</button>
+                            <button
+                                class="px-3.5 py-1.5 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface"
+                                type="button">AI Systems</button>
+                        </div>
+                    </div>
+                    <!-- 4 Case Study Cards Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+                        <!-- Case Study 1 -->
+                        <div
+                            class="rounded-xl overflow-hidden bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col">
+                            <div class="relative h-64 w-full bg-surface-container-low overflow-hidden">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="High-fashion modern minimalist luxury apparel website showcased on sleek clean tablet interface, high dynamic range editorial design with neutral beige, charcoal and crisp electric cyan accents, premium studio lighting"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7lsEg31e7OMSppgyqtYpLY1SKTeO6MN6mkHGucq070Su4F6VV-7byNGNAIQPlBzd0QAHVZI2XiRXOMxjvXKdGV7s-Mi900EBL6LeAFsQSkaEV2JTbY5drHRdcpSCtkg-v5LOpbmnPnY3o11nW1MhJSK9ex6EjKl-NA9qLT2_ZnjdBZ_5gayIRjHcN04dj_5xAutZcPRXvWnh4uQCOXnfCHAOkzAvdNieXoWwEBus">
+                                <div
+                                    class="absolute top-4 left-4 px-3 py-1 rounded bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-primary font-bold">
+                                    SHOPIFY PLUS • HEADLESS
+                                </div>
+                                <div
+                                    class="absolute bottom-4 right-4 px-3 py-1 rounded bg-surface-container-lowest text-emerald-600 font-label-sm text-label-sm font-bold shadow-sm">
+                                    +140% CONVERSION LIFT
+                                </div>
+                            </div>
+                            <div class="p-space-lg flex flex-col gap-space-sm flex-1 justify-between">
+                                <div class="flex flex-col gap-space-xs">
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant font-mono">ITALO
+                                        MILAN // LUXURY E-COMMERCE</span>
+                                    <h3 class="font-headline-md text-headline-md text-on-surface">High-Conversion Global
+                                        Store Scaling &amp; Multi-Currency Engine</h3>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                        Re-engineered the global digital flagship store from monolithic legacy systems
+                                        to headless Shopify with 98 Lighthouse performance score, sub-second checkout,
+                                        and international fulfillment synchronizers.
+                                    </p>
+                                </div>
+                                <div class="pt-space-sm flex items-center justify-between">
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Deployment: 10
+                                        Weeks</span>
+                                    <a class="font-label-md text-label-md text-primary font-semibold flex items-center gap-1 hover:underline"
+                                        data-path="case-studies" href="#">
+                                        <span>View Full Case Study</span>
+                                        <span class="material-symbols-outlined text-sm">north_east</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Case Study 2 -->
+                        <div
+                            class="rounded-xl overflow-hidden bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col">
+                            <div class="relative h-64 w-full bg-surface-container-low overflow-hidden">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="Futuristic fleet management and commercial vehicle security platform dashboard UI with telemetry sensors, real-time map tracking, clean white and sky blue accents, high precision technical data layout"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRhi3INl7nIl5tWWj7Hm2ZNlV2E40u11cbL-SIEyD5Kz4n4kfKayHyOms-D2FmMArlLIso8RDSQwZ-24rByLXNksvwZcAqqOzE3OpgvCyoOdakRJGw0lJGOfO2-l3hdbx2GnY75-zm4J6C4YA_L-ZOEp1jdcjXXFr265wbVTbKHMO7KsUZ9aoboDx68KD1vIJtofYyCwCfXAKtB1YILm1FchSPokGzxBcVs1kjX94">
+                                <div
+                                    class="absolute top-4 left-4 px-3 py-1 rounded bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-primary font-bold">
+                                    WEB APP • IOT PLATFORM
+                                </div>
+                                <div
+                                    class="absolute bottom-4 right-4 px-3 py-1 rounded bg-surface-container-lowest text-emerald-600 font-label-sm text-label-sm font-bold shadow-sm">
+                                    45,000+ ACTIVE VEHICLES
+                                </div>
+                            </div>
+                            <div class="p-space-lg flex flex-col gap-space-sm flex-1 justify-between">
+                                <div class="flex flex-col gap-space-xs">
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant font-mono">VANLOCK
+                                        SECURITY // TELEMATICS &amp; IOT</span>
+                                    <h3 class="font-headline-md text-headline-md text-on-surface">Commercial Fleet Lock
+                                        Security &amp; Instant Booking Portal</h3>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                        Architected an end-to-end commercial fleet security portal with IoT hardware
+                                        synchronization, digital service bookings, and dispatch logistics for UK
+                                        commercial transport operators.
+                                    </p>
+                                </div>
+                                <div class="pt-space-sm flex items-center justify-between">
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Tech: Next.js,
+                                        Node.js, AWS IoT</span>
+                                    <a class="font-label-md text-label-md text-primary font-semibold flex items-center gap-1 hover:underline"
+                                        data-path="case-studies" href="#">
+                                        <span>View Full Case Study</span>
+                                        <span class="material-symbols-outlined text-sm">north_east</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Case Study 3 -->
+                        <div
+                            class="rounded-xl overflow-hidden bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col">
+                            <div class="relative h-64 w-full bg-surface-container-low overflow-hidden">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="Ultra-luxury architectural engineering and modern real estate development web platform showcasing 3D building renderings, clinical clean white background, architectural typography and light cyan interactive UI badges"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0XHSbXSBMBEcSdv_DzO-DwVs8sDjBJVkzGVitO_3pOllDdG0jhKdr9XWBdsFprbRvaI_adewmzB_buO2lsgpb2n8j0CZlq_tjJRteIaM9OlHb97AP-B6nYpnFnazqr7jmG-n0Mgxd1E5JHApvW4tayMPdePKW4uJ0in4s-TFX0evw50uQZ7brp7lrCVh-kZPgCcR4oyagYbRMgp7R64jMb0Phc2JNO4eet5OaxoA">
+                                <div
+                                    class="absolute top-4 left-4 px-3 py-1 rounded bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-primary font-bold">
+                                    NEXT.JS • 3D IMMERSIVE
+                                </div>
+                                <div
+                                    class="absolute bottom-4 right-4 px-3 py-1 rounded bg-surface-container-lowest text-emerald-600 font-label-sm text-label-sm font-bold shadow-sm">
+                                    $82M+ PIPELINE INVENTORY
+                                </div>
+                            </div>
+                            <div class="p-space-lg flex flex-col gap-space-sm flex-1 justify-between">
+                                <div class="flex flex-col gap-space-xs">
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant font-mono">RUKAN
+                                        ALBAIT // REAL ESTATE PORTFOLIO</span>
+                                    <h3 class="font-headline-md text-headline-md text-on-surface">Modern Architectural
+                                        Development &amp; Property Platform</h3>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                        Crafted a high-elegance real estate ecosystem for premier Middle Eastern
+                                        developments featuring 3D floor plan walk-throughs, buyer CRM integrations, and
+                                        multi-language support (AR/EN).
+                                    </p>
+                                </div>
+                                <div class="pt-space-sm flex items-center justify-between">
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Impact: 3.4x
+                                        Inbound Lead Velocity</span>
+                                    <a class="font-label-md text-label-md text-primary font-semibold flex items-center gap-1 hover:underline"
+                                        data-path="case-studies" href="#">
+                                        <span>View Full Case Study</span>
+                                        <span class="material-symbols-outlined text-sm">north_east</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Case Study 4 -->
+                        <div
+                            class="rounded-xl overflow-hidden bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col">
+                            <div class="relative h-64 w-full bg-surface-container-low overflow-hidden">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="Luxury executive black limousine mobile app interface screens showing ride tracking, driver route maps, card payment confirmations, sharp high-contrast UI with dark mode preview against pristine light studio background"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeTyYYDCH5-3aM2oeABk9K2Re6bJ0tzM1cj57Qpxrpq5xfay0RFgNUiFD25Vea9IXYKX0Dg8eooP2r8OxvguDTlEuPrTmmLmUqZyhT4r8jfICfvY95nrjhSOZBIDkIgFZ5ZyWB43hen9rGSzhQnS3vTjNiDAKNhwGr9U54g_wWMe2UtHd2ZXY7aIDF2uXG4Tz6R6_H4tmqmDqYRWG01QoKHWHKUBuJoNYOulr1PV4">
+                                <div
+                                    class="absolute top-4 left-4 px-3 py-1 rounded bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-primary font-bold">
+                                    FLUTTER • STRIPE • REALTIME
+                                </div>
+                                <div
+                                    class="absolute bottom-4 right-4 px-3 py-1 rounded bg-surface-container-lowest text-emerald-600 font-label-sm text-label-sm font-bold shadow-sm">
+                                    99.98% DISPATCH UPTIME
+                                </div>
+                            </div>
+                            <div class="p-space-lg flex flex-col gap-space-sm flex-1 justify-between">
+                                <div class="flex flex-col gap-space-xs">
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant font-mono">BLACK
+                                        SEA LIMO // MOBILITY PLATFORM</span>
+                                    <h3 class="font-headline-md text-headline-md text-on-surface">VIP Executive
+                                        Chauffeur &amp; Airport Dispatch Booking Engine</h3>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                        Delivered dual mobile applications (Passenger &amp; Chauffeur) with automated
+                                        dynamic pricing, Stripe payment split escrows, flight telemetry synchronization,
+                                        and GPS turn-by-turn routing.
+                                    </p>
+                                </div>
+                                <div class="pt-space-sm flex items-center justify-between">
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Platform: iOS,
+                                        Android, Dispatch Web</span>
+                                    <a class="font-label-md text-label-md text-primary font-semibold flex items-center gap-1 hover:underline"
+                                        data-path="case-studies" href="#">
+                                        <span>View Full Case Study</span>
+                                        <span class="material-symbols-outlined text-sm">north_east</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 6: STAFF AUGMENTATION & ENGINEERING TALENT -->
+            <section class="w-full px-margin py-space-xl bg-surface-container-low">
+                <div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+                    <div class="flex flex-col gap-space-xs max-w-3xl">
+                        <span
+                            class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-widest">Flexible
+                            Scale Models</span>
+                        <h2 class="font-display text-display text-on-surface">Precision Talent on Demand</h2>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant">Choose between dedicated embedded
+                            squads or fixed-scope outcome delivery.</p>
+                    </div>
+                    <!-- Comparison Cards -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+                        <!-- Model A: Dedicated Team -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-md">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="px-3 py-1 rounded bg-surface-container text-primary font-label-sm text-label-sm font-bold">RECOMMENDED
+                                        FOR SCALE</span>
+                                    <span class="font-label-md text-label-md font-mono text-on-surface-variant">FLEXIBLE
+                                        SPRINT</span>
+                                </div>
+                                <h3 class="font-headline-md text-headline-md text-on-surface">Dedicated Agile
+                                    Engineering Squad</h3>
+                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                    High-output product squads (Frontend, Backend, AI Engineer, QA, Lead PM) embedded
+                                    directly into your tools. Scale up or down with 30-day flexibility.
+                                </p>
+                                <ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant pt-2">
+                                    <li class="flex items-center gap-2"><span
+                                            class="material-symbols-outlined text-primary text-base">check_circle</span>Direct
+                                        Slack/Jira/Git integration</li>
+                                    <li class="flex items-center gap-2"><span
+                                            class="material-symbols-outlined text-primary text-base">check_circle</span>Full
+                                        IP transfer &amp; automated daily code pushes</li>
+                                    <li class="flex items-center gap-2"><span
+                                            class="material-symbols-outlined text-primary text-base">check_circle</span>Overlapping
+                                        working hours with US/UK/EU timezones</li>
+                                </ul>
+                            </div>
+                            <a class="inline-flex items-center justify-center px-6 py-3 rounded bg-primary-container text-on-primary-container font-label-lg text-label-lg font-medium shadow-sm hover:bg-primary transition-all"
+                                data-path="hire-developer" href="#">
+                                <span>Assemble Your Squad</span>
+                            </a>
+                        </div>
+                        <!-- Model B: Fixed Scope Project -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-md">
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="px-3 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold">GUARANTEED
+                                        OUTCOME</span>
+                                    <span
+                                        class="font-label-md text-label-md font-mono text-on-surface-variant">MILESTONE
+                                        TIERS</span>
+                                </div>
+                                <h3 class="font-headline-md text-headline-md text-on-surface">Fixed-Price Turnkey
+                                    Project</h3>
+                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                    Rigidly scoped deliverables with strict deadlines and pre-agreed financial
+                                    commitments. Ideal for MVPs, platform revamps, and isolated AI module deliveries.
+                                </p>
+                                <ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant pt-2">
+                                    <li class="flex items-center gap-2"><span
+                                            class="material-symbols-outlined text-primary text-base">check_circle</span>Strict
+                                        architecture documentation &amp; design sign-off</li>
+                                    <li class="flex items-center gap-2"><span
+                                            class="material-symbols-outlined text-primary text-base">check_circle</span>Zero
+                                        budget creep guarantee</li>
+                                    <li class="flex items-center gap-2"><span
+                                            class="material-symbols-outlined text-primary text-base">check_circle</span>30-day
+                                        post-launch warranty &amp; hyper-care SLA</li>
+                                </ul>
+                            </div>
+                            <a class="inline-flex items-center justify-center px-6 py-3 rounded bg-surface-container text-on-surface font-label-lg text-label-lg font-medium shadow-sm hover:text-primary transition-all"
+                                data-path="book-consultation" href="#">
+                                <span>Request Fixed Quote</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Talent Snapshot Strip -->
+                    <div class="flex flex-col gap-space-md">
+                        <span
+                            class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Featured
+                            Core Leaders &amp; Architects</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+                            <div
+                                class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-label-sm text-label-sm text-primary font-mono font-bold">STAFF
+                                        ARCHITECT</span>
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                </div>
+                                <span class="font-headline-sm text-headline-sm text-on-surface">Noman Tariq</span>
+                                <span class="font-body-sm text-body-sm text-on-surface-variant">Lead Backend &amp; AI
+                                    Systems (Python / Go / LangChain)</span>
+                            </div>
+                            <div
+                                class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-label-sm text-label-sm text-primary font-mono font-bold">DESIGN
+                                        DIRECTOR</span>
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                </div>
+                                <span class="font-headline-sm text-headline-sm text-on-surface">Asfand Yar</span>
+                                <span class="font-body-sm text-body-sm text-on-surface-variant">Principal UI/UX &amp;
+                                    Design Systems Lead</span>
+                            </div>
+                            <div
+                                class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-label-sm text-label-sm text-primary font-mono font-bold">MOBILE
+                                        PRINCIPAL</span>
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                </div>
+                                <span class="font-headline-sm text-headline-sm text-on-surface">Asim Tariq</span>
+                                <span class="font-body-sm text-body-sm text-on-surface-variant">Staff Mobile Engineer
+                                    (Flutter / iOS / Android)</span>
+                            </div>
+                            <div
+                                class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-label-sm text-label-sm text-primary font-mono font-bold">PLATFORM
+                                        LEAD</span>
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                </div>
+                                <span class="font-headline-sm text-headline-sm text-on-surface">Muhammad Haris</span>
+                                <span class="font-body-sm text-body-sm text-on-surface-variant">Lead Headless CMS &amp;
+                                    Modern Frontends</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 7: 6-STEP PRECISION PROCESS -->
+            <section class="w-full px-margin py-space-xl bg-surface">
+                <div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+                    <div class="flex flex-col gap-space-xs max-w-3xl">
+                        <span
+                            class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-widest">Engineering
+                            Methodology</span>
+                        <h2 class="font-display text-display text-on-surface">6-Step Execution Lifecycle</h2>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant">How we transform ambitious scopes
+                            into high-velocity reality without friction.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+                        <!-- Step 1 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm relative">
+                            <span
+                                class="font-headline-lg text-headline-lg text-primary/30 font-bold font-mono">01</span>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface">Ideate &amp; Discover</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Comprehensive discovery
+                                sprints, business architecture modeling, KPI alignment, and tech-stack feasibility
+                                analysis.</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm relative">
+                            <span
+                                class="font-headline-lg text-headline-lg text-primary/30 font-bold font-mono">02</span>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface">Prototype &amp; UX</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">High-fidelity wireframes,
+                                interactive user testing flows, and design system components finalized in Figma before a
+                                single line of code.</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm relative">
+                            <span
+                                class="font-headline-lg text-headline-lg text-primary/30 font-bold font-mono">03</span>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface">Agile Development</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Bi-weekly sprints, pull request
+                                reviews, automated CI/CD builds, and constant visibility via Slack channels and staging
+                                deployments.</p>
+                        </div>
+                        <!-- Step 4 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm relative">
+                            <span
+                                class="font-headline-lg text-headline-lg text-primary/30 font-bold font-mono">04</span>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface">Rigorous QA &amp; Testing</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Automated end-to-end
+                                Cypress/Playwright suites, regression testing, load balancing stress tests, and SOC2
+                                compliance audits.</p>
+                        </div>
+                        <!-- Step 5 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm relative">
+                            <span
+                                class="font-headline-lg text-headline-lg text-primary/30 font-bold font-mono">05</span>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface">Strategic Launch</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Zero-downtime blue/green
+                                deployments, DNS migrations, conversion tracking tagging, and live infrastructure
+                                monitoring on day one.</p>
+                        </div>
+                        <!-- Step 6 -->
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm relative">
+                            <span
+                                class="font-headline-lg text-headline-lg text-primary/30 font-bold font-mono">06</span>
+                            <h3 class="font-headline-sm text-headline-sm text-on-surface">24/7 Support &amp; Scale</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Dedicated maintenance pods,
+                                monthly performance audits, continuous CRO experiments, and instant security patch
+                                cycles.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 8: TECH STACK MATRIX -->
+            <section class="w-full px-margin py-space-xl bg-surface-container-low">
+                <div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+                    <div class="flex flex-col gap-space-xs max-w-2xl">
+                        <span
+                            class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-widest">Architectural
+                            Foundation</span>
+                        <h2 class="font-display text-display text-on-surface">Technical Stack Matrix</h2>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant">Battle-tested tools and frameworks
+                            selected strictly for velocity, scale, and long-term stability.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-md">
+                        <!-- Frontend -->
+                        <div
+                            class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">browser_updated</span>
+                                <h4 class="font-headline-sm text-headline-sm text-on-surface">Frontend</h4>
+                            </div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">Next.js
+                                    15</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">React
+                                    19</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">TypeScript</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">Tailwind
+                                    CSS</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">Vue
+                                    / Nuxt</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">GraphQL</span>
+                            </div>
+                        </div>
+                        <!-- Backend -->
+                        <div
+                            class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">dns</span>
+                                <h4 class="font-headline-sm text-headline-sm text-on-surface">Backend</h4>
+                            </div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">Node.js</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">Python</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">Django</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">Go
+                                    (Golang)</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">PostgreSQL</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">Redis</span>
+                            </div>
+                        </div>
+                        <!-- Mobile -->
+                        <div
+                            class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">phone_iphone</span>
+                                <h4 class="font-headline-sm text-headline-sm text-on-surface">Mobile</h4>
+                            </div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">Flutter</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">React
+                                    Native</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">Swift
+                                    (iOS)</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">Kotlin
+                                    (Android)</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">Firebase</span>
+                            </div>
+                        </div>
+                        <!-- AI & Data -->
+                        <div
+                            class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">memory</span>
+                                <h4 class="font-headline-sm text-headline-sm text-on-surface">AI &amp; Data</h4>
+                            </div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">OpenAI
+                                    API</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">LangChain</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">PyTorch</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">Pinecone</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">HuggingFace</span>
+                            </div>
+                        </div>
+                        <!-- Cloud & DevOps -->
+                        <div
+                            class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">cloud</span>
+                                <h4 class="font-headline-sm text-headline-sm text-on-surface">Cloud &amp; Ops</h4>
+                            </div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">AWS</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">GCP</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">Docker</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">Kubernetes</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">Terraform</span>
+                                <span
+                                    class="px-2 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface">GitHub
+                                    Actions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 9: GLOBAL HUBS & TECHNICAL CONSULTATION FORM -->
+            <section class="w-full px-margin py-space-xl bg-surface">
+                <div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+                    <!-- Section Intro -->
+                    <div class="flex flex-col gap-space-xs max-w-2xl">
+                        <span
+                            class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-widest">Global
+                            Reach • Local Precision</span>
+                        <h2 class="font-display text-display text-on-surface">Initiate an Engineering Consultation</h2>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant">Speak directly with a Senior
+                            Technical Director. We evaluate your requirements and provide an architecture estimate
+                            within 24 hours.</p>
+                    </div>
+                    <!-- Split Layout: Regional Hubs vs Interactive Form -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+                        <!-- Left: Hub Directory -->
+                        <div class="lg:col-span-5 flex flex-col gap-space-md">
+                            <div
+                                class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface">Worldwide Locations</h3>
+                                <div class="flex flex-col gap-space-sm divide-y-0">
+                                    <div
+                                        class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+                                        <div class="flex items-center justify-between">
+                                            <span class="font-headline-sm text-headline-sm text-on-surface">United
+                                                States</span>
+                                            <span
+                                                class="font-label-sm text-label-sm text-primary font-mono font-semibold">PST
+                                                / EST</span>
+                                        </div>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant">Sacramento &amp;
+                                            San Francisco Tech Corridor</p>
+                                    </div>
+                                    <div
+                                        class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+                                        <div class="flex items-center justify-between">
+                                            <span class="font-headline-sm text-headline-sm text-on-surface">United
+                                                Kingdom</span>
+                                            <span
+                                                class="font-label-sm text-label-sm text-primary font-mono font-semibold">GMT
+                                                / BST</span>
+                                        </div>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant">London Tech Square
+                                            Delivery Studio</p>
+                                    </div>
+                                    <div
+                                        class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+                                        <div class="flex items-center justify-between">
+                                            <span class="font-headline-sm text-headline-sm text-on-surface">United Arab
+                                                Emirates</span>
+                                            <span
+                                                class="font-label-sm text-label-sm text-primary font-mono font-semibold">GST
+                                                (UTC+4)</span>
+                                        </div>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant">Dubai Internet City
+                                            &amp; Sharjah Tech District</p>
+                                    </div>
+                                    <div
+                                        class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+                                        <div class="flex items-center justify-between">
+                                            <span class="font-headline-sm text-headline-sm text-on-surface">Nordics
+                                                Hub</span>
+                                            <span
+                                                class="font-label-sm text-label-sm text-primary font-mono font-semibold">CET</span>
+                                        </div>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant">Stockholm
+                                            Engineering Studio, Sweden</p>
+                                    </div>
+                                    <div
+                                        class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+                                        <div class="flex items-center justify-between">
+                                            <span class="font-headline-sm text-headline-sm text-on-surface">Delivery
+                                                Center</span>
+                                            <span
+                                                class="font-label-sm text-label-sm text-primary font-mono font-semibold">PKT
+                                                (UTC+5)</span>
+                                        </div>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant">Abbottabad &amp;
+                                            Islamabad Innovation Labs</p>
+                                    </div>
+                                </div>
+                                <!-- Direct Contact details -->
+                                <div
+                                    class="pt-space-sm flex flex-col gap-2 font-label-md text-label-md text-on-surface-variant">
+                                    <div class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-primary text-base">mail</span>
+                                        <span class="text-on-surface font-semibold">info@trivex.agency</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-primary text-base">forum</span>
+                                        <span>Direct WhatsApp Engineering Concierge Available</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Right: Technical Consultation Form -->
+                        <div
+                            class="lg:col-span-7 p-space-lg rounded-xl bg-surface-container-lowest shadow-md flex flex-col gap-space-md">
+                            <div class="flex flex-col gap-1">
+                                <span class="font-label-sm text-label-sm text-primary font-mono font-bold">PROJECT
+                                    ENGAGEMENT SPEC</span>
+                                <h3 class="font-headline-md text-headline-md text-on-surface">Tell us about your
+                                    requirements</h3>
+                            </div>
+                            <form class="flex flex-col gap-space-md"
+                                onsubmit="event.preventDefault(); alert('Consultation request received. A Technical Lead will reach out in &lt; 24h.');">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                                    <div class="flex flex-col gap-1">
+                                        <label
+                                            class="font-label-sm text-label-sm text-on-surface-variant font-semibold">FULL
+                                            NAME *</label>
+                                        <input
+                                            class="w-full px-3 py-2.5 rounded bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-sm outline-none focus:ring-2 focus:ring-primary-container"
+                                            placeholder="e.g. Alex Henderson" required="" type="text">
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <label
+                                            class="font-label-sm text-label-sm text-on-surface-variant font-semibold">WORK
+                                            EMAIL *</label>
+                                        <input
+                                            class="w-full px-3 py-2.5 rounded bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-sm outline-none focus:ring-2 focus:ring-primary-container"
+                                            placeholder="alex@company.com" required="" type="email">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                                    <div class="flex flex-col gap-1">
+                                        <label
+                                            class="font-label-sm text-label-sm text-on-surface-variant font-semibold">PRIMARY
+                                            REQUIREMENT *</label>
+                                        <select
+                                            class="w-full px-3 py-2.5 rounded bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-sm outline-none focus:ring-2 focus:ring-primary-container">
+                                            <option>Full-Stack Web App Development</option>
+                                            <option>Mobile App (Flutter / Native)</option>
+                                            <option>E-commerce Architecture &amp; Shopify Plus</option>
+                                            <option>AI Automation &amp; LLM Systems</option>
+                                            <option>Dedicated Agile Engineering Pod</option>
+                                            <option>Growth Marketing &amp; Paid Scaling</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <label
+                                            class="font-label-sm text-label-sm text-on-surface-variant font-semibold">ESTIMATED
+                                            BUDGET</label>
+                                        <select
+                                            class="w-full px-3 py-2.5 rounded bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-sm outline-none focus:ring-2 focus:ring-primary-container">
+                                            <option>$10k - $25k</option>
+                                            <option>$25k - $50k</option>
+                                            <option>$50k - $150k</option>
+                                            <option>$150k+</option>
+                                            <option>Monthly Retainer / Squad</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <label
+                                        class="font-label-sm text-label-sm text-on-surface-variant font-semibold">PROJECT
+                                        SUMMARY / TECHNICAL SCOPE</label>
+                                    <textarea
+                                        class="w-full px-3 py-2.5 rounded bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-sm outline-none focus:ring-2 focus:ring-primary-container"
+                                        placeholder="Describe the current architecture, timelines, key integrations, or target metrics..."
+                                        rows="4"></textarea>
+                                </div>
+                                <div
+                                    class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+                                    <div class="flex items-center gap-2">
+                                        <input checked="" class="w-4 h-4 rounded text-primary focus:ring-0" id="nda"
+                                            type="checkbox">
+                                        <label class="font-label-sm text-label-sm text-on-surface-variant"
+                                            for="nda">Standard NDA protection applies automatically</label>
+                                    </div>
+                                    <button
+                                        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded bg-primary-container text-on-primary-container font-label-lg text-label-lg font-medium shadow-md hover:bg-primary transition-all"
+                                        type="submit">
+                                        <span>Submit Technical Scope</span>
+                                        <span class="material-symbols-outlined text-base">send</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Interactive script for case-study filter visual feedback -->
+            <script>
+                document.querySelectorAll('#case-study-filters button').forEach(button => {
+                    button.addEventListener('click', () => {
+                        document.querySelectorAll('#case-study-filters button').forEach(b => {
+                            b.className = 'px-3.5 py-1.5 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface';
+                        });
+                        button.className = 'px-3.5 py-1.5 rounded font-label-sm text-label-sm font-semibold bg-surface-container-lowest text-primary shadow-sm';
+                    });
+                });
+            </script>
+        </div>
+    </main>
+    <footer class="w-full bg-slate-100 border-t border-slate-200 text-slate-700">
+        <div class="w-full px-margin py-space-xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl">
+                <div class="space-y-space-md">
+                    <div
+                        class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface flex items-center">
+                        TRIVE<span class="text-primary-container font-headline-md">X</span></div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed max-w-sm">High-velocity
+                        engineering and global technology consultancy accelerating enterprise platforms, AI
+                        infrastructure, and mission-critical cloud solutions.</p>
+                    <div class="pt-2 space-y-1.5 font-label-md text-label-md text-on-surface-variant">
+                        <div class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-sm text-primary">mail</span><span>contact@trivex.group</span>
+                        </div>
+                        <div class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-sm text-primary">phone_in_talk</span><span>+1
+                                (800) 874-8390</span></div>
+                        <div class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-sm text-primary">dns</span><span
+                                class="text-primary font-mono">ISO 27001 &amp; SOC 2 TYPE II CERTIFIED</span></div>
+                    </div>
+                </div>
+                <div class="space-y-space-md">
+                    <h4 class="font-headline-sm text-headline-sm text-on-surface">Capabilities</h4>
+                    <ul class="space-y-2.5 font-body-sm text-body-sm">
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="services"
+                                href="#">Enterprise Architecture &amp; Cloud</a></li>
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="services"
+                                href="#">Generative AI &amp; Data Platforms</a></li>
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="services"
+                                href="#">Full-Cycle Product Engineering</a></li>
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="services"
+                                href="#">Legacy Migration &amp; Refactoring</a></li>
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="services"
+                                href="#">DevSecOps &amp; Platform Automation</a></li>
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors"
+                                data-path="hire-developer" href="#">Dedicated Engineering Squads</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-space-md">
+                    <h4 class="font-headline-sm text-headline-sm text-on-surface">Tech Stacks</h4>
+                    <ul class="space-y-2.5 font-body-sm text-body-sm">
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="services"
+                                href="#">Next.js / React / TypeScript</a></li>
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="services"
+                                href="#">Go / Rust / Distributed Systems</a></li>
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="services"
+                                href="#">Python / PyTorch / LLMOps</a></li>
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="services"
+                                href="#">AWS / GCP / Azure Hybrid Cloud</a></li>
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="services"
+                                href="#">Kubernetes / Terraform / Kafka</a></li>
+                        <li><a class="text-on-surface-variant hover:text-primary transition-colors" data-path="services"
+                                href="#">PostgreSQL / Snowflake / Redis</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-space-md">
+                    <h4 class="font-headline-sm text-headline-sm text-on-surface">Global Delivery Hubs</h4>
+                    <div class="space-y-3 font-body-sm text-body-sm">
+                        <div class="border-l-2 border-primary-container pl-3">
+                            <div class="font-label-md text-label-md font-semibold text-on-surface">United States</div>
+                            <div class="text-on-surface-variant text-xs">New York • San Francisco • Austin</div>
+                        </div>
+                        <div class="border-l-2 border-primary-container pl-3">
+                            <div class="font-label-md text-label-md font-semibold text-on-surface">United Kingdom &amp;
+                                Sweden</div>
+                            <div class="text-on-surface-variant text-xs">London Tech Square • Stockholm Hub</div>
+                        </div>
+                        <div class="border-l-2 border-primary-container pl-3">
+                            <div class="font-label-md text-label-md font-semibold text-on-surface">United Arab Emirates
+                            </div>
+                            <div class="text-on-surface-variant text-xs">Dubai Internet City HQ</div>
+                        </div>
+                        <div class="border-l-2 border-primary-container pl-3">
+                            <div class="font-label-md text-label-md font-semibold text-on-surface">Pakistan Delivery
+                                Center</div>
+                            <div class="text-on-surface-variant text-xs">Islamabad • Lahore Center of Excellence</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="pt-space-lg border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="font-label-sm text-label-sm text-on-surface-variant">© 2026 TRIVEX Global Technology Group.
+                    All rights reserved. Precision-engineered enterprise solutions.</div>
+                <div class="flex items-center gap-space-lg font-label-sm text-label-sm text-on-surface-variant"><a
+                        class="hover:text-primary transition-colors" data-path="privacy-policy" href="#">Privacy
+                        Policy</a><a class="hover:text-primary transition-colors" data-path="terms-of-service"
+                        href="#">Terms of Service</a><a class="hover:text-primary transition-colors"
+                        data-path="security" href="#">Security &amp; Compliance</a><a
+                        class="hover:text-primary transition-colors" data-path="sitemap" href="#">Sitemap</a></div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

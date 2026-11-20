@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRIVEX Headers Showcase (Light & Dark Mode)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-brand {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#0b0e14] text-slate-100 min-h-screen py-10 px-4 md:px-8 space-y-12">
+
+  <!-- Header Info / Title Bar -->
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-slate-800/80 gap-4">
+    <div>
+      <div class="flex items-center gap-2 mb-2">
+        <span class="inline-flex items-center px-2.5 py-1 rounded text-xs font-semibold tracking-wider uppercase bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+          Component Export
+        </span>
+        <span class="text-xs text-slate-400 font-mono">v1.0.0 // Header Navigation Bar</span>
+      </div>
+      <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white font-brand">
+        TRIVEX Global Header Components
+      </h1>
+      <p class="text-sm text-slate-400 mt-1">
+        Selected screens (Light Mode & Dark Mode) se exact pixel-perfect standalone header components.
+      </p>
+    </div>
+    <div class="flex items-center gap-3 self-start md:self-auto">
+      <div class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-medium text-slate-300 flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Fully Responsive &amp; Interactive
+      </div>
+    </div>
+  </div>
+
+  <!-- VARIANT 1: DARK MODE HEADER (Exact match from SCREEN_11) -->
+  <div class="max-w-7xl mx-auto space-y-3">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <span class="w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_8px_#00d2ff]"></span>
+        <h2 class="text-base font-bold text-white tracking-wide uppercase font-mono text-xs text-cyan-400">
+          Option 01: TRIVEX Dark Mode Header (Obsidian Kinetic)
+        </h2>
+      </div>
+      <span class="text-xs font-mono text-slate-500">Dark / Glassmorphism Background (#080B10)</span>
+    </div>
+
+    <!-- The Exact Dark Header Component -->
+    <header class="w-full bg-[#080B10]/95 backdrop-blur-md border border-[#1E2633] rounded-xl shadow-2xl transition-all duration-200">
+      <div class="w-full px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        
+        <!-- Left: Brand Logo -->
+        <a href="#" class="flex items-center gap-2 group focus:outline-none">
+          <div class="flex items-center tracking-tighter">
+            <span class="text-2xl sm:text-3xl font-black text-white tracking-wider font-brand">TRIVE</span>
+            <span class="text-2xl sm:text-3xl font-black text-[#00D2FF] tracking-wider font-brand">X</span>
+          </div>
+          <span class="px-1.5 py-0.5 text-[9px] font-bold tracking-widest bg-[#00D2FF]/10 text-[#00D2FF] border border-[#00D2FF]/30 rounded uppercase font-mono">
+            GLOBAL
+          </span>
+        </a>
+
+        <!-- Center: Nav Items -->
+        <nav class="hidden md:flex items-center space-x-7 lg:space-x-8">
+          <a href="#" class="text-sm font-semibold text-[#00D2FF] border-b-2 border-[#00D2FF] pb-1 transition-colors">
+            Home
+          </a>
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+            About Us
+          </a>
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+            Services
+          </a>
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+            Our Work / Case Studies
+          </a>
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+            Industries
+          </a>
+          <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+            Careers
+          </a>
+        </nav>
+
+        <!-- Right: Theme Switcher & Actions -->
+        <div class="flex items-center space-x-3 sm:space-x-4">
+          <!-- Dark/Light Theme Toggle Pill -->
+          <div class="flex items-center bg-[#10141D] border border-[#1E2633] rounded-full p-1 shadow-inner">
+            <button class="p-1.5 rounded-full text-slate-400 hover:text-white hover:bg-[#19202E] transition-colors" title="Switch to Light Mode">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </button>
+            <button class="p-1.5 rounded-full bg-[#00D2FF] text-black shadow-sm" title="Dark Mode Active">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Primary Book Consultation CTA Button -->
+          <a href="#consultation" class="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold bg-[#00D2FF] hover:bg-[#2fe0ff] text-black shadow-[0_0_20px_rgba(0,210,255,0.35)] transition-all hover:scale-[1.02] active:scale-[0.98]">
+            Book a Free Consultation
+          </a>
+
+          <!-- Mobile Hamburger Menu Button -->
+          <button class="md:hidden p-2 rounded-lg bg-[#10141D] text-slate-300 border border-[#1E2633] hover:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </header>
+  </div>
+
+  <!-- VARIANT 2: LIGHT MODE HEADER (Exact match from SCREEN_14) -->
+  <div class="max-w-7xl mx-auto space-y-3">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <span class="w-3 h-3 rounded-full bg-[#0088FF] shadow-[0_0_8px_#0088ff]"></span>
+        <h2 class="text-base font-bold text-white tracking-wide uppercase font-mono text-xs text-[#0088FF]">
+          Option 02: TRIVEX Light Mode Header (Precision Light)
+        </h2>
+      </div>
+      <span class="text-xs font-mono text-slate-500">Light / Clean White Surface (#FFFFFF &amp; #F8FAFC)</span>
+    </div>
+
+    <!-- The Exact Light Header Component (Rendered inside preview container) -->
+    <div class="p-4 bg-slate-900/60 rounded-2xl border border-slate-800">
+      <header class="w-full bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-xl shadow-lg transition-all duration-200">
+        <div class="w-full px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+          
+          <!-- Left: Brand Logo -->
+          <a href="#" class="flex items-center gap-2 group focus:outline-none">
+            <div class="flex items-center tracking-tighter">
+              <span class="text-2xl sm:text-3xl font-black text-[#0B0F17] tracking-wider font-brand">TRIVE</span>
+              <span class="text-2xl sm:text-3xl font-black text-[#0088FF] tracking-wider font-brand">X</span>
+            </div>
+            <span class="px-1.5 py-0.5 text-[9px] font-bold tracking-widest bg-[#0088FF]/10 text-[#0088FF] border border-[#0088FF]/20 rounded uppercase font-mono">
+              GLOBAL
+            </span>
+          </a>
+
+          <!-- Center: Nav Items -->
+          <nav class="hidden md:flex items-center space-x-7 lg:space-x-8">
+            <a href="#" class="text-sm font-semibold text-[#0088FF] border-b-2 border-[#0088FF] pb-1 transition-colors">
+              Home
+            </a>
+            <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+              About Us
+            </a>
+            <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+              Services
+            </a>
+            <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+              Our Work / Case Studies
+            </a>
+            <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+              Industries
+            </a>
+            <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+              Careers
+            </a>
+          </nav>
+
+          <!-- Right: Theme Switcher & Actions -->
+          <div class="flex items-center space-x-3 sm:space-x-4">
+            <!-- Light/Dark Theme Toggle Pill -->
+            <div class="flex items-center bg-slate-100 border border-slate-200 rounded-full p-1 shadow-inner">
+              <button class="p-1.5 rounded-full bg-[#0088FF] text-white shadow-sm" title="Light Mode Active">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </button>
+              <button class="p-1.5 rounded-full text-slate-500 hover:text-slate-800 hover:bg-slate-200 transition-colors" title="Switch to Dark Mode">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Primary Book Consultation CTA Button -->
+            <a href="#consultation" class="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold bg-[#0088FF] hover:bg-[#0070d6] text-white shadow-[0_4px_14px_rgba(0,136,255,0.35)] transition-all hover:scale-[1.02] active:scale-[0.98]">
+              Book a Free Consultation
+            </a>
+
+            <!-- Mobile Hamburger Menu Button -->
+            <button class="md:hidden p-2 rounded-lg bg-slate-100 text-slate-600 border border-slate-200 hover:text-slate-900">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+      </header>
+    </div>
+  </div>
+
+  <!-- Technical Spec & Code Quick Copy Section -->
+  <div class="max-w-7xl mx-auto pt-6 border-t border-slate-800/80">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-400">
+      <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/70">
+        <div class="font-bold text-white mb-1 flex items-center gap-2">
+          <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          Brand Logomark
+        </div>
+        <p class="leading-relaxed">Custom typography with stylized TRIVE + electric cyan/blue X and micro 'GLOBAL' tech badge matching the official brand identity.</p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/70">
+        <div class="font-bold text-white mb-1 flex items-center gap-2">
+          <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          Dual Theme Switcher
+        </div>
+        <p class="leading-relaxed">Interactive rounded pill switch between Sun (light) and Moon (dark) with distinct active states for each mode.</p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/70">
+        <div class="font-bold text-white mb-1 flex items-center gap-2">
+          <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          Conversion CTA
+        </div>
+        <p class="leading-relaxed">High-contrast 'Book a Free Consultation' primary action button with glowing shadows and micro-interaction states.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
