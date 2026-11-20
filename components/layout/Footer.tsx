@@ -12,10 +12,10 @@ export function Footer() {
 
   return (
     <footer
-      className="w-full transition-colors duration-200"
+      className="w-full transition-colors duration-200 backdrop-blur-xl"
       style={{
-        backgroundColor: isDark ? "#0B0E14" : "#f1f5f9",
-        borderTop: isDark ? "1px solid #1E2633" : "1px solid #e2e8f0",
+        backgroundColor: isDark ? "rgba(8, 11, 16, 0.85)" : "rgba(241, 245, 249, 0.85)",
+        borderTop: isDark ? "1px solid rgba(255, 255, 255, 0.08)" : "1px solid rgba(0, 0, 0, 0.06)",
         color: isDark ? "#94A3B8" : "#404754",
       }}
     >

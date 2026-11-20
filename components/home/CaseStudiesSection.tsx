@@ -91,10 +91,7 @@ export function CaseStudiesSection() {
   return (
     <section
       id="case-studies"
-      className="w-full px-margin py-space-xl transition-colors"
-      style={{
-        backgroundColor: theme === "dark" ? "#080B10" : "#f8f9ff",
-      }}
+      className="w-full px-margin py-space-xl transition-colors bg-transparent"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-space-xl">
         {/* Section Title & Dynamic Filter Tabs */}
@@ -116,12 +113,8 @@ export function CaseStudiesSection() {
 
           {/* Interactive Filter Strip */}
           <div
-            className="flex flex-wrap items-center gap-2 p-1.5 rounded-lg"
+            className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl glass-pill"
             id="case-study-filters"
-            style={{
-              backgroundColor: theme === "dark" ? "#0F141C" : "#eff4ff",
-              border: theme === "dark" ? "1px solid #1E2633" : "1px solid #cbd5e1",
-            }}
           >
             {FILTERS.map((f) => {
               const isActive = activeFilter === f;
@@ -160,11 +153,7 @@ export function CaseStudiesSection() {
           {filteredCaseStudies.map((cs) => (
             <div
               key={cs.id}
-              className="rounded-xl overflow-hidden shadow-sm hover:scale-[1.01] transition-all flex flex-col justify-between"
-              style={{
-                backgroundColor: theme === "dark" ? "#0F141C" : "#ffffff",
-                border: theme === "dark" ? "1px solid #1E2633" : "1px solid #e2e8f0",
-              }}
+              className="rounded-3xl overflow-hidden glass-panel glass-panel-interactive flex flex-col justify-between"
             >
               <div
                 className="relative h-64 w-full overflow-hidden"

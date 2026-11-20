@@ -10,44 +10,19 @@ export function HeroSection() {
   const isDark = theme === "dark";
 
   return (
-    <section className="relative w-full px-margin py-space-xl overflow-hidden bg-surface">
-      {/* Background Graphic with Gradient Fade */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          alt="Modern digital technology agency studio"
-          className="absolute right-0 top-0 h-full w-full lg:w-3/5 object-cover object-center"
-          style={{ opacity: 0.92, filter: "contrast(1.05) brightness(1.02)" }}
-          src="https://lh3.googleusercontent.com/aida/ALJJyrBzx4Y8noL01zqp5PYB66KSR1tjqH5ijNXJUsXiEyppbVMuMtGQW_DEkYKsXbe6YXt67YIdtcw20eKIt1KIJCY9qyiwMIg2mm3PhaCJtcsVmZbhBiregWNnmsu9mUp8dHPPn61SHrXXfjntBV7rEOtgKL3FQOM1KiXbRGqwv7ZU1RY6gPQCXDngrXeUqMgyk8MwNvsgbwW0SEpzZHvpPNj5i94GBD_aT6cVSHjhY4z5"
-        />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: isDark
-              ? "linear-gradient(to right, rgb(8, 11, 16) 0%, rgb(8, 11, 16) 38%, rgba(8, 11, 16, 0.75) 55%, rgba(8, 11, 16, 0.2) 75%, transparent 92%)"
-              : "linear-gradient(to right, rgba(248, 249, 255, 0.95) 0%, rgba(248, 249, 255, 0.9) 38%, rgba(248, 249, 255, 0.75) 55%, rgba(248, 249, 255, 0.3) 75%, transparent 92%)",
-          }}
-        />
-        <div
-          className="absolute inset-0 bg-gradient-to-t from-[#080B10] via-transparent to-transparent pointer-events-none"
-          style={{ height: "100%", opacity: isDark ? 0.7 : 0.2 }}
-        />
-        <div
-          className="absolute -top-32 right-10 w-96 h-96 rounded-full blur-3xl pointer-events-none"
-          style={{
-            background: "radial-gradient(circle, rgba(0, 210, 255, 0.18) 0%, transparent 70%)",
-          }}
-        />
-      </div>
+    <section className="relative w-full px-margin py-space-xl overflow-hidden bg-transparent">
+      {/* Subtle atmospheric ambient glow */}
+      <div
+        aria-hidden="true"
+        className="absolute top-10 right-0 w-[500px] h-[500px] rounded-full blur-3xl pointer-events-none opacity-40 dark:opacity-25 bg-gradient-to-br from-cyan-500/30 via-blue-500/15 to-transparent z-0"
+      />
 
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-space-xl">
         {/* Top Tagline & Status Pill */}
         <div className="flex flex-wrap items-center justify-between gap-space-md">
           <div
-            className="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-full shadow-sm"
+            className="inline-flex items-center gap-space-xs px-4 py-1.5 rounded-full shadow-sm glass-pill"
             style={{
-              backgroundColor: isDark ? "#141B26" : "#f1f5f9",
-              border: isDark ? "1px solid #1E2633" : "1px solid #e2e8f0",
               color: isDark ? "#00D2FF" : "#005baf",
             }}
           >
@@ -63,10 +38,8 @@ export function HeroSection() {
             </span>
           </div>
           <div
-            className="flex items-center gap-space-sm font-label-sm text-label-sm px-3 py-1 rounded shadow-sm"
+            className="flex items-center gap-space-sm font-label-sm text-label-sm px-4 py-1.5 rounded-full shadow-sm glass-pill"
             style={{
-              backgroundColor: isDark ? "#0F141C" : "#f8fafc",
-              border: isDark ? "1px solid #1E2633" : "1px solid #e2e8f0",
               color: isDark ? "#94A3B8" : "#64748B",
             }}
           >
@@ -114,25 +87,23 @@ export function HeroSection() {
             {/* Dual CTA */}
             <div className="flex flex-wrap items-center gap-space-md pt-space-xs">
               <Link
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded font-label-lg text-label-lg font-medium shadow-md transition-all hover:brightness-110"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-label-lg text-label-lg font-medium shadow-lg transition-all hover:brightness-110 hover:scale-[1.02]"
                 href="/contact"
                 style={{
                   backgroundColor: isDark ? "#00D2FF" : "#0074db",
                   color: isDark ? "#080B10" : "#ffffff",
                   boxShadow: isDark
-                    ? "0 4px 14px rgba(0, 210, 255, 0.3)"
-                    : "0 4px 14px rgba(0, 116, 219, 0.3)",
+                    ? "0 4px 20px rgba(0, 210, 255, 0.4)"
+                    : "0 4px 20px rgba(0, 116, 219, 0.35)",
                 }}
               >
                 <span>Book a Free Consultation</span>
                 <Icon name="arrow_forward" className="w-4 h-4" />
               </Link>
               <Link
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded font-label-lg text-label-lg font-medium transition-all hover:border-[#00D2FF] hover:text-[#00D2FF]"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-label-lg text-label-lg font-medium transition-all glass-panel glass-panel-interactive hover:text-[#00D2FF]"
                 href="/services"
                 style={{
-                  backgroundColor: isDark ? "#141B26" : "#f1f5f9",
-                  border: isDark ? "1px solid #1E2633" : "1px solid #cbd5e1",
                   color: isDark ? "#FFFFFF" : "#0b1c30",
                 }}
               >
@@ -154,10 +125,8 @@ export function HeroSection() {
               ].map((chip) => (
                 <span
                   key={chip}
-                  className="px-2.5 py-1 rounded font-label-sm text-label-sm"
+                  className="px-3 py-1 rounded-full font-label-sm text-label-sm glass-pill shadow-xs"
                   style={{
-                    backgroundColor: isDark ? "#141B26" : "#f1f5f9",
-                    border: isDark ? "1px solid #1E2633" : "1px solid #e2e8f0",
                     color: isDark ? "#94A3B8" : "#475569",
                   }}
                 >
@@ -169,13 +138,7 @@ export function HeroSection() {
 
           {/* Right: Core Capability Console */}
           <div className="lg:col-span-5 flex flex-col gap-space-md">
-            <div
-              className="p-space-lg rounded-2xl shadow-md flex flex-col gap-space-md"
-              style={{
-                backgroundColor: isDark ? "#0F141C" : "#ffffff",
-                border: isDark ? "1px solid #1E2633" : "1px solid #e2e8f0",
-              }}
-            >
+            <div className="glass-panel p-space-lg rounded-3xl shadow-xl flex flex-col gap-space-md">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span
@@ -190,7 +153,7 @@ export function HeroSection() {
                   </span>
                 </div>
                 <span
-                  className="font-mono text-[11px] font-semibold px-2 py-0.5 rounded"
+                  className="font-mono text-[11px] font-semibold px-2.5 py-0.5 rounded-full"
                   style={{
                     backgroundColor: "rgba(16, 185, 129, 0.15)",
                     color: "#10B981",
@@ -201,15 +164,9 @@ export function HeroSection() {
                 </span>
               </div>
 
-              {/* 4 Pillars Preview */}
+              {/* 4 Pillars Preview with Glassmorphism */}
               <div className="space-y-2.5 pt-1">
-                <div
-                  className="p-3 rounded-xl border flex items-center justify-between"
-                  style={{
-                    backgroundColor: isDark ? "#141B26" : "#f8fafc",
-                    borderColor: isDark ? "#1E2633" : "#e2e8f0",
-                  }}
-                >
+                <div className="p-3.5 rounded-2xl border flex items-center justify-between glass-panel-interactive bg-white/40 dark:bg-white/[0.04] border-white/50 dark:border-white/10">
                   <div className="flex items-center gap-2.5">
                     <span style={{ color: isDark ? "#00D2FF" : "#0074db" }}>
                       <Icon name="query_stats" className="w-5 h-5" />
@@ -219,13 +176,7 @@ export function HeroSection() {
                   <span className="text-[10px] font-mono text-slate-400">Meta • Google • TikTok</span>
                 </div>
 
-                <div
-                  className="p-3 rounded-xl border flex items-center justify-between"
-                  style={{
-                    backgroundColor: isDark ? "#141B26" : "#f8fafc",
-                    borderColor: isDark ? "#1E2633" : "#e2e8f0",
-                  }}
-                >
+                <div className="p-3.5 rounded-2xl border flex items-center justify-between glass-panel-interactive bg-white/40 dark:bg-white/[0.04] border-white/50 dark:border-white/10">
                   <div className="flex items-center gap-2.5">
                     <span style={{ color: isDark ? "#00D2FF" : "#0074db" }}>
                       <Icon name="terminal" className="w-5 h-5" />
@@ -235,13 +186,7 @@ export function HeroSection() {
                   <span className="text-[10px] font-mono text-slate-400">Next.js • React • TypeScript</span>
                 </div>
 
-                <div
-                  className="p-3 rounded-xl border flex items-center justify-between"
-                  style={{
-                    backgroundColor: isDark ? "#141B26" : "#f8fafc",
-                    borderColor: isDark ? "#1E2633" : "#e2e8f0",
-                  }}
-                >
+                <div className="p-3.5 rounded-2xl border flex items-center justify-between glass-panel-interactive bg-white/40 dark:bg-white/[0.04] border-white/50 dark:border-white/10">
                   <div className="flex items-center gap-2.5">
                     <span style={{ color: isDark ? "#00D2FF" : "#0074db" }}>
                       <Icon name="shopping_bag" className="w-5 h-5" />
@@ -251,13 +196,7 @@ export function HeroSection() {
                   <span className="text-[10px] font-mono text-slate-400">Shopify • Headless • ACF</span>
                 </div>
 
-                <div
-                  className="p-3 rounded-xl border flex items-center justify-between"
-                  style={{
-                    backgroundColor: isDark ? "#141B26" : "#f8fafc",
-                    borderColor: isDark ? "#1E2633" : "#e2e8f0",
-                  }}
-                >
+                <div className="p-3.5 rounded-2xl border flex items-center justify-between glass-panel-interactive bg-white/40 dark:bg-white/[0.04] border-white/50 dark:border-white/10">
                   <div className="flex items-center gap-2.5">
                     <span style={{ color: isDark ? "#00D2FF" : "#0074db" }}>
                       <Icon name="smart_toy" className="w-5 h-5" />
@@ -270,16 +209,10 @@ export function HeroSection() {
             </div>
 
             {/* Studio Banner Preview Card */}
-            <div
-              className="p-4 rounded-xl flex items-center justify-between shadow-sm"
-              style={{
-                backgroundColor: isDark ? "#0F141C" : "#ffffff",
-                border: isDark ? "1px solid #1E2633" : "1px solid #e2e8f0",
-              }}
-            >
+            <div className="glass-panel p-4 rounded-2xl flex items-center justify-between shadow-sm">
               <div className="flex items-center gap-3">
                 <div
-                  className="w-9 h-9 rounded flex items-center justify-center font-mono font-bold"
+                  className="w-9 h-9 rounded-xl flex items-center justify-center font-mono font-bold"
                   style={{
                     backgroundColor: isDark ? "rgba(0, 210, 255, 0.12)" : "rgba(0, 116, 219, 0.1)",
                     color: isDark ? "#00D2FF" : "#0074db",
@@ -311,13 +244,7 @@ export function HeroSection() {
         </div>
 
         {/* Honest Agency Value Metrics Bar */}
-        <div
-          className="p-space-lg rounded-2xl shadow-md grid grid-cols-2 md:grid-cols-4 gap-space-md"
-          style={{
-            backgroundColor: isDark ? "#0F141C" : "#ffffff",
-            border: isDark ? "1px solid #1E2633" : "1px solid #e2e8f0",
-          }}
-        >
+        <div className="glass-panel p-space-lg rounded-3xl shadow-xl grid grid-cols-2 md:grid-cols-4 gap-space-md">
           <div className="flex flex-col gap-1">
             <span
               className="font-display text-2xl lg:text-3xl font-bold"

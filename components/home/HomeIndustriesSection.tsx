@@ -12,10 +12,7 @@ export function HomeIndustriesSection() {
 
   return (
     <section
-      className="w-full px-margin py-space-xl transition-colors"
-      style={{
-        backgroundColor: isDark ? "#080B10" : "#f8f9ff",
-      }}
+      className="w-full px-margin py-space-xl transition-colors bg-transparent"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-space-xl">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -54,11 +51,7 @@ export function HomeIndustriesSection() {
           {INDUSTRIES.slice(0, 3).map((ind) => (
             <div
               key={ind.slug}
-              className="p-7 rounded-2xl border flex flex-col justify-between transition-all duration-200 hover:-translate-y-1"
-              style={{
-                backgroundColor: isDark ? "#0F141C" : "#ffffff",
-                borderColor: isDark ? "#1E2633" : "#e2e8f0",
-              }}
+              className="glass-panel glass-panel-interactive p-8 rounded-3xl flex flex-col justify-between"
             >
               <div className="space-y-4">
                 <div

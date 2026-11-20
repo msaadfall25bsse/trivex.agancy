@@ -19,11 +19,10 @@ export function PartnersSection() {
 
   return (
     <section
-      className="w-full px-margin py-space-lg transition-colors"
+      className="w-full px-margin py-space-lg transition-colors border-y backdrop-blur-md"
       style={{
-        backgroundColor: theme === "dark" ? "#0B0E14" : "#eff4ff",
-        borderTop: theme === "dark" ? "1px solid #1E2633" : "1px solid #e2e8f0",
-        borderBottom: theme === "dark" ? "1px solid #1E2633" : "1px solid #e2e8f0",
+        backgroundColor: theme === "dark" ? "rgba(8, 11, 16, 0.45)" : "rgba(255, 255, 255, 0.45)",
+        borderColor: theme === "dark" ? "rgba(255, 255, 255, 0.08)" : "rgba(255, 255, 255, 0.5)",
       }}
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-space-md">
@@ -46,11 +45,7 @@ export function PartnersSection() {
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="p-4 rounded-xl shadow-sm flex flex-col items-center justify-center gap-1 transition-all hover:scale-[1.02]"
-              style={{
-                backgroundColor: theme === "dark" ? "#0F141C" : "#ffffff",
-                border: theme === "dark" ? "1px solid #1E2633" : "1px solid #e2e8f0",
-              }}
+              className="p-4 rounded-2xl flex flex-col items-center justify-center gap-1 glass-panel glass-panel-interactive"
             >
               <span
                 style={{ color: theme === "dark" ? "#00D2FF" : "#005baf" }}

@@ -51,10 +51,7 @@ export function ConsultationSection() {
   return (
     <section
       id="book-consultation"
-      className="w-full px-margin py-space-xl transition-colors"
-      style={{
-        backgroundColor: theme === "dark" ? "#080B10" : "#f8f9ff",
-      }}
+      className="w-full px-margin py-space-xl transition-colors bg-transparent"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-space-xl">
         {/* Section Intro */}
@@ -84,13 +81,7 @@ export function ConsultationSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
           {/* Left: Hub Directory */}
           <div className="lg:col-span-5 flex flex-col gap-space-md">
-            <div
-              className="p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md"
-              style={{
-                backgroundColor: theme === "dark" ? "#0F141C" : "#eff4ff",
-                border: theme === "dark" ? "1px solid #1E2633" : "1px solid #cbd5e1",
-              }}
-            >
+            <div className="glass-panel p-space-lg rounded-3xl shadow-xl flex flex-col gap-space-md">
               <h3
                 className="font-headline-sm text-headline-sm"
                 style={{ color: theme === "dark" ? "#FFFFFF" : "#0b1c30" }}
@@ -158,13 +149,7 @@ export function ConsultationSection() {
           </div>
 
           {/* Right: Technical Consultation Form */}
-          <div
-            className="lg:col-span-7 p-space-lg rounded-xl shadow-md flex flex-col gap-space-md"
-            style={{
-              backgroundColor: theme === "dark" ? "#0F141C" : "#ffffff",
-              border: theme === "dark" ? "1px solid #1E2633" : "1px solid #e2e8f0",
-            }}
-          >
+          <div className="lg:col-span-7 glass-panel p-space-lg rounded-3xl shadow-xl flex flex-col gap-space-md">
             <div className="flex flex-col gap-1">
               <span
                 className="font-label-sm text-label-sm font-mono font-bold"
@@ -230,7 +215,7 @@ export function ConsultationSection() {
             ) : (
               <form className="flex flex-col gap-space-md" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col gap-1.5">
                     <label
                       className="font-label-sm text-label-sm font-semibold"
                       style={{ color: theme === "dark" ? "#94A3B8" : "#475569" }}
@@ -238,12 +223,10 @@ export function ConsultationSection() {
                       FULL NAME *
                     </label>
                     <input
-                      className="w-full px-3 py-2.5 rounded font-body-md text-body-md shadow-sm outline-none transition-all focus:ring-2 focus:ring-[#0074db]"
+                      className="w-full px-4 py-3 rounded-xl font-body-md text-body-md shadow-xs outline-none transition-all focus:ring-2 focus:ring-[#00D2FF]/50 glass-pill"
                       placeholder="e.g. Alex Henderson"
                       required
                       style={{
-                        backgroundColor: theme === "dark" ? "#141B26" : "#f8fafc",
-                        border: theme === "dark" ? "1px solid #1E2633" : "1px solid #cbd5e1",
                         color: theme === "dark" ? "#FFFFFF" : "#0b1c30",
                       }}
                       type="text"
@@ -251,7 +234,7 @@ export function ConsultationSection() {
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     />
                   </div>
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col gap-1.5">
                     <label
                       className="font-label-sm text-label-sm font-semibold"
                       style={{ color: theme === "dark" ? "#94A3B8" : "#475569" }}
@@ -259,12 +242,10 @@ export function ConsultationSection() {
                       WORK EMAIL *
                     </label>
                     <input
-                      className="w-full px-3 py-2.5 rounded font-body-md text-body-md shadow-sm outline-none transition-all focus:ring-2 focus:ring-[#0074db]"
+                      className="w-full px-4 py-3 rounded-xl font-body-md text-body-md shadow-xs outline-none transition-all focus:ring-2 focus:ring-[#00D2FF]/50 glass-pill"
                       placeholder="alex@company.com"
                       required
                       style={{
-                        backgroundColor: theme === "dark" ? "#141B26" : "#f8fafc",
-                        border: theme === "dark" ? "1px solid #1E2633" : "1px solid #cbd5e1",
                         color: theme === "dark" ? "#FFFFFF" : "#0b1c30",
                       }}
                       type="email"
@@ -275,7 +256,7 @@ export function ConsultationSection() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col gap-1.5">
                     <label
                       className="font-label-sm text-label-sm font-semibold"
                       style={{ color: theme === "dark" ? "#94A3B8" : "#475569" }}
@@ -283,24 +264,22 @@ export function ConsultationSection() {
                       PRIMARY REQUIREMENT *
                     </label>
                     <select
-                      className="w-full px-3 py-2.5 rounded font-body-md text-body-md shadow-sm outline-none transition-all focus:ring-2 focus:ring-[#0074db]"
+                      className="w-full px-4 py-3 rounded-xl font-body-md text-body-md shadow-xs outline-none transition-all focus:ring-2 focus:ring-[#00D2FF]/50 glass-pill cursor-pointer"
                       style={{
-                        backgroundColor: theme === "dark" ? "#141B26" : "#f8fafc",
-                        border: theme === "dark" ? "1px solid #1E2633" : "1px solid #cbd5e1",
                         color: theme === "dark" ? "#FFFFFF" : "#0b1c30",
                       }}
                       value={formData.requirement}
                       onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
                     >
-                      <option>Full-Stack Web App Development</option>
-                      <option>Mobile App (Flutter / Native)</option>
-                      <option>E-commerce Architecture &amp; Shopify Plus</option>
-                      <option>AI Automation &amp; LLM Systems</option>
-                      <option>Dedicated Agile Engineering Pod</option>
-                      <option>Growth Marketing &amp; Paid Scaling</option>
+                      <option className="text-black dark:text-white dark:bg-[#0F141C]">Full-Stack Web App Development</option>
+                      <option className="text-black dark:text-white dark:bg-[#0F141C]">Mobile App (Flutter / Native)</option>
+                      <option className="text-black dark:text-white dark:bg-[#0F141C]">E-commerce Architecture &amp; Shopify Plus</option>
+                      <option className="text-black dark:text-white dark:bg-[#0F141C]">AI Automation &amp; LLM Systems</option>
+                      <option className="text-black dark:text-white dark:bg-[#0F141C]">Dedicated Agile Engineering Pod</option>
+                      <option className="text-black dark:text-white dark:bg-[#0F141C]">Growth Marketing &amp; Paid Scaling</option>
                     </select>
                   </div>
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col gap-1.5">
                     <label
                       className="font-label-sm text-label-sm font-semibold"
                       style={{ color: theme === "dark" ? "#94A3B8" : "#475569" }}
@@ -308,25 +287,23 @@ export function ConsultationSection() {
                       ESTIMATED BUDGET
                     </label>
                     <select
-                      className="w-full px-3 py-2.5 rounded font-body-md text-body-md shadow-sm outline-none transition-all focus:ring-2 focus:ring-[#0074db]"
+                      className="w-full px-4 py-3 rounded-xl font-body-md text-body-md shadow-xs outline-none transition-all focus:ring-2 focus:ring-[#00D2FF]/50 glass-pill cursor-pointer"
                       style={{
-                        backgroundColor: theme === "dark" ? "#141B26" : "#f8fafc",
-                        border: theme === "dark" ? "1px solid #1E2633" : "1px solid #cbd5e1",
                         color: theme === "dark" ? "#FFFFFF" : "#0b1c30",
                       }}
                       value={formData.budget}
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                     >
-                      <option>$10k - $25k</option>
-                      <option>$25k - $50k</option>
-                      <option>$50k - $150k</option>
-                      <option>$150k+</option>
-                      <option>Monthly Retainer / Squad</option>
+                      <option className="text-black dark:text-white dark:bg-[#0F141C]">$10k - $25k</option>
+                      <option className="text-black dark:text-white dark:bg-[#0F141C]">$25k - $50k</option>
+                      <option className="text-black dark:text-white dark:bg-[#0F141C]">$50k - $150k</option>
+                      <option className="text-black dark:text-white dark:bg-[#0F141C]">$150k+</option>
+                      <option className="text-black dark:text-white dark:bg-[#0F141C]">Monthly Retainer / Squad</option>
                     </select>
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1.5">
                   <label
                     className="font-label-sm text-label-sm font-semibold"
                     style={{ color: theme === "dark" ? "#94A3B8" : "#475569" }}
@@ -334,12 +311,10 @@ export function ConsultationSection() {
                     PROJECT SUMMARY / TECHNICAL SCOPE
                   </label>
                   <textarea
-                    className="w-full px-3 py-2.5 rounded font-body-md text-body-md shadow-sm outline-none transition-all focus:ring-2 focus:ring-[#0074db]"
+                    className="w-full px-4 py-3 rounded-xl font-body-md text-body-md shadow-xs outline-none transition-all focus:ring-2 focus:ring-[#00D2FF]/50 glass-pill"
                     placeholder="Describe the current architecture, timelines, key integrations, or target metrics..."
                     rows={4}
                     style={{
-                      backgroundColor: theme === "dark" ? "#141B26" : "#f8fafc",
-                      border: theme === "dark" ? "1px solid #1E2633" : "1px solid #cbd5e1",
                       color: theme === "dark" ? "#FFFFFF" : "#0b1c30",
                     }}
                     value={formData.scope}

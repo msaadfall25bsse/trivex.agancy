@@ -55,10 +55,7 @@ export function AboutSection() {
   return (
     <section
       id="about-us"
-      className="w-full px-margin py-space-xl transition-colors"
-      style={{
-        backgroundColor: theme === "dark" ? "#080B10" : "#f8f9ff",
-      }}
+      className="w-full px-margin py-space-xl transition-colors bg-transparent"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-space-xl">
         {/* Section Header */}
@@ -90,17 +87,13 @@ export function AboutSection() {
           {fourPillars.map((p) => (
             <div
               key={p.title}
-              className="p-space-lg rounded-xl shadow-sm hover:scale-[1.01] transition-all flex flex-col gap-space-sm"
-              style={{
-                backgroundColor: theme === "dark" ? "#0F141C" : "#ffffff",
-                border: theme === "dark" ? "1px solid #1E2633" : "1px solid #e2e8f0",
-              }}
+              className="glass-panel glass-panel-interactive p-space-lg rounded-2xl flex flex-col gap-space-sm"
             >
               <div
-                className="w-10 h-10 rounded flex items-center justify-center"
+                className="w-10 h-10 rounded-xl flex items-center justify-center"
                 style={{
                   backgroundColor:
-                    theme === "dark" ? "#141B26" : "rgba(0, 116, 219, 0.1)",
+                    theme === "dark" ? "rgba(0, 210, 255, 0.12)" : "rgba(0, 116, 219, 0.1)",
                   color: theme === "dark" ? "#00D2FF" : "#0074db",
                 }}
               >
@@ -127,11 +120,7 @@ export function AboutSection() {
           {structuralCards.map((card) => (
             <div
               key={card.pillar}
-              className="p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md justify-between"
-              style={{
-                backgroundColor: theme === "dark" ? "#0F141C" : "#eff4ff",
-                border: theme === "dark" ? "1px solid #1E2633" : "1px solid #cbd5e1",
-              }}
+              className="glass-panel glass-panel-interactive p-space-lg rounded-3xl flex flex-col gap-space-md justify-between"
             >
               <div className="flex flex-col gap-space-sm">
                 <span

@@ -43,10 +43,7 @@ export function ProcessSection() {
 
   return (
     <section
-      className="w-full px-margin py-space-xl transition-colors"
-      style={{
-        backgroundColor: theme === "dark" ? "#080B10" : "#f8f9ff",
-      }}
+      className="w-full px-margin py-space-xl transition-colors bg-transparent"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-space-xl">
         <div className="flex flex-col gap-space-xs max-w-3xl">
@@ -74,11 +71,7 @@ export function ProcessSection() {
           {steps.map((step) => (
             <div
               key={step.num}
-              className="p-space-lg rounded-xl shadow-sm flex flex-col gap-space-sm relative hover:scale-[1.01] transition-all"
-              style={{
-                backgroundColor: theme === "dark" ? "#0F141C" : "#ffffff",
-                border: theme === "dark" ? "1px solid #1E2633" : "1px solid #e2e8f0",
-              }}
+              className="glass-panel glass-panel-interactive p-space-lg rounded-3xl flex flex-col gap-space-sm relative"
             >
               <span
                 className="font-headline-lg text-headline-lg font-bold font-mono"

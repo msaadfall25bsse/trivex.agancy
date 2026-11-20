@@ -1,4 +1,5 @@
 export { HeroSection } from "./HeroSection";
+export { HomeBackground } from "./HomeBackground";
 export { PartnersSection } from "./PartnersSection";
 export { AboutSection } from "./AboutSection";
 export { ServicesSection } from "./ServicesSection";

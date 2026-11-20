@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { constructMetadata } from "@/lib/seo";
 import {
   HeroSection,
+  HomeBackground,
   PartnersSection,
   AboutSection,
   ServicesSection,
@@ -24,9 +25,14 @@ export const metadata: Metadata = constructMetadata({
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full">
-      {/* 1. HERO & CORE AGENCY VALUE PROPOSITION */}
-      <HeroSection />
+    <div className="relative min-h-screen w-full overflow-x-hidden">
+      {/* Fixed Ambient 3D Theme-Aware Background */}
+      <HomeBackground />
+
+      {/* Foreground Content Layer */}
+      <div className="relative z-10 flex flex-col w-full">
+        {/* 1. HERO & CORE AGENCY VALUE PROPOSITION */}
+        <HeroSection />
 
       {/* 2. VERIFIED PLATFORM & ECOSYSTEM STACK */}
       <PartnersSection />
@@ -57,6 +63,7 @@ export default function Home() {
 
       {/* 11. GLOBAL HUBS & STRATEGIC CONSULTATION INQUIRY */}
       <ConsultationSection />
+      </div>
     </div>
   );
 }

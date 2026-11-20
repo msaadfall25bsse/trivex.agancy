@@ -19,10 +19,7 @@ export function HomeFaqSection() {
 
   return (
     <section
-      className="w-full px-margin py-space-xl transition-colors"
-      style={{
-        backgroundColor: isDark ? "#080B10" : "#f8f9ff",
-      }}
+      className="w-full px-margin py-space-xl transition-colors bg-transparent"
     >
       <div className="max-w-4xl mx-auto flex flex-col gap-space-lg">
         <div className="text-center space-y-2">
@@ -52,11 +49,7 @@ export function HomeFaqSection() {
             return (
               <div
                 key={idx}
-                className="rounded-2xl border overflow-hidden transition-colors"
-                style={{
-                  backgroundColor: isDark ? "#0F141C" : "#ffffff",
-                  borderColor: isDark ? "#1E2633" : "#e2e8f0",
-                }}
+                className="rounded-2xl overflow-hidden glass-panel glass-panel-interactive"
               >
                 <button
                   onClick={() => toggle(idx)}
@@ -75,9 +68,8 @@ export function HomeFaqSection() {
                 </button>
                 {isOpen && (
                   <div
-                    className="px-5 pb-5 pt-1 text-xs sm:text-sm leading-relaxed border-t"
+                    className="px-5 pb-5 pt-1 text-xs sm:text-sm leading-relaxed border-t border-white/20 dark:border-white/10"
                     style={{
-                      borderColor: isDark ? "#1E2633" : "#f1f5f9",
                       color: isDark ? "#94A3B8" : "#404754",
                     }}
                   >

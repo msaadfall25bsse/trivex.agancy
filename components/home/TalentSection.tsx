@@ -34,12 +34,7 @@ export function TalentSection() {
   return (
     <section
       id="talent"
-      className="w-full px-margin py-space-xl transition-colors"
-      style={{
-        backgroundColor: theme === "dark" ? "#0B0E14" : "#eff4ff",
-        borderTop: theme === "dark" ? "1px solid #1E2633" : "1px solid #e2e8f0",
-        borderBottom: theme === "dark" ? "1px solid #1E2633" : "1px solid #e2e8f0",
-      }}
+      className="w-full px-margin py-space-xl transition-colors bg-transparent"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-space-xl">
         <div className="flex flex-col gap-space-xs max-w-3xl">
@@ -66,13 +61,7 @@ export function TalentSection() {
         {/* Comparison Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
           {/* Model A: Dedicated Squad */}
-          <div
-            className="p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md"
-            style={{
-              backgroundColor: theme === "dark" ? "#0F141C" : "#ffffff",
-              border: theme === "dark" ? "1px solid #1E2633" : "1px solid #e2e8f0",
-            }}
-          >
+          <div className="glass-panel glass-panel-interactive p-space-lg rounded-3xl flex flex-col justify-between gap-space-md">
             <div className="flex flex-col gap-space-sm">
               <div className="flex items-center justify-between">
                 <span
@@ -142,13 +131,7 @@ export function TalentSection() {
           </div>
 
           {/* Model B: Fixed Scope Project */}
-          <div
-            className="p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md"
-            style={{
-              backgroundColor: theme === "dark" ? "#0F141C" : "#ffffff",
-              border: theme === "dark" ? "1px solid #1E2633" : "1px solid #e2e8f0",
-            }}
-          >
+          <div className="glass-panel glass-panel-interactive p-space-lg rounded-3xl flex flex-col justify-between gap-space-md">
             <div className="flex flex-col gap-space-sm">
               <div className="flex items-center justify-between">
                 <span
@@ -227,11 +210,7 @@ export function TalentSection() {
             {architects.map((person) => (
               <div
                 key={person.name}
-                className="p-space-md rounded-xl shadow-sm flex flex-col gap-space-xs"
-                style={{
-                  backgroundColor: theme === "dark" ? "#0F141C" : "#ffffff",
-                  border: theme === "dark" ? "1px solid #1E2633" : "1px solid #e2e8f0",
-                }}
+                className="glass-panel glass-panel-interactive p-space-md rounded-2xl flex flex-col gap-space-xs"
               >
                 <div className="flex items-center justify-between">
                   <span

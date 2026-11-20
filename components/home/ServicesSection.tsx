@@ -111,10 +111,7 @@ export function ServicesSection() {
   return (
     <section
       id="services-matrix"
-      className="w-full px-margin py-space-xl transition-colors"
-      style={{
-        backgroundColor: isDark ? "#080B10" : "#f8f9ff",
-      }}
+      className="w-full px-margin py-space-xl transition-colors bg-transparent"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-space-xl">
         {/* Section Intro */}
@@ -142,7 +139,7 @@ export function ServicesSection() {
           </div>
 
           <Link
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded font-label-md text-label-md font-bold transition-all shadow-sm self-start md:self-auto hover:brightness-110"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-label-md text-label-md font-bold transition-all shadow-md self-start md:self-auto hover:brightness-110"
             href="/services"
             style={{
               backgroundColor: isDark ? "#00D2FF" : "#0074db",
@@ -159,11 +156,7 @@ export function ServicesSection() {
           {services.map((svc) => (
             <div
               key={svc.num}
-              className="p-space-lg rounded-xl shadow-sm hover:scale-[1.01] transition-all flex flex-col justify-between gap-space-md group"
-              style={{
-                backgroundColor: isDark ? "#0F141C" : "#ffffff",
-                border: isDark ? "1px solid #1E2633" : "1px solid #e2e8f0",
-              }}
+              className="glass-panel glass-panel-interactive p-space-lg rounded-3xl flex flex-col justify-between gap-space-md group"
             >
               <div className="flex flex-col gap-space-sm">
                 <div className="flex items-center justify-between">

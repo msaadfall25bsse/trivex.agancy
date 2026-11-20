@@ -85,10 +85,10 @@ export function Header() {
     <div className="fixed top-0 left-0 w-full z-50 px-3 sm:px-6 lg:px-8 pt-3 pb-1">
       <div className="max-w-7xl mx-auto">
         <header
-          className={`w-full backdrop-blur-md rounded-xl transition-all duration-200 ${
+          className={`w-full backdrop-blur-xl rounded-2xl transition-all duration-300 ${
             isDark
-              ? "bg-[#080B10]/95 border border-[#1E2633] shadow-2xl"
-              : "bg-white/95 border border-slate-200/90 shadow-lg"
+              ? "bg-[#080B10]/75 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.45),inset_0_1px_0_0_rgba(255,255,255,0.1)]"
+              : "bg-white/75 border border-white/80 shadow-[0_8px_32px_0_rgba(0,80,200,0.06),inset_0_1px_0_0_rgba(255,255,255,0.95)]"
           }`}
         >
           <div className="w-full px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
