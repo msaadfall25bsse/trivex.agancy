@@ -75,6 +75,7 @@ export function Header() {
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
+    { label: "Leadership", href: "/team" },
     { label: "Our Work", href: "/work" },
     { label: "Industries", href: "/industries" },
     { label: "Process", href: "/process" },
@@ -490,6 +491,19 @@ export function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   About Us
+                </Link>
+                <Link
+                  href="/team"
+                  className={`py-1.5 transition-colors ${
+                    pathname === "/team" || pathname?.startsWith("/team/")
+                      ? isDark
+                        ? "text-[#00D2FF] font-bold"
+                        : "text-[#0088FF] font-bold"
+                      : ""
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Founding Leadership
                 </Link>
                 <Link
                   href="/industries"

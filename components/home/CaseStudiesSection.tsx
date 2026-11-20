@@ -5,88 +5,91 @@ import Link from "next/link";
 import { useTheme } from "@/components/ThemeProvider";
 import { Icon } from "@/components/ui/Icon";
 
-interface CaseStudy {
+interface PracticeDomain {
   id: string;
-  category: "Web Apps" | "Mobile" | "E-commerce" | "AI Systems";
+  category: "Web Applications" | "Mobile Apps" | "E-commerce" | "AI & Automation";
   badge: string;
-  statBadge: string;
-  client: string;
+  status: string;
   title: string;
-  description: string;
-  meta: string;
-  image: string;
-  alt: string;
+  scopeSummary: string;
+  technologies: string[];
+  deliverableHighlights: string[];
 }
 
-const CASE_STUDIES: CaseStudy[] = [
+const PRACTICE_DOMAINS: PracticeDomain[] = [
   {
-    id: "italo-milan",
+    id: "headless-commerce",
     category: "E-commerce",
-    badge: "SHOPIFY PLUS • HEADLESS",
-    statBadge: "+140% CONVERSION LIFT",
-    client: "ITALO MILAN // LUXURY E-COMMERCE",
-    title: "High-Conversion Global Store Scaling & Multi-Currency Engine",
-    description:
-      "Re-engineered the global digital flagship store from monolithic legacy systems to headless Shopify with 98 Lighthouse performance score, sub-second checkout, and international fulfillment synchronizers.",
-    meta: "Deployment: 10 Weeks",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuB7lsEg31e7OMSppgyqtYpLY1SKTeO6MN6mkHGucq070Su4F6VV-7byNGNAIQPlBzd0QAHVZI2XiRXOMxjvXKdGV7s-Mi900EBL6LeAFsQSkaEV2JTbY5drHRdcpSCtkg-v5LOpbmnPnY3o11nW1MhJSK9ex6EjKl-NA9qLT2_ZnjdBZ_5gayIRjHcN04dj_5xAutZcPRXvWnh4uQCOXnfCHAOkzAvdNieXoWwEBus",
-    alt: "High-fashion modern minimalist luxury apparel website",
+    badge: "GLOBAL COMMERCE",
+    status: "CASE STUDY IN PRODUCTION",
+    title: "Headless E-Commerce & Multi-Currency Storefront Architecture",
+    scopeSummary:
+      "Sub-second page speeds, global multi-currency checkout routing, and real-time ERP inventory synchronization engineered for high-volume retail.",
+    technologies: ["Shopify Plus", "Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
+    deliverableHighlights: [
+      "Custom headless storefront frontend",
+      "Single-page multi-currency checkout",
+      "Automated inventory & ERP sync",
+    ],
   },
   {
-    id: "vanlock",
-    category: "Web Apps",
-    badge: "WEB APP • IOT PLATFORM",
-    statBadge: "45,000+ ACTIVE VEHICLES",
-    client: "VANLOCK SECURITY // TELEMATICS & IOT",
-    title: "Commercial Fleet Lock Security & Instant Booking Portal",
-    description:
-      "Architected an end-to-end commercial fleet security portal with IoT hardware synchronization, digital service bookings, and dispatch logistics for UK commercial transport operators.",
-    meta: "Tech: Next.js, Node.js, AWS IoT",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBRhi3INl7nIl5tWWj7Hm2ZNlV2E40u11cbL-SIEyD5Kz4n4kfKayHyOms-D2FmMArlLIso8RDSQwZ-24rByLXNksvwZcAqqOzE3OpgvCyoOdakRJGw0lJGOfO2-l3hdbx2GnY75-zm4J6C4YA_L-ZOEp1jdcjXXFr265wbVTbKHMO7KsUZ9aoboDx68KD1vIJtofYyCwCfXAKtB1YILm1FchSPokGzxBcVs1kjX94",
-    alt: "Futuristic fleet management and commercial vehicle security platform",
+    id: "iot-operations-portal",
+    category: "Web Applications",
+    badge: "ENTERPRISE SAAS",
+    status: "CASE STUDY IN PRODUCTION",
+    title: "Commercial Fleet Dispatch & Operational Logistics Portal",
+    scopeSummary:
+      "Reactive cloud portal providing commercial fleet operators with real-time telematics tracking, automated booking scheduling, and customer self-service modules.",
+    technologies: ["React / Next.js", "Node.js", "PostgreSQL", "REST APIs", "AWS"],
+    deliverableHighlights: [
+      "Real-time operations dispatch dashboard",
+      "Interactive customer booking workflow",
+      "Automated SMS & email dispatch notifications",
+    ],
   },
   {
-    id: "rukan-albait",
-    category: "Web Apps",
-    badge: "NEXT.JS • 3D IMMERSIVE",
-    statBadge: "$82M+ PIPELINE INVENTORY",
-    client: "RUKAN ALBAIT // REAL ESTATE PORTFOLIO",
-    title: "Modern Architectural Development & Property Platform",
-    description:
-      "Crafted a high-elegance real estate ecosystem for premier Middle Eastern developments featuring 3D floor plan walk-throughs, buyer CRM integrations, and multi-language support (AR/EN).",
-    meta: "Impact: 3.4x Inbound Lead Velocity",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuA0XHSbXSBMBEcSdv_DzO-DwVs8sDjBJVkzGVitO_3pOllDdG0jhKdr9XWBdsFprbRvaI_adewmzB_buO2lsgpb2n8j0CZlq_tjJRteIaM9OlHb97AP-B6nYpnFnazqr7jmG-n0Mgxd1E5JHApvW4tayMPdePKW4uJ0in4s-TFX0evw50uQZ7brp7lrCVh-kZPgCcR4oyagYbRMgp7R64jMb0Phc2JNO4eet5OaxoA",
-    alt: "Ultra-luxury architectural engineering web platform",
+    id: "executive-dispatch-app",
+    category: "Mobile Apps",
+    badge: "CROSS-PLATFORM MOBILE",
+    status: "CASE STUDY IN PRODUCTION",
+    title: "VIP Mobility & Real-Time Fleet Telemetry Mobile Platform",
+    scopeSummary:
+      "Dual cross-platform passenger and driver applications built with background GPS tracking, dynamic fare pricing, and escrow payment processing.",
+    technologies: ["Flutter", "Dart", "Firebase", "Stripe API", "Google Maps SDK"],
+    deliverableHighlights: [
+      "Passenger iOS & Android application",
+      "Driver dispatch & navigation app",
+      "Real-time telemetry & GPS routing",
+    ],
   },
   {
-    id: "black-sea-limo",
-    category: "Mobile",
-    badge: "FLUTTER • STRIPE • REALTIME",
-    statBadge: "99.98% DISPATCH UPTIME",
-    client: "BLACK SEA LIMO // MOBILITY PLATFORM",
-    title: "VIP Executive Chauffeur & Airport Dispatch Booking Engine",
-    description:
-      "Delivered dual mobile applications (Passenger & Chauffeur) with automated dynamic pricing, Stripe payment split escrows, flight telemetry synchronization, and GPS turn-by-turn routing.",
-    meta: "Platform: iOS, Android, Dispatch Web",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAeTyYYDCH5-3aM2oeABk9K2Re6bJ0tzM1cj57Qpxrpq5xfay0RFgNUiFD25Vea9IXYKX0Dg8eooP2r8OxvguDTlEuPrTmmLmUqZyhT4r8jfICfvY95nrjhSOZBIDkIgFZ5ZyWB43hen9rGSzhQnS3vTjNiDAKNhwGr9U54g_wWMe2UtHd2ZXY7aIDF2uXG4Tz6R6_H4tmqmDqYRWG01QoKHWHKUBuJoNYOulr1PV4",
-    alt: "Luxury executive black limousine mobile app interface",
+    id: "intelligent-automation",
+    category: "AI & Automation",
+    badge: "AI SYSTEMS & WORKFLOWS",
+    status: "CASE STUDY IN PRODUCTION",
+    title: "Autonomous Enterprise Pipeline & Multi-Agent Intelligence",
+    scopeSummary:
+      "Custom LLM integrations, multi-channel customer triage agents, and enterprise workflow automation reducing repetitive operational overhead.",
+    technologies: ["Python", "FastAPI", "OpenAI API", "LangChain", "Vector DB"],
+    deliverableHighlights: [
+      "Custom triage & document extraction bots",
+      "Automated CRM & ticketing synchronizers",
+      "Enterprise security & access control",
+    ],
   },
 ];
 
-const FILTERS = ["All Work", "Web Apps", "Mobile", "E-commerce", "AI Systems"];
+const FILTERS = ["All Domains", "Web Applications", "Mobile Apps", "E-commerce", "AI & Automation"];
 
 export function CaseStudiesSection() {
   const { theme } = useTheme();
-  const [activeFilter, setActiveFilter] = useState<string>("All Work");
+  const isDark = theme === "dark";
+  const [activeFilter, setActiveFilter] = useState<string>("All Domains");
 
-  const filteredCaseStudies =
-    activeFilter === "All Work"
-      ? CASE_STUDIES
-      : CASE_STUDIES.filter((cs) => cs.category === activeFilter);
+  const filteredDomains =
+    activeFilter === "All Domains"
+      ? PRACTICE_DOMAINS
+      : PRACTICE_DOMAINS.filter((d) => d.category === activeFilter);
 
   return (
     <section
@@ -94,49 +97,53 @@ export function CaseStudiesSection() {
       className="w-full px-margin py-space-xl transition-colors bg-transparent"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-space-xl">
-        {/* Section Title & Dynamic Filter Tabs */}
+        {/* Section Header & Filter Tabs */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
-          <div className="flex flex-col gap-space-xs">
+          <div className="flex flex-col gap-space-xs max-w-2xl">
             <span
               className="font-label-sm text-label-sm font-semibold uppercase tracking-widest"
-              style={{ color: theme === "dark" ? "#00D2FF" : "#005baf" }}
+              style={{ color: isDark ? "#00D2FF" : "#005baf" }}
             >
-              Proven Measurable ROI
+              Selected Work &amp; Practice Domains
             </span>
             <h2
               className="font-display text-display uppercase tracking-tight"
-              style={{ color: theme === "dark" ? "#FFFFFF" : "#0b1c30" }}
+              style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
             >
-              Featured Case Studies
+              Architected for Performance &amp; Scale
             </h2>
+            <p
+              className="font-body-lg text-body-lg leading-relaxed"
+              style={{ color: isDark ? "#94A3B8" : "#475569" }}
+            >
+              Our client engineering deliverables are designed with strict code quality, zero-waste infrastructure, and measurable commercial velocity.
+            </p>
           </div>
 
-          {/* Interactive Filter Strip */}
-          <div
-            className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl glass-pill"
-            id="case-study-filters"
-          >
+          {/* Dynamic Filter Pills */}
+          <div className="flex flex-wrap items-center gap-2">
             {FILTERS.map((f) => {
               const isActive = activeFilter === f;
               return (
                 <button
                   key={f}
-                  className="px-3.5 py-1.5 rounded font-label-sm text-label-sm transition-all focus:outline-none"
+                  className="px-3.5 py-1.5 rounded-full font-mono text-xs font-semibold transition-all cursor-pointer border"
                   style={{
                     backgroundColor: isActive
-                      ? theme === "dark"
+                      ? isDark
                         ? "#00D2FF"
-                        : "#ffffff"
-                      : "transparent",
-                    color: isActive
-                      ? theme === "dark"
-                        ? "#080B10"
-                        : "#005baf"
-                      : theme === "dark"
-                      ? "#94A3B8"
-                      : "#404754",
-                    fontWeight: isActive ? 600 : 400,
-                    boxShadow: isActive ? "0 1px 3px rgba(0,0,0,0.1)" : "none",
+                        : "#0074db"
+                      : isDark
+                      ? "rgba(255, 255, 255, 0.04)"
+                      : "rgba(255, 255, 255, 0.6)",
+                    borderColor: isActive
+                      ? isDark
+                        ? "#00D2FF"
+                        : "#0074db"
+                      : isDark
+                      ? "rgba(255, 255, 255, 0.1)"
+                      : "rgba(0, 0, 0, 0.08)",
+                    color: isActive ? (isDark ? "#080B10" : "#ffffff") : isDark ? "#94A3B8" : "#475569",
                   }}
                   type="button"
                   onClick={() => setActiveFilter(f)}
@@ -148,107 +155,151 @@ export function CaseStudiesSection() {
           </div>
         </div>
 
-        {/* 4 Case Study Cards Grid */}
+        {/* Practice Domain Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
-          {filteredCaseStudies.map((cs) => (
+          {filteredDomains.map((item) => (
             <div
-              key={cs.id}
-              className="rounded-3xl overflow-hidden glass-panel glass-panel-interactive flex flex-col justify-between"
+              key={item.id}
+              className="rounded-3xl glass-panel glass-panel-interactive p-6 sm:p-8 flex flex-col justify-between gap-6"
             >
-              <div
-                className="relative h-64 w-full overflow-hidden"
-                style={{ backgroundColor: theme === "dark" ? "#141B26" : "#eff4ff" }}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  alt={cs.alt}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                  src={cs.image}
-                />
-                <div
-                  className="absolute top-4 left-4 px-3 py-1 rounded backdrop-blur font-label-sm text-label-sm font-bold"
-                  style={{
-                    backgroundColor:
-                      theme === "dark" ? "rgba(15, 20, 28, 0.85)" : "rgba(255, 255, 255, 0.9)",
-                    color: theme === "dark" ? "#00D2FF" : "#005baf",
-                    border:
-                      theme === "dark"
-                        ? "1px solid rgba(0, 210, 255, 0.3)"
-                        : "1px solid rgba(0, 91, 175, 0.2)",
-                  }}
-                >
-                  {cs.badge}
-                </div>
-                <div
-                  className="absolute bottom-4 right-4 px-3 py-1 rounded font-label-sm text-label-sm font-bold shadow-sm"
-                  style={{
-                    backgroundColor:
-                      theme === "dark" ? "rgba(15, 20, 28, 0.9)" : "rgba(255, 255, 255, 0.95)",
-                    color: "#10B981",
-                    border: "1px solid rgba(16, 185, 129, 0.3)",
-                  }}
-                >
-                  {cs.statBadge}
-                </div>
-              </div>
-
-              <div className="p-space-lg flex flex-col gap-space-sm flex-1 justify-between">
-                <div className="flex flex-col gap-space-xs">
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center justify-between">
                   <span
-                    className="font-label-sm text-label-sm font-mono"
-                    style={{ color: theme === "dark" ? "#94A3B8" : "#64748B" }}
+                    className="px-3 py-1 rounded-full font-mono text-[11px] font-bold uppercase tracking-wider border"
+                    style={{
+                      backgroundColor: isDark ? "rgba(0, 210, 255, 0.12)" : "rgba(0, 116, 219, 0.08)",
+                      borderColor: isDark ? "rgba(0, 210, 255, 0.3)" : "rgba(0, 116, 219, 0.2)",
+                      color: isDark ? "#00D2FF" : "#005baf",
+                    }}
                   >
-                    {cs.client}
+                    {item.badge}
                   </span>
-                  <h3
-                    className="font-headline-md text-headline-md"
-                    style={{ color: theme === "dark" ? "#FFFFFF" : "#0b1c30" }}
+                  <span
+                    className="px-2.5 py-0.5 rounded text-[10px] font-mono font-semibold uppercase border"
+                    style={{
+                      backgroundColor: isDark ? "rgba(255, 255, 255, 0.05)" : "rgba(0, 0, 0, 0.04)",
+                      borderColor: isDark ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.08)",
+                      color: isDark ? "#94A3B8" : "#64748B",
+                    }}
                   >
-                    {cs.title}
+                    {item.status}
+                  </span>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <h3
+                    className="font-display text-xl sm:text-2xl font-bold tracking-tight"
+                    style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
+                  >
+                    {item.title}
                   </h3>
                   <p
                     className="font-body-sm text-body-sm leading-relaxed"
-                    style={{ color: theme === "dark" ? "#94A3B8" : "#475569" }}
+                    style={{ color: isDark ? "#94A3B8" : "#475569" }}
                   >
-                    {cs.description}
+                    {item.scopeSummary}
                   </p>
                 </div>
-                <div
-                  className="pt-space-sm flex items-center justify-between border-t mt-space-sm"
-                  style={{ borderColor: theme === "dark" ? "#1E2633" : "#e2e8f0" }}
-                >
+
+                {/* Key Deliverables */}
+                <div className="pt-2 flex flex-col gap-1.5">
                   <span
-                    className="font-label-sm text-label-sm font-mono"
-                    style={{ color: theme === "dark" ? "#94A3B8" : "#64748B" }}
+                    className="font-mono text-[11px] uppercase tracking-wider font-semibold"
+                    style={{ color: isDark ? "#64748B" : "#64748B" }}
                   >
-                    {cs.meta}
+                    Key Architecture Scopes
                   </span>
-                  <Link
-                    className="font-label-sm text-label-sm font-bold flex items-center gap-1 hover:underline"
-                    href="/work"
-                    style={{ color: theme === "dark" ? "#00D2FF" : "#005baf" }}
-                  >
-                    <span>View Case Study</span>
-                    <Icon name="arrow_forward" className="w-3.5 h-3.5" />
-                  </Link>
+                  <ul className="space-y-1.5 font-body-sm text-xs">
+                    {item.deliverableHighlights.map((del) => (
+                      <li key={del} className="flex items-center gap-2" style={{ color: isDark ? "#CBD5E1" : "#334155" }}>
+                        <Icon name="check" className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                        <span>{del}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
+              </div>
+
+              {/* Technologies & Inquire */}
+              <div
+                className="pt-4 border-t flex flex-wrap items-center justify-between gap-3"
+                style={{ borderColor: isDark ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.06)" }}
+              >
+                <div className="flex flex-wrap gap-1.5">
+                  {item.technologies.map((t) => (
+                    <span
+                      key={t}
+                      className="px-2 py-0.5 rounded text-[11px] font-mono border"
+                      style={{
+                        backgroundColor: isDark ? "rgba(255, 255, 255, 0.03)" : "rgba(255, 255, 255, 0.8)",
+                        borderColor: isDark ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.06)",
+                        color: isDark ? "#94A3B8" : "#64748B",
+                      }}
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <Link
+                  href="/contact"
+                  className="font-mono text-xs font-bold flex items-center gap-1 hover:underline"
+                  style={{ color: isDark ? "#00D2FF" : "#005baf" }}
+                >
+                  <span>Request Scope Overview</span>
+                  <Icon name="arrow_forward" className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
           ))}
         </div>
 
-        {/* View All Work Link */}
-        <div className="flex justify-center pt-2">
+        {/* Confidentiality & Real Projects Notice Banner */}
+        <div
+          className="p-6 sm:p-8 rounded-3xl border flex flex-col md:flex-row items-center justify-between gap-6"
+          style={{
+            backgroundColor: isDark ? "rgba(15, 20, 28, 0.6)" : "rgba(248, 250, 252, 0.8)",
+            borderColor: isDark ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.06)",
+          }}
+        >
+          <div className="flex items-start gap-4">
+            <div
+              className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border"
+              style={{
+                backgroundColor: isDark ? "rgba(0, 210, 255, 0.1)" : "rgba(0, 116, 219, 0.08)",
+                borderColor: isDark ? "rgba(0, 210, 255, 0.25)" : "rgba(0, 116, 219, 0.2)",
+                color: isDark ? "#00D2FF" : "#005baf",
+              }}
+            >
+              <Icon name="lock" className="w-5 h-5" />
+            </div>
+            <div className="flex flex-col gap-1">
+              <h4
+                className="font-display text-base font-bold"
+                style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
+              >
+                Client Privacy &amp; Production Integrity
+              </h4>
+              <p
+                className="font-body-sm text-xs sm:text-sm leading-relaxed max-w-2xl"
+                style={{ color: isDark ? "#94A3B8" : "#475569" }}
+              >
+                TRIVEX does not publish unverified client names or fabricated performance claims. Active client codebases and case studies are protected by strict bilateral non-disclosure agreements. Verified case studies and staging demos are provided during confidential partner consultations.
+              </p>
+            </div>
+          </div>
+
           <Link
             href="/work"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm font-mono transition-all hover:brightness-110 shadow-md"
+            className="shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-xl font-mono text-xs font-bold transition-all border hover:brightness-110"
             style={{
-              backgroundColor: theme === "dark" ? "#00D2FF" : "#0088FF",
-              color: theme === "dark" ? "#000000" : "#ffffff",
+              backgroundColor: isDark ? "#00D2FF" : "#0074db",
+              borderColor: isDark ? "#00D2FF" : "#0074db",
+              color: isDark ? "#080B10" : "#ffffff",
             }}
           >
-            <span>Explore All Projects &amp; Case Studies</span>
-            <Icon name="arrow_forward" className="w-4 h-4" />
+            <span>View Work Portal</span>
+            <Icon name="arrow_forward" className="w-3.5 h-3.5" />
           </Link>
         </div>
       </div>

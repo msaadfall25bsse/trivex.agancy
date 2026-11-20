@@ -11,7 +11,10 @@ export function JsonLd() {
     logo: `${siteConfig.url}/logo-dark.png`,
     description: siteConfig.description,
     email: siteConfig.contact.email,
-    telephone: siteConfig.contact.phone,
+    founder: siteConfig.founders.map((name) => ({
+      "@type": "Person",
+      name,
+    })),
     sameAs: [
       siteConfig.links.twitter,
       siteConfig.links.linkedin,
@@ -19,7 +22,6 @@ export function JsonLd() {
     ],
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: siteConfig.contact.phone,
       contactType: "customer service",
       email: siteConfig.contact.email,
       availableLanguage: ["English"],
@@ -40,13 +42,8 @@ export function JsonLd() {
     name: siteConfig.name,
     image: `${siteConfig.url}/logo-dark.png`,
     url: siteConfig.url,
-    telephone: siteConfig.contact.phone,
     priceRange: "$$$$",
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "US",
-    },
-    areaServed: ["US", "GB", "AE", "SE", "PK"],
+    areaServed: ["US", "GB", "AE", "SE", "CA", "AU", "PK"],
     description: siteConfig.description,
   };
 

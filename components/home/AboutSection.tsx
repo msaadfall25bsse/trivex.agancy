@@ -35,8 +35,8 @@ export function AboutSection() {
     {
       pillar: "PILLAR // 01",
       title: "Global Delivery Excellence",
-      desc: "Strategic presences across Sacramento (US), London (UK), Dubai (UAE), Stockholm (Sweden), anchored by high-velocity technical execution squads in Pakistan. Round-the-clock handover cycles.",
-      tag: "CONTINUOUS 24/7 SPRINT CYCLE",
+      desc: "Synchronous timezone alignment across North America (PST/EST), Europe (GMT/CET), and the Middle East (GST). Engineered for round-the-clock delivery cycles and rapid sprint turnaround.",
+      tag: "SYNCHRONIZED SPRINT CYCLES",
     },
     {
       pillar: "PILLAR // 02",

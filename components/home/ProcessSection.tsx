@@ -108,7 +108,7 @@ export function ProcessSection() {
               color: theme === "dark" ? "#000000" : "#ffffff",
             }}
           >
-            <span>Learn More About Our 4-Stage Methodology</span>
+            <span>Learn More About Our Engineering Methodology</span>
             <Icon name="arrow_forward" className="w-4 h-4" />
           </Link>
         </div>

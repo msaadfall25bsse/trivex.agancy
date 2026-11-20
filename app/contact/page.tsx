@@ -87,27 +87,27 @@ export default function ContactPage() {
 
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-blue-500/10 text-[#0088FF] dark:bg-cyan-500/10 dark:text-[#00D2FF]">
-                    <Icon name="phone_in_talk" className="w-5 h-5" />
+                    <Icon name="video_call" className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-mono uppercase text-slate-400">Telephone</div>
+                    <div className="text-xs font-mono uppercase text-slate-400">Video Consultation</div>
                     <div className="font-semibold text-slate-900 dark:text-white">
-                      +1 (800) 874-8390
+                      Google Meet / Zoom Session
                     </div>
-                    <div className="text-xs text-slate-500">Mon – Fri: 9:00 AM – 6:00 PM EST</div>
+                    <div className="text-xs text-slate-500">Scheduled upon initial technical scope review</div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-blue-500/10 text-[#0088FF] dark:bg-cyan-500/10 dark:text-[#00D2FF]">
-                    <Icon name="location_on" className="w-5 h-5" />
+                    <Icon name="public" className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-mono uppercase text-slate-400">Global Hubs</div>
+                    <div className="text-xs font-mono uppercase text-slate-400">Timezone Coverage</div>
                     <div className="font-semibold text-slate-900 dark:text-white">
-                      United States • UK • UAE • Pakistan
+                      North America • Europe • MENA • APAC
                     </div>
-                    <div className="text-xs text-slate-500">Distributed client collaboration</div>
+                    <div className="text-xs text-slate-500">Synchronous sprint overlap and remote delivery</div>
                   </div>
                 </div>
               </div>

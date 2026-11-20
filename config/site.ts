@@ -3,10 +3,11 @@ export const siteConfig = {
   shortName: "TRIVEX",
   tagline: "We Build, Market & Scale Digital Businesses.",
   description:
-    "From performance marketing and creative production to websites, apps and AI-powered solutions, we help businesses build and grow their digital presence.",
+    "Full-service digital growth, software engineering, and creative technology agency. Three founding partners, one unified operating model for international clients.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://trivex-agancy.vercel.app",
   ogImage: "https://trivex-agancy.vercel.app/logo-dark.png",
   creator: "TRIVEX Agency",
+  founders: ["Muhammad Saad", "Sardar Samiullah", "Shafaq Ejaz"],
   keywords: [
     "Digital Growth Agency",
     "Performance Marketing & Paid Ads",
@@ -28,7 +29,6 @@ export const siteConfig = {
   },
   contact: {
     email: "contact@trivex.group",
-    phone: "+1 (800) 874-8390",
     responseCommitment: "Consultation response within 24 business hours",
   },
 };

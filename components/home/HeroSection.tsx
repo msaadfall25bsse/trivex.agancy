@@ -47,10 +47,10 @@ export function HeroSection() {
               className="font-mono font-semibold"
               style={{ color: isDark ? "#00D2FF" : "#005baf" }}
             >
-              DEPLOYED GLOBAL NODES:
+              GLOBAL DELIVERY:
             </span>
             <span style={{ color: isDark ? "#FFFFFF" : "#0f172a" }}>
-              US • UK • UAE • SE • PK
+              NORTH AMERICA · EUROPE · MENA · APAC
             </span>
           </div>
         </div>
@@ -107,65 +107,48 @@ export function HeroSection() {
                   color: isDark ? "#FFFFFF" : "#0b1c30",
                 }}
               >
-                <span>Explore Capabilities</span>
-                <Icon name="terminal" className="w-4 h-4" />
+                <span>Explore All Services</span>
+                <Icon name="hub" className="w-4 h-4" />
               </Link>
             </div>
 
-            {/* Quick Proof Chips */}
-            <div className="pt-space-md flex flex-wrap items-center gap-space-sm">
-              <span className="font-label-sm text-label-sm" style={{ color: "#64748B" }}>
-                TRUSTED INFRASTRUCTURE:
+            {/* Micro Trust Proofs */}
+            <div className="flex flex-wrap items-center gap-space-md pt-space-xs text-xs font-mono text-slate-400">
+              <span className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                100% Client Code &amp; IP Ownership
               </span>
-              {[
-                "ISO 27001",
-                "SOC 2 Type II",
-                "GDPR Compliant",
-                "Zero Fluff Architecture",
-              ].map((chip) => (
-                <span
-                  key={chip}
-                  className="px-2.5 py-1 rounded font-label-sm text-label-sm glass-pill shadow-xs"
-                  style={{
-                    color: isDark ? "#94A3B8" : "#475569",
-                  }}
-                >
-                  {chip}
-                </span>
-              ))}
+              <span className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                Direct Founding Partner Access
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                24-Hour Consultation Turnaround
+              </span>
             </div>
           </div>
 
-          {/* Right: Core Capability Console */}
-          <div className="lg:col-span-5 flex flex-col gap-space-md">
-            <div className="glass-panel p-space-lg rounded-3xl shadow-xl flex flex-col gap-space-md">
-              <div className="flex items-center justify-between">
+          {/* Right: Agency Operating Capabilities Card (Retained Original Structure) */}
+          <div className="lg:col-span-5 flex flex-col gap-4">
+            <div className="glass-panel p-6 rounded-3xl shadow-2xl relative overflow-hidden">
+              <div className="flex items-center justify-between pb-4 border-b border-white/10 dark:border-white/5">
                 <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span
-                    className="w-2.5 h-2.5 rounded-full"
-                    style={{ backgroundColor: isDark ? "#00D2FF" : "#0074db" }}
-                  />
-                  <span
-                    className="font-label-sm text-label-sm font-mono font-bold tracking-wider"
+                    className="font-mono text-xs font-bold uppercase tracking-wider"
                     style={{ color: isDark ? "#00D2FF" : "#005baf" }}
                   >
-                    AGENCY OPERATING CAPABILITIES
+                    Agency Operating Capabilities
                   </span>
                 </div>
-                <span
-                  className="font-mono text-[11px] font-semibold px-2.5 py-0.5 rounded-full"
-                  style={{
-                    backgroundColor: "rgba(16, 185, 129, 0.15)",
-                    color: "#10B981",
-                    border: "1px solid rgba(16, 185, 129, 0.3)",
-                  }}
-                >
-                  INTAKE OPEN
+                <span className="font-mono text-[10px] uppercase px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold">
+                  Intake Open
                 </span>
               </div>
 
-              {/* 4 Pillars Preview with Glassmorphism */}
-              <div className="space-y-2.5 pt-1">
+              {/* Service Matrix Items */}
+              <div className="space-y-3 pt-4">
                 <div className="p-3.5 rounded-2xl border flex items-center justify-between glass-panel-interactive bg-white/40 dark:bg-white/[0.04] border-white/50 dark:border-white/10">
                   <div className="flex items-center gap-2.5">
                     <span style={{ color: isDark ? "#00D2FF" : "#0074db" }}>
@@ -225,19 +208,19 @@ export function HeroSection() {
                     className="font-headline-sm text-xs font-bold uppercase tracking-wider"
                     style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
                   >
-                    TRIVEX Collaborative Model
+                    TRIVEX Founding Leadership
                   </div>
                   <div className="font-label-sm text-[11px]" style={{ color: "#64748B" }}>
-                    Dedicated Engineering &amp; Creative Pods
+                    Three Minds. One Unified Vision.
                   </div>
                 </div>
               </div>
               <Link
-                href="/about"
+                href="/team"
                 className="text-xs font-mono font-semibold hover:underline"
                 style={{ color: isDark ? "#00D2FF" : "#0088FF" }}
               >
-                Our Story →
+                Meet Leadership →
               </Link>
             </div>
           </div>
@@ -264,13 +247,13 @@ export function HeroSection() {
               className="font-display text-2xl lg:text-3xl font-bold"
               style={{ color: isDark ? "#00D2FF" : "#005baf" }}
             >
-              4
+              100%
             </span>
             <span
               className="font-label-sm text-label-sm"
               style={{ color: isDark ? "#94A3B8" : "#64748B" }}
             >
-              Global Operational Hubs
+              Remote-First Global Delivery
             </span>
           </div>
           <div className="flex flex-col gap-1">
@@ -298,7 +281,7 @@ export function HeroSection() {
               className="font-label-sm text-label-sm"
               style={{ color: isDark ? "#94A3B8" : "#64748B" }}
             >
-              Consultation Assessment Turnaround
+              Consultation Assessment SLA
             </span>
           </div>
         </div>

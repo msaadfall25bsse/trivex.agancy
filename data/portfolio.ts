@@ -2,137 +2,139 @@ export interface ProjectItem {
   id: string;
   slug: string;
   title: string;
-  category: "Websites" | "Web Applications" | "E-commerce" | "WordPress" | "Mobile Apps" | "Marketing & Ads" | "Branding" | "Video & Creative";
+  client?: string;
+  category:
+    | "Web Applications"
+    | "Mobile Apps"
+    | "E-commerce"
+    | "AI & Automation"
+    | "WordPress & CMS"
+    | "Branding & Design";
   summary: string;
-  challenge: string;
-  solution: string;
+  challenge?: string;
+  approach?: string;
   deliverables: string[];
   technologies: string[];
-  image: string;
-  alt: string;
+  image?: string;
+  alt?: string;
   badge: string;
+  results?: string[];
+  liveUrl?: string;
+  status: "published" | "in_production" | "confidential";
   featured?: boolean;
 }
 
-export const PORTFOLIO_PROJECTS: ProjectItem[] = [
+export interface PracticeDomainScope {
+  id: string;
+  category: ProjectItem["category"];
+  badge: string;
+  title: string;
+  summary: string;
+  architecturalFocus: string[];
+  technologies: string[];
+  statusNote: string;
+}
+
+/**
+ * ARCHITECTURAL PRACTICE DOMAINS
+ * These reflect the concrete engineering scopes TRIVEX delivers to international clients.
+ */
+export const PRACTICE_DOMAINS: PracticeDomainScope[] = [
   {
-    id: "luxury-apparel-commerce",
-    slug: "luxury-apparel-commerce",
-    title: "Global Apparel Flagship & Headless Store Architecture",
-    category: "E-commerce",
-    badge: "SHOPIFY PLUS // HEADLESS",
-    summary: "Re-engineered a digital flagship store to deliver sub-second mobile page loads, streamlined multi-currency checkout, and automated inventory sync.",
-    challenge: "The existing monolithic platform suffered from slow mobile load times, high checkout drop-offs, and disjointed international fulfillment across regions.",
-    solution: "Designed and engineered a custom headless storefront with instant client-side transitions, simplified single-page checkout, and real-time ERP inventory sync.",
-    deliverables: [
-      "Headless Storefront Frontend",
-      "Custom Multi-Currency Checkout Flow",
-      "Automated Inventory & ERP Synchronization",
-      "Core Web Vitals Speed Optimization",
-    ],
-    technologies: ["Shopify Plus", "Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB7lsEg31e7OMSppgyqtYpLY1SKTeO6MN6mkHGucq070Su4F6VV-7byNGNAIQPlBzd0QAHVZI2XiRXOMxjvXKdGV7s-Mi900EBL6LeAFsQSkaEV2JTbY5drHRdcpSCtkg-v5LOpbmnPnY3o11nW1MhJSK9ex6EjKl-NA9qLT2_ZnjdBZ_5gayIRjHcN04dj_5xAutZcPRXvWnh4uQCOXnfCHAOkzAvdNieXoWwEBus",
-    alt: "Modern luxury apparel e-commerce web platform",
-    featured: true,
-  },
-  {
-    id: "commercial-fleet-portal",
-    slug: "commercial-fleet-portal",
-    title: "Commercial Fleet Dispatch & Service Booking Portal",
+    id: "full-stack-web-apps",
     category: "Web Applications",
-    badge: "FULL-STACK // IOT PORTAL",
-    summary: "Architected an intuitive web application providing commercial vehicle operators with real-time hardware status, booking scheduling, and maintenance dispatch.",
-    challenge: "Manual dispatching and fragmented spreadsheets resulted in slow communication, missed maintenance windows, and frustrated fleet managers.",
-    solution: "Built a reactive, real-time web portal integrating telematics APIs, automated service scheduling, and customer self-service booking modules.",
-    deliverables: [
-      "Custom Operations Dashboard & Telematics Sync",
-      "Interactive Customer Booking Workflow",
-      "Automated SMS & Email Service Notifications",
-      "Role-Based Access Control for Dispatchers",
+    badge: "FULL-STACK SAAS",
+    title: "Reactive Cloud Platforms & Enterprise Web Applications",
+    summary:
+      "Modern full-stack web applications with sub-second page loads, modular React 19 / Next.js architectures, distributed REST/GraphQL APIs, and resilient PostgreSQL databases.",
+    architecturalFocus: [
+      "Role-based access control (RBAC) and enterprise authentication",
+      "Real-time event synchronization and webhook dispatching",
+      "Automated CI/CD deployment pipelines on AWS and Vercel",
     ],
-    technologies: ["React", "Next.js", "Node.js", "PostgreSQL", "REST APIs"],
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBRhi3INl7nIl5tWWj7Hm2ZNlV2E40u11cbL-SIEyD5Kz4n4kfKayHyOms-D2FmMArlLIso8RDSQwZ-24rByLXNksvwZcAqqOzE3OpgvCyoOdakRJGw0lJGOfO2-l3hdbx2GnY75-zm4J6C4YA_L-ZOEp1jdcjXXFr265wbVTbKHMO7KsUZ9aoboDx68KD1vIJtofYyCwCfXAKtB1YILm1FchSPokGzxBcVs1kjX94",
-    alt: "Fleet management operations portal interface",
-    featured: true,
+    technologies: ["Next.js", "React 19", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
+    statusNote: "Case studies in active production — walkthroughs available under NDA",
   },
   {
-    id: "executive-mobility-app",
-    slug: "executive-mobility-app",
-    title: "Executive Chauffeur & Airport Dispatch Mobile Platform",
+    id: "headless-ecommerce",
+    category: "E-commerce",
+    badge: "HEADLESS COMMERCE",
+    title: "Global Multi-Currency Flagships & Headless Storefronts",
+    summary:
+      "Decoupled e-commerce architectures engineered for high-volume retail. Instant client-side transitions, unified single-page checkout flows, and automated inventory sync.",
+    architecturalFocus: [
+      "Headless storefront frontend with 95+ PageSpeed Core Web Vitals",
+      "Multi-currency checkout and localized tax/shipping gateways",
+      "Bidirectional ERP & inventory catalog synchronizers",
+    ],
+    technologies: ["Shopify Plus", "Next.js", "Stripe API", "GraphQL", "Tailwind CSS"],
+    statusNote: "Case studies in active production — walkthroughs available under NDA",
+  },
+  {
+    id: "cross-platform-mobile",
     category: "Mobile Apps",
-    badge: "CROSS-PLATFORM // FLUTTER",
-    summary: "Engineered dual cross-platform iOS and Android applications for passengers and drivers with real-time GPS telemetry, in-app payments, and flight tracking.",
-    challenge: "The client needed a white-glove mobile experience for luxury travelers with zero dispatch latency, dynamic pricing, and seamless payment escrow.",
-    solution: "Developed native-feel mobile applications in Flutter with background location tracking, flight arrival synchronization, and one-tap booking.",
-    deliverables: [
-      "Passenger iOS & Android Application",
-      "Chauffeur Dispatch Application",
-      "Real-Time Telemetry & GPS Navigation",
-      "Stripe Payment Escrow Integration",
+    badge: "CROSS-PLATFORM MOBILE",
+    title: "Cross-Platform iOS & Android Mobile Applications",
+    summary:
+      "High-performance native-feel mobile applications built with Flutter and React Native. Seamless background telemetry, real-time push notifications, and in-app payments.",
+    architecturalFocus: [
+      "Background GPS telemetry and live map tracking",
+      "Secure payment escrow and in-app subscription processing",
+      "Offline-first state synchronization and encrypted local storage",
     ],
-    technologies: ["Flutter", "Dart", "Firebase", "Stripe API", "Google Maps SDK"],
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAeTyYYDCH5-3aM2oeABk9K2Re6bJ0tzM1cj57Qpxrpq5xfay0RFgNUiFD25Vea9IXYKX0Dg8eooP2r8OxvguDTlEuPrTmmLmUqZyhT4r8jfICfvY95nrjhSOZBIDkIgFZ5ZyWB43hen9rGSzhQnS3vTjNiDAKNhwGr9U54g_wWMe2UtHd2ZXY7aIDF2uXG4Tz6R6_H4tmqmDqYRWG01QoKHWHKUBuJoNYOulr1PV4",
-    alt: "Executive limousine mobile application design",
-    featured: true,
+    technologies: ["Flutter", "Dart", "Firebase", "Stripe SDK", "Google Maps SDK"],
+    statusNote: "Case studies in active production — walkthroughs available under NDA",
   },
   {
-    id: "architectural-development-web",
-    slug: "architectural-development-web",
-    title: "Modern Architectural Development & Property Showcase",
-    category: "Websites",
-    badge: "NEXT.JS // 3D IMMERSIVE",
-    summary: "Crafted a high-elegance web platform for premier real estate developments featuring interactive unit floor plans, buyer CRM integrations, and multi-language support.",
-    challenge: "Traditional PDF brochures were failing to convey the luxury scale of developments, resulting in low international inquiry conversion.",
-    solution: "Constructed an interactive web experience with fluid typography, responsive 3D floor plan explorer, and automated lead capture routing.",
-    deliverables: [
-      "Responsive Architectural Showcase Website",
-      "Interactive Floor Plan Selector",
-      "Multi-Language Architecture (English & Arabic)",
-      "Automated CRM Lead Routing",
+    id: "ai-enterprise-automation",
+    category: "AI & Automation",
+    badge: "AI & WORKFLOWS",
+    title: "Autonomous Enterprise AI Pipelines & Intelligence Nodes",
+    summary:
+      "Bespoke LLM integrations, document extraction agents, and multi-channel customer triage bots that automate repetitive administrative and operational workflows.",
+    architecturalFocus: [
+      "Semantic search and vector retrieval augmentation (RAG)",
+      "Automated CRM, lead routing, and ticketing synchronization",
+      "Enterprise audit logging and privacy-preserving data redaction",
     ],
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "HubSpot CRM"],
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA0XHSbXSBMBEcSdv_DzO-DwVs8sDjBJVkzGVitO_3pOllDdG0jhKdr9XWBdsFprbRvaI_adewmzB_buO2lsgpb2n8j0CZlq_tjJRteIaM9OlHb97AP-B6nYpnFnazqr7jmG-n0Mgxd1E5JHApvW4tayMPdePKW4uJ0in4s-TFX0evw50uQZ7brp7lrCVh-kZPgCcR4oyagYbRMgp7R64jMb0Phc2JNO4eet5OaxoA",
-    alt: "Architectural property showcase website",
-    featured: false,
+    technologies: ["Python", "FastAPI", "OpenAI API", "LangChain", "Vector DB", "Docker"],
+    statusNote: "Case studies in active production — walkthroughs available under NDA",
   },
   {
-    id: "corporate-consulting-wordpress",
-    slug: "corporate-consulting-wordpress",
-    title: "Bespoke Corporate Advisory WordPress Platform",
-    category: "WordPress",
-    badge: "CUSTOM THEME // ACF PRO",
-    summary: "Engineered a custom, bloat-free corporate WordPress website with modular Gutenberg blocks, ACF Pro custom fields, and hardened enterprise security.",
-    challenge: "The client was trapped on an outdated, fragile page-builder theme that took 6+ seconds to load and frequently broke during WordPress updates.",
-    solution: "Rebuilt the site from scratch with clean, semantic PHP templates, modular editor blocks, and a lightweight asset pipeline achieving 95+ PageSpeed.",
-    deliverables: [
-      "Custom WordPress Theme Architecture",
-      "Modular Gutenberg Blocks & ACF Setup",
-      "Security Hardening & 2FA Configuration",
-      "Comprehensive Editorial Documentation",
+    id: "custom-wordpress-cms",
+    category: "WordPress & CMS",
+    badge: "HEADLESS CMS // ACF PRO",
+    title: "Custom Corporate WordPress & Editorial Publishing Platforms",
+    summary:
+      "Bespoke, bloat-free WordPress themes engineered with custom Gutenberg blocks, ACF Pro fields, and hardened enterprise security. Zero fragile page-builders.",
+    architecturalFocus: [
+      "Custom semantic PHP & React Gutenberg block components",
+      "Lightweight asset pipeline with 95+ Lighthouse scores",
+      "Two-factor authentication and automated daily backup routines",
     ],
-    technologies: ["WordPress", "PHP 8", "ACF Pro", "MySQL", "Cloudflare"],
-    image: "https://lh3.googleusercontent.com/aida/ALJJyrBzx4Y8noL01zqp5PYB66KSR1tjqH5ijNXJUsXiEyppbVMuMtGQW_DEkYKsXbe6YXt67YIdtcw20eKIt1KIJCY9qyiwMIg2mm3PhaCJtcsVmZbhBiregWNnmsu9mUp8dHPPn61SHrXXfjntBV7rEOtgKL3FQOM1KiXbRGqwv7ZU1RY6gPQCXDngrXeUqMgyk8MwNvsgbwW0SEpzZHvpPNj5i94GBD_aT6cVSHjhY4z5",
-    alt: "Clean corporate WordPress website",
-    featured: false,
+    technologies: ["WordPress", "PHP 8", "ACF Pro", "MySQL", "Cloudflare CDN"],
+    statusNote: "Case studies in active production — walkthroughs available under NDA",
   },
   {
-    id: "fintech-brand-identity",
-    slug: "fintech-brand-identity",
-    title: "Fintech Platform Visual Identity & Design System",
-    category: "Branding",
-    badge: "BRAND SYSTEM // FIGMA",
-    summary: "Designed a cohesive visual identity, comprehensive brand guidelines, custom iconography, and responsive design system for an emerging financial technology firm.",
-    challenge: "The company lacked unified visual standards, with marketing materials, landing pages, and web apps each presenting conflicting styles.",
-    solution: "Created an authoritative yet modern brand system, precision vector logo system, dark/light token architecture, and production-ready component library.",
-    deliverables: [
-      "Master Logo System & App Iconography",
-      "Color Tokens, Typography & Brand Guidelines Manual",
-      "Marketing Deck & Social Media Templates",
-      "Figma UI Component Kit",
+    id: "design-systems-branding",
+    category: "Branding & Design",
+    badge: "DESIGN SYSTEMS",
+    title: "Design Tokens, Figma UI Component Systems & Brand Identity",
+    summary:
+      "Comprehensive digital brand systems, precision vector logo iconography, dual-theme dark/light token palettes, and production-ready Figma component libraries.",
+    architecturalFocus: [
+      "Cross-platform design token architecture and spacing scales",
+      "Accessible WCAG 2.2 AA compliant color contrast systems",
+      "Interactive component states, motion guidelines, and micro-interactions",
     ],
-    technologies: ["Figma", "Adobe Illustrator", "Tokens Studio"],
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB7lsEg31e7OMSppgyqtYpLY1SKTeO6MN6mkHGucq070Su4F6VV-7byNGNAIQPlBzd0QAHVZI2XiRXOMxjvXKdGV7s-Mi900EBL6LeAFsQSkaEV2JTbY5drHRdcpSCtkg-v5LOpbmnPnY3o11nW1MhJSK9ex6EjKl-NA9qLT2_ZnjdBZ_5gayIRjHcN04dj_5xAutZcPRXvWnh4uQCOXnfCHAOkzAvdNieXoWwEBus",
-    alt: "Brand identity design system showcase",
-    featured: false,
+    technologies: ["Figma", "Tokens Studio", "Adobe Illustrator", "Storybook"],
+    statusNote: "Case studies in active production — walkthroughs available under NDA",
   },
 ];
+
+/**
+ * PRODUCTION CLIENT PROJECTS
+ * Strictly populated only when genuine, verified client projects and permissions are provided.
+ * No fabricated clients, fake revenue lifts, or invented case studies.
+ */
+export const PORTFOLIO_PROJECTS: ProjectItem[] = [];

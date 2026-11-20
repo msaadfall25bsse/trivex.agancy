@@ -49,10 +49,10 @@ export function Footer() {
               className="font-body-sm text-body-sm leading-relaxed max-w-sm transition-colors"
               style={{ color: isDark ? "#94A3B8" : "#404754" }}
             >
-              Full-service digital growth, engineering, and creative agency helping modern businesses build, scale, and automate. Three minds, one unified vision.
+              Full-service digital growth, software engineering, and creative technology agency. Three founding partners, one synchronized execution model.
             </p>
             <div
-              className="pt-2 space-y-1.5 font-label-md text-label-md transition-colors"
+              className="pt-2 space-y-2 font-label-md text-label-md transition-colors"
               style={{ color: isDark ? "#94A3B8" : "#404754" }}
             >
               <div className="flex items-center gap-2">
@@ -69,16 +69,10 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <span style={{ color: isDark ? "#00D2FF" : "#005baf" }}>
-                  <Icon name="phone_in_talk" className="w-4 h-4" />
-                </span>
-                <span>+1 (800) 874-8390</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span style={{ color: isDark ? "#00D2FF" : "#005baf" }}>
                   <Icon name="verified" className="w-4 h-4" />
                 </span>
                 <span
-                  className="font-mono font-semibold"
+                  className="font-mono text-xs font-semibold"
                   style={{ color: isDark ? "#00D2FF" : "#005baf" }}
                 >
                   24-Hour Consultation Turnaround
@@ -117,19 +111,10 @@ export function Footer() {
               <li>
                 <Link
                   className="transition-colors hover:text-[#00D2FF]"
-                  href="/services/wordpress-development"
-                  style={{ color: isDark ? "#94A3B8" : "#404754" }}
-                >
-                  WordPress Theme Engineering
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="transition-colors hover:text-[#00D2FF]"
                   href="/services/mobile-app-development"
                   style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  Cross-Platform Mobile Apps
+                  Mobile App Development
                 </Link>
               </li>
               <li>
@@ -138,28 +123,37 @@ export function Footer() {
                   href="/services/digital-marketing"
                   style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  Paid Ads &amp; Performance Marketing
+                  Digital Marketing &amp; Paid Ads
                 </Link>
               </li>
               <li>
                 <Link
-                  className="transition-colors font-semibold hover:text-[#00D2FF]"
-                  href="/services"
-                  style={{ color: isDark ? "#00D2FF" : "#0088FF" }}
+                  className="transition-colors hover:text-[#00D2FF]"
+                  href="/services/business-automation"
+                  style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  View All 12 Services →
+                  Business Automation &amp; AI
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="transition-colors hover:text-[#00D2FF]"
+                  href="/services/ui-ux-design"
+                  style={{ color: isDark ? "#94A3B8" : "#404754" }}
+                >
+                  UI/UX &amp; Product Design
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Agency & Methodology */}
+          {/* Column 3: Company & Leadership */}
           <div className="space-y-space-md">
             <h4
               className="font-headline-sm text-headline-sm transition-colors"
               style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
             >
-              TRIVEX Agency
+              Company &amp; Team
             </h4>
             <ul className="space-y-2.5 font-body-sm text-body-sm">
               <li>
@@ -168,7 +162,16 @@ export function Footer() {
                   href="/about"
                   style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  About Our Philosophy
+                  About TRIVEX
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="transition-colors hover:text-[#00D2FF]"
+                  href="/team"
+                  style={{ color: isDark ? "#94A3B8" : "#404754" }}
+                >
+                  Founding Leadership
                 </Link>
               </li>
               <li>
@@ -177,16 +180,7 @@ export function Footer() {
                   href="/work"
                   style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  Portfolio &amp; Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="transition-colors hover:text-[#00D2FF]"
-                  href="/industries"
-                  style={{ color: isDark ? "#94A3B8" : "#404754" }}
-                >
-                  Industries We Support
+                  Selected Work &amp; Scopes
                 </Link>
               </li>
               <li>
@@ -195,16 +189,16 @@ export function Footer() {
                   href="/process"
                   style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  4-Stage Execution Process
+                  Development Process
                 </Link>
               </li>
               <li>
                 <Link
                   className="transition-colors hover:text-[#00D2FF]"
-                  href="/faq"
+                  href="/industries"
                   style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  Frequently Asked Questions
+                  Industries Served
                 </Link>
               </li>
               <li>
@@ -213,19 +207,19 @@ export function Footer() {
                   href="/contact"
                   style={{ color: isDark ? "#94A3B8" : "#404754" }}
                 >
-                  Book a Consultation
+                  Contact &amp; Inquiries
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: Global Hubs */}
+          {/* Column 4: Global Timezone Alignment */}
           <div className="space-y-space-md">
             <h4
               className="font-headline-sm text-headline-sm transition-colors"
               style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
             >
-              Global Hubs
+              Global Timezone Reach
             </h4>
             <div className="space-y-3 font-body-sm text-body-sm">
               <div
@@ -236,13 +230,13 @@ export function Footer() {
                   className="font-label-md text-label-md font-semibold transition-colors"
                   style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
                 >
-                  United States
+                  North America
                 </div>
                 <div
                   className="text-xs transition-colors"
                   style={{ color: isDark ? "#64748B" : "#64748B" }}
                 >
-                  Strategic Client Growth &amp; Advisory
+                  PST / EST Active Sprint Overlap
                 </div>
               </div>
               <div
@@ -253,13 +247,13 @@ export function Footer() {
                   className="font-label-md text-label-md font-semibold transition-colors"
                   style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
                 >
-                  United Kingdom &amp; Sweden
+                  United Kingdom &amp; Europe
                 </div>
                 <div
                   className="text-xs transition-colors"
                   style={{ color: isDark ? "#64748B" : "#64748B" }}
                 >
-                  European Delivery &amp; Design Architecture
+                  GMT / CET Milestone Demos
                 </div>
               </div>
               <div
@@ -270,13 +264,13 @@ export function Footer() {
                   className="font-label-md text-label-md font-semibold transition-colors"
                   style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
                 >
-                  United Arab Emirates
+                  Middle East &amp; Gulf
                 </div>
                 <div
                   className="text-xs transition-colors"
                   style={{ color: isDark ? "#64748B" : "#64748B" }}
                 >
-                  MENA Commercial Operations
+                  GST (UTC+4) Commercial Operations
                 </div>
               </div>
               <div
@@ -287,13 +281,13 @@ export function Footer() {
                   className="font-label-md text-label-md font-semibold transition-colors"
                   style={{ color: isDark ? "#FFFFFF" : "#0b1c30" }}
                 >
-                  Center of Technical Excellence
+                  Global Remote Delivery
                 </div>
                 <div
                   className="text-xs transition-colors"
                   style={{ color: isDark ? "#64748B" : "#64748B" }}
                 >
-                  Abbottabad &amp; Islamabad Engineering Hubs
+                  24h Rapid Response SLA &amp; IP Protection
                 </div>
               </div>
             </div>
@@ -338,12 +332,6 @@ export function Footer() {
               href="/faq"
             >
               FAQ
-            </Link>
-            <Link
-              className="hover:text-primary transition-colors"
-              href="/sitemap.xml"
-            >
-              Sitemap
             </Link>
           </div>
         </div>
