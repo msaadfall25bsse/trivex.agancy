@@ -65,6 +65,12 @@ body {
    ========================================================================== */
 
 /* Font Family Classes */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .font-display,
 .font-display-mobile,
 .font-headline-lg,
@@ -72,14 +78,14 @@ body {
 .font-headline-md,
 .font-headline-sm,
 .font-brand {
-  font-family: var(--font-space), 'Space Grotesk', sans-serif !important;
+  font-family: 'Space Grotesk', var(--font-space), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
 .font-body,
 .font-body-lg,
 .font-body-md,
 .font-body-sm {
-  font-family: var(--font-hanken), 'Hanken Grotesk', sans-serif !important;
+  font-family: 'Hanken Grotesk', var(--font-hanken), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
 .font-label,
@@ -87,7 +93,7 @@ body {
 .font-label-md,
 .font-label-sm,
 .font-mono {
-  font-family: var(--font-mono), 'JetBrains Mono', monospace !important;
+  font-family: 'JetBrains Mono', var(--font-mono), monospace !important;
 }
 
 /* Font Size & Weight Tokens from index_dark.html */
